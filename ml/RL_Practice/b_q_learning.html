@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Q-learning | Way To Machine Learning</title>
+    <meta name="description" content=" ">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="icon" href="/logo.svg">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="msapplication-TileColor" content="#000000">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css">
+    
+    <link rel="preload" href="/assets/css/0.styles.20991f8c.css" as="style"><link rel="preload" href="/assets/js/app.2f9808b5.js" as="script"><link rel="preload" href="/assets/js/5.5be22c85.js" as="script"><link rel="preload" href="/assets/js/106.6ffb9931.js" as="script"><link rel="preload" href="/assets/js/22.9bca349d.js" as="script"><link rel="prefetch" href="/assets/js/1.1d775e1b.js"><link rel="prefetch" href="/assets/js/10.083d1548.js"><link rel="prefetch" href="/assets/js/100.05597e80.js"><link rel="prefetch" href="/assets/js/101.31a23ef5.js"><link rel="prefetch" href="/assets/js/102.14cea9c2.js"><link rel="prefetch" href="/assets/js/103.0010eae9.js"><link rel="prefetch" href="/assets/js/104.6db8c9c6.js"><link rel="prefetch" href="/assets/js/105.504bf4d3.js"><link rel="prefetch" href="/assets/js/107.bc567323.js"><link rel="prefetch" href="/assets/js/108.f1c2e50c.js"><link rel="prefetch" href="/assets/js/109.777102ad.js"><link rel="prefetch" href="/assets/js/11.ecd9305e.js"><link rel="prefetch" href="/assets/js/110.c1a3fc89.js"><link rel="prefetch" href="/assets/js/111.231b2cb8.js"><link rel="prefetch" href="/assets/js/112.c0e98c74.js"><link rel="prefetch" href="/assets/js/113.bbb9e129.js"><link rel="prefetch" href="/assets/js/114.367eea1f.js"><link rel="prefetch" href="/assets/js/115.f42e89d8.js"><link rel="prefetch" href="/assets/js/116.79f1f1a2.js"><link rel="prefetch" href="/assets/js/117.3da3f11d.js"><link rel="prefetch" href="/assets/js/118.1a35a14c.js"><link rel="prefetch" href="/assets/js/119.f2537db2.js"><link rel="prefetch" href="/assets/js/12.bee72ee2.js"><link rel="prefetch" href="/assets/js/120.0adc5cf8.js"><link rel="prefetch" href="/assets/js/121.40b98d67.js"><link rel="prefetch" href="/assets/js/122.a9fb6b63.js"><link rel="prefetch" href="/assets/js/123.ffb2e3eb.js"><link rel="prefetch" href="/assets/js/124.5c170e24.js"><link rel="prefetch" href="/assets/js/125.f51896ce.js"><link rel="prefetch" href="/assets/js/126.13337ca3.js"><link rel="prefetch" href="/assets/js/127.c27ab429.js"><link rel="prefetch" href="/assets/js/128.c7a47b28.js"><link rel="prefetch" href="/assets/js/129.409eab1a.js"><link rel="prefetch" href="/assets/js/13.f33f1e60.js"><link rel="prefetch" href="/assets/js/130.c5699ea4.js"><link rel="prefetch" href="/assets/js/131.09d315a3.js"><link rel="prefetch" href="/assets/js/132.9fbfbefe.js"><link rel="prefetch" href="/assets/js/133.a85afcb0.js"><link rel="prefetch" href="/assets/js/134.a8961135.js"><link rel="prefetch" href="/assets/js/135.b8beffd9.js"><link rel="prefetch" href="/assets/js/136.74479c69.js"><link rel="prefetch" href="/assets/js/137.a3b91940.js"><link rel="prefetch" href="/assets/js/138.2856ceb8.js"><link rel="prefetch" href="/assets/js/139.f521558b.js"><link rel="prefetch" href="/assets/js/14.3270a5a1.js"><link rel="prefetch" href="/assets/js/140.c2bc3cf3.js"><link rel="prefetch" href="/assets/js/141.c0412bd8.js"><link rel="prefetch" href="/assets/js/142.7f348940.js"><link rel="prefetch" href="/assets/js/143.a1ebf024.js"><link rel="prefetch" href="/assets/js/144.19896f76.js"><link rel="prefetch" href="/assets/js/145.a564d47e.js"><link rel="prefetch" href="/assets/js/146.1a536af8.js"><link rel="prefetch" href="/assets/js/147.15220144.js"><link rel="prefetch" href="/assets/js/148.abf671bb.js"><link rel="prefetch" href="/assets/js/149.d43abbd0.js"><link rel="prefetch" href="/assets/js/15.4dd4c12f.js"><link rel="prefetch" href="/assets/js/150.d33295bc.js"><link rel="prefetch" href="/assets/js/151.608be654.js"><link rel="prefetch" href="/assets/js/152.20258027.js"><link rel="prefetch" href="/assets/js/153.f70acd5e.js"><link rel="prefetch" href="/assets/js/154.b8525aa8.js"><link rel="prefetch" href="/assets/js/155.a41a1317.js"><link rel="prefetch" href="/assets/js/156.a001c873.js"><link rel="prefetch" href="/assets/js/157.64091ba5.js"><link rel="prefetch" href="/assets/js/158.68992239.js"><link rel="prefetch" href="/assets/js/159.3e6ab0f4.js"><link rel="prefetch" href="/assets/js/16.26a5046e.js"><link rel="prefetch" href="/assets/js/160.fd81bd59.js"><link rel="prefetch" href="/assets/js/161.f2d1951f.js"><link rel="prefetch" href="/assets/js/162.e8c75e03.js"><link rel="prefetch" href="/assets/js/163.ea5bacb7.js"><link rel="prefetch" href="/assets/js/164.3de07231.js"><link rel="prefetch" href="/assets/js/165.49db50bf.js"><link rel="prefetch" href="/assets/js/166.60c9fdc9.js"><link rel="prefetch" href="/assets/js/167.4578295e.js"><link rel="prefetch" href="/assets/js/168.a3eb528e.js"><link rel="prefetch" href="/assets/js/169.ba3c1f77.js"><link rel="prefetch" href="/assets/js/17.19821f4a.js"><link rel="prefetch" href="/assets/js/170.f5d2c9be.js"><link rel="prefetch" href="/assets/js/171.aed2c8c4.js"><link rel="prefetch" href="/assets/js/172.c7aad879.js"><link rel="prefetch" href="/assets/js/173.592c424e.js"><link rel="prefetch" href="/assets/js/174.e908b40a.js"><link rel="prefetch" href="/assets/js/175.2bd1fdb1.js"><link rel="prefetch" href="/assets/js/176.9ce28557.js"><link rel="prefetch" href="/assets/js/177.edb8361d.js"><link rel="prefetch" href="/assets/js/178.1874321c.js"><link rel="prefetch" href="/assets/js/179.7d10cb3e.js"><link rel="prefetch" href="/assets/js/18.bedfcd06.js"><link rel="prefetch" href="/assets/js/180.6596c9a5.js"><link rel="prefetch" href="/assets/js/181.0c73f4ac.js"><link rel="prefetch" href="/assets/js/182.86ffaa16.js"><link rel="prefetch" href="/assets/js/183.b9b5012d.js"><link rel="prefetch" href="/assets/js/184.6af16c4a.js"><link rel="prefetch" href="/assets/js/185.5a0d205a.js"><link rel="prefetch" href="/assets/js/186.484093e8.js"><link rel="prefetch" href="/assets/js/19.a4ec96de.js"><link rel="prefetch" href="/assets/js/2.8dff0620.js"><link rel="prefetch" href="/assets/js/20.e11c2b65.js"><link rel="prefetch" href="/assets/js/21.4d365135.js"><link rel="prefetch" href="/assets/js/23.57f877c0.js"><link rel="prefetch" href="/assets/js/24.60c2ff49.js"><link rel="prefetch" href="/assets/js/25.ae9fcc4b.js"><link rel="prefetch" href="/assets/js/26.df23623d.js"><link rel="prefetch" href="/assets/js/27.4a570cc5.js"><link rel="prefetch" href="/assets/js/28.ed03c100.js"><link rel="prefetch" href="/assets/js/29.d7248aed.js"><link rel="prefetch" href="/assets/js/30.30811ef7.js"><link rel="prefetch" href="/assets/js/31.7593da2c.js"><link rel="prefetch" href="/assets/js/32.645d550b.js"><link rel="prefetch" href="/assets/js/33.42510bc1.js"><link rel="prefetch" href="/assets/js/34.059f5cd4.js"><link rel="prefetch" href="/assets/js/35.35cc2ad8.js"><link rel="prefetch" href="/assets/js/36.63ab4f88.js"><link rel="prefetch" href="/assets/js/37.3a40b428.js"><link rel="prefetch" href="/assets/js/38.db16b8d9.js"><link rel="prefetch" href="/assets/js/39.4b1d0182.js"><link rel="prefetch" href="/assets/js/40.cb781bcf.js"><link rel="prefetch" href="/assets/js/41.7ec182ad.js"><link rel="prefetch" href="/assets/js/42.4d886a4b.js"><link rel="prefetch" href="/assets/js/43.5e011000.js"><link rel="prefetch" href="/assets/js/44.f431cae8.js"><link rel="prefetch" href="/assets/js/45.3d6942db.js"><link rel="prefetch" href="/assets/js/46.a3a01c60.js"><link rel="prefetch" href="/assets/js/47.4e7a0faa.js"><link rel="prefetch" href="/assets/js/48.4251fa73.js"><link rel="prefetch" href="/assets/js/49.0e8e0f83.js"><link rel="prefetch" href="/assets/js/50.d09b6aec.js"><link rel="prefetch" href="/assets/js/51.2b07371f.js"><link rel="prefetch" href="/assets/js/52.1b73df6e.js"><link rel="prefetch" href="/assets/js/53.14902e53.js"><link rel="prefetch" href="/assets/js/54.d3f3b689.js"><link rel="prefetch" href="/assets/js/55.457c9328.js"><link rel="prefetch" href="/assets/js/56.e653e50f.js"><link rel="prefetch" href="/assets/js/57.0cce41f1.js"><link rel="prefetch" href="/assets/js/58.e1f4b13d.js"><link rel="prefetch" href="/assets/js/59.20d66923.js"><link rel="prefetch" href="/assets/js/6.b870c351.js"><link rel="prefetch" href="/assets/js/60.4a13bca1.js"><link rel="prefetch" href="/assets/js/61.eb81ebd4.js"><link rel="prefetch" href="/assets/js/62.292ac53d.js"><link rel="prefetch" href="/assets/js/63.9c4f5172.js"><link rel="prefetch" href="/assets/js/64.a22c86f0.js"><link rel="prefetch" href="/assets/js/65.9bbb629e.js"><link rel="prefetch" href="/assets/js/66.9275c1e4.js"><link rel="prefetch" href="/assets/js/67.04cd0239.js"><link rel="prefetch" href="/assets/js/68.91c0363b.js"><link rel="prefetch" href="/assets/js/69.97da9fba.js"><link rel="prefetch" href="/assets/js/7.af56ef51.js"><link rel="prefetch" href="/assets/js/70.620f2b9b.js"><link rel="prefetch" href="/assets/js/71.731258b8.js"><link rel="prefetch" href="/assets/js/72.dfc04b9b.js"><link rel="prefetch" href="/assets/js/73.2f3ed3e2.js"><link rel="prefetch" href="/assets/js/74.37299168.js"><link rel="prefetch" href="/assets/js/75.fd1ba02b.js"><link rel="prefetch" href="/assets/js/76.61ae490e.js"><link rel="prefetch" href="/assets/js/77.4eff448c.js"><link rel="prefetch" href="/assets/js/78.478ea4c9.js"><link rel="prefetch" href="/assets/js/79.789d36c5.js"><link rel="prefetch" href="/assets/js/8.b8495681.js"><link rel="prefetch" href="/assets/js/80.e3e8c172.js"><link rel="prefetch" href="/assets/js/81.105d5e89.js"><link rel="prefetch" href="/assets/js/82.61676fc7.js"><link rel="prefetch" href="/assets/js/83.90598205.js"><link rel="prefetch" href="/assets/js/84.5772ed90.js"><link rel="prefetch" href="/assets/js/85.15e3dc93.js"><link rel="prefetch" href="/assets/js/86.42794481.js"><link rel="prefetch" href="/assets/js/87.ab776019.js"><link rel="prefetch" href="/assets/js/88.ee4b88de.js"><link rel="prefetch" href="/assets/js/89.a06417e5.js"><link rel="prefetch" href="/assets/js/9.ca3e4dbc.js"><link rel="prefetch" href="/assets/js/90.9d6ff92a.js"><link rel="prefetch" href="/assets/js/91.e29c20ba.js"><link rel="prefetch" href="/assets/js/92.fc5e69b2.js"><link rel="prefetch" href="/assets/js/93.17da5aa5.js"><link rel="prefetch" href="/assets/js/94.f0010390.js"><link rel="prefetch" href="/assets/js/95.a1da3134.js"><link rel="prefetch" href="/assets/js/96.2f6ee939.js"><link rel="prefetch" href="/assets/js/97.9506ddc0.js"><link rel="prefetch" href="/assets/js/98.70441e21.js"><link rel="prefetch" href="/assets/js/99.a2fe6234.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.20c8dd6c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.20991f8c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container ml-class"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Way To Machine Learning</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools" class="dropdown-title"><span class="title">Tools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/linux/learn_linux_by_doing/" class="nav-link">
+  动手学Linux
+</a></li><li class="dropdown-item"><!----> <a href="/linux/linux_tools/" class="nav-link">
+  Linux工具箱
+</a></li><li class="dropdown-item"><!----> <a href="/linux/daily_cmd/" class="nav-link">
+  命令行日常
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/python/use_pi_to_learn_python/" class="nav-link">
+  用树莓派入门Python
+</a></li><li class="dropdown-item"><!----> <a href="/python/daily_python/" class="nav-link">
+  Python日常
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ML" class="dropdown-title"><span class="title">ML</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ml/CNN/" class="nav-link">
+  CNN
+</a></li><li class="dropdown-item"><!----> <a href="/ml/RNN/" class="nav-link">
+  RNN
+</a></li><li class="dropdown-item"><!----> <a href="/ml/GAN/" class="nav-link">
+  GAN
+</a></li><li class="dropdown-item"><!----> <a href="/ml/TF/" class="nav-link">
+  Tensorflow
+</a></li><li class="dropdown-item"><!----> <a href="/ml/PyTorch/" class="nav-link">
+  PyTorch
+</a></li><li class="dropdown-item"><!----> <a href="/ml/RL_Theory/" class="nav-link">
+  RL理论
+</a></li><li class="dropdown-item"><!----> <a href="/ml/RL_Practice/" class="nav-link router-link-active">
+  RL实践
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Projects/" class="nav-link">
+  实战项目
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Experience/" class="nav-link">
+  ML经验
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Information_Theory/" class="nav-link">
+  信息论
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Others/" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div> <a href="https://github.com/way2ml/way2ml" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools" class="dropdown-title"><span class="title">Tools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/linux/learn_linux_by_doing/" class="nav-link">
+  动手学Linux
+</a></li><li class="dropdown-item"><!----> <a href="/linux/linux_tools/" class="nav-link">
+  Linux工具箱
+</a></li><li class="dropdown-item"><!----> <a href="/linux/daily_cmd/" class="nav-link">
+  命令行日常
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/python/use_pi_to_learn_python/" class="nav-link">
+  用树莓派入门Python
+</a></li><li class="dropdown-item"><!----> <a href="/python/daily_python/" class="nav-link">
+  Python日常
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ML" class="dropdown-title"><span class="title">ML</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ml/CNN/" class="nav-link">
+  CNN
+</a></li><li class="dropdown-item"><!----> <a href="/ml/RNN/" class="nav-link">
+  RNN
+</a></li><li class="dropdown-item"><!----> <a href="/ml/GAN/" class="nav-link">
+  GAN
+</a></li><li class="dropdown-item"><!----> <a href="/ml/TF/" class="nav-link">
+  Tensorflow
+</a></li><li class="dropdown-item"><!----> <a href="/ml/PyTorch/" class="nav-link">
+  PyTorch
+</a></li><li class="dropdown-item"><!----> <a href="/ml/RL_Theory/" class="nav-link">
+  RL理论
+</a></li><li class="dropdown-item"><!----> <a href="/ml/RL_Practice/" class="nav-link router-link-active">
+  RL实践
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Projects/" class="nav-link">
+  实战项目
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Experience/" class="nav-link">
+  ML经验
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Information_Theory/" class="nav-link">
+  信息论
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Others/" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div> <a href="https://github.com/way2ml/way2ml" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/ml/RL_Practice/" class="sidebar-link">强化学习实践</a></li><li><a href="/ml/RL_Practice/a_start_to_use_Gym.html" class="sidebar-link">开始使用Gym</a></li><li><a href="/ml/RL_Practice/b_q_learning.html" class="active sidebar-link">Q-learning</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ml/RL_Practice/b_q_learning.html#观测状态" class="sidebar-link">观测状态</a></li><li class="sidebar-sub-header"><a href="/ml/RL_Practice/b_q_learning.html#创建q-tabel" class="sidebar-link">创建Q-tabel</a></li><li class="sidebar-sub-header"><a href="/ml/RL_Practice/b_q_learning.html#更新q-tabel" class="sidebar-link">更新Q-tabel</a></li></ul></li><li><a href="/ml/RL_Practice/c_deep_q_learning.html" class="sidebar-link">DQN: 一个好的开始</a></li><li><a href="/ml/RL_Practice/c_deep_q_learning_2.html" class="sidebar-link">DQN: 优化变得更完善</a></li><li><a href="/ml/RL_Practice/c_deep_q_learning_3.html" class="sidebar-link">DQN: 使用武功秘籍</a></li><li><a href="/ml/RL_Practice/d_create_env.html" class="sidebar-link">创建自己的强化学习环境</a></li><li><a href="/ml/RL_Practice/a2c.html" class="sidebar-link">A2C 策略优化&amp;&amp;值函数优化</a></li><li><a href="/ml/RL_Practice/PPO.html" class="sidebar-link">PPO 高效的学习算法</a></li><li><a href="/ml/RL_Practice/continuous_action_control.html" class="sidebar-link">连续动作控制</a></li><li><a href="/ml/RL_Practice/GAIL.html" class="sidebar-link">GAIL 生成对抗模仿学习</a></li><li><a href="/ml/RL_Practice/pendulum_v0.html" class="sidebar-link">Pendulum-v0</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="q-learning"><a href="#q-learning" class="header-anchor">#</a> Q-learning</h1> <p>这里我们要找到Q-tabel, 它就像是小车的行动指南，当小车处于某种状态下是，Q-tabel
+会告诉它接下来应该要怎么做。我们要让机器学习的也就是这个Q-tabel。</p> <h2 id="观测状态"><a href="#观测状态" class="header-anchor">#</a> 观测状态</h2> <p>这里的状态指的是环境的状态，因此也被叫做观测(Observations)。</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> gym
+env <span class="token operator">=</span> gym<span class="token punctuation">.</span>make<span class="token punctuation">(</span><span class="token string">&quot;MountainCar-v0&quot;</span><span class="token punctuation">)</span>
+<span class="token comment"># 输出总共可以有几个动作</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>env<span class="token punctuation">.</span>action_space<span class="token punctuation">.</span>n<span class="token punctuation">)</span>
+<span class="token comment"># 3 代表有三个动作</span>
+<span class="token comment"># 0:表示向左 1:表示不动 2: 表示向右</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>env<span class="token punctuation">.</span>observation_space<span class="token punctuation">.</span>low<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>env<span class="token punctuation">.</span>observation_space<span class="token punctuation">.</span>high<span class="token punctuation">)</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>得到。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token number">3</span>
+<span class="token punctuation">[</span>-1.2  -0.07<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0.6</span>  <span class="token number">0.07</span><span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>这里的输出表示: 观测值1(x)的范围是[-1.2, 0.6], 观测值2(v)的范围是[-0.07, 0.07]。接下来我们可以将观测值给输出来。
+利用上一节的程序，在循环中添加<code>print</code>语句，如下:</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> gym
+<span class="token keyword">import</span> time 
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np 
+
+env <span class="token operator">=</span> gym<span class="token punctuation">.</span>make<span class="token punctuation">(</span><span class="token string">'MountainCar-v0'</span><span class="token punctuation">)</span>
+env <span class="token operator">=</span> gym<span class="token punctuation">.</span>wrappers<span class="token punctuation">.</span>Monitor<span class="token punctuation">(</span>env<span class="token punctuation">,</span> <span class="token string">'records'</span><span class="token punctuation">,</span> force<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+env<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+done <span class="token operator">=</span> <span class="token boolean">False</span>
+action <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token keyword">not</span> done<span class="token punctuation">:</span>
+    new_state<span class="token punctuation">,</span> reward<span class="token punctuation">,</span> done<span class="token punctuation">,</span> _ <span class="token operator">=</span> env<span class="token punctuation">.</span>step<span class="token punctuation">(</span>action<span class="token punctuation">)</span>
+    <span class="token comment"># 添加下面这一行</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>new_state<span class="token punctuation">)</span>
+    env<span class="token punctuation">.</span>render<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> new_state<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        action <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment"># 向左</span>
+    <span class="token keyword">elif</span> new_state<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        action <span class="token operator">=</span> <span class="token number">2</span> <span class="token comment"># 向右</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        action <span class="token operator">=</span> <span class="token number">1</span>     
+env<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>得到:</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>-4.27521207e-01  <span class="token number">2</span>.91450276e-04<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>-0.4269404  <span class="token number">0.0005808</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span>-0.42607442  <span class="token number">0.00086598</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span>-0.42492948  <span class="token number">0.00114494</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span>-0.4235138   <span class="token number">0.00141568</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span>-0.42183752  <span class="token number">0.00167627</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span>-0.41991266  <span class="token number">0.00192486</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span>-0.41775297  <span class="token number">0.0021597</span> <span class="token punctuation">]</span>
+<span class="token punctuation">[</span>-0.41537384  <span class="token number">0.00237913</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span>-0.41279221  <span class="token number">0.00258162</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span>-0.41002642  <span class="token number">0.0027658</span> <span class="token punctuation">]</span>
+<span class="token punctuation">[</span>-0.40709603  <span class="token number">0.00293039</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span>-0.40402173  <span class="token number">0.0030743</span> <span class="token punctuation">]</span>
+<span class="token punctuation">[</span>-0.40082515  <span class="token number">0.00319658</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span>-0.39752869  <span class="token number">0.00329646</span><span class="token punctuation">]</span>
+<span class="token punctuation">..</span>.
+<span class="token punctuation">[</span><span class="token number">0.02137293</span> <span class="token number">0.04518345</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0.06506151</span> <span class="token number">0.04368858</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0.10729757</span> <span class="token number">0.04223605</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0.14816202</span> <span class="token number">0.04086446</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0.1877694</span>  <span class="token number">0.03960738</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0.22626305</span> <span class="token number">0.03849365</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0.26381086</span> <span class="token number">0.03754781</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0.3006016</span>  <span class="token number">0.03679074</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0.33684186</span> <span class="token number">0.03624026</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0.37275358</span> <span class="token number">0.03591172</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0.40857217</span> <span class="token number">0.0358186</span> <span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0.44454509</span> <span class="token number">0.03597292</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0.48093065</span> <span class="token number">0.03638556</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0.51799707</span> <span class="token number">0.03706642</span><span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p>可见状态是连续的值, 如果直接使用连续的值来创建Q-table，那么这个Q-tabel会无穷大，因此
+接下来我们需要让观测值(Observations)离散话，这样就可以减小我们的Q-table的大小了。</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code>DISCRETE_OS_SIZE <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token builtin">len</span><span class="token punctuation">(</span>env<span class="token punctuation">.</span>observation_space<span class="token punctuation">.</span>high<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>DISCRETE_OS_SIZE<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>这样就将观测空间分成了<code>20x20</code>这样离散的空间了。</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token comment"># 这些都是同时处理两部分的内容</span>
+discrete_os_win_size <span class="token operator">=</span> <span class="token punctuation">(</span>env<span class="token punctuation">.</span>observation_space<span class="token punctuation">.</span>high <span class="token operator">-</span> env<span class="token punctuation">.</span>observation_space<span class="token punctuation">.</span>low<span class="token punctuation">)</span><span class="token operator">/</span>DISCRETE_OS_SIZE
+<span class="token keyword">print</span><span class="token punctuation">(</span>discrete_os_win_size<span class="token punctuation">)</span>
+<span class="token comment"># [0.09  0.007] 表示位移的步长是0.09, 速度的步长是0.007</span>
+
+<span class="token comment"># 将得到的连续状态变成离散的</span>
+<span class="token keyword">def</span> <span class="token function">get_discrete_state</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    discrete_state <span class="token operator">=</span> <span class="token punctuation">(</span>state <span class="token operator">-</span> env<span class="token punctuation">.</span>observation_space<span class="token punctuation">.</span>low<span class="token punctuation">)</span><span class="token operator">/</span>discrete_os_win_size
+    <span class="token keyword">return</span> <span class="token builtin">tuple</span><span class="token punctuation">(</span>discrete_state<span class="token punctuation">.</span>astype<span class="token punctuation">(</span>np<span class="token punctuation">.</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>上面的代码得到了观测空间的步长, <code>get_discrete_state</code>将连续状态变成离散的值。</p> <h2 id="创建q-tabel"><a href="#创建q-tabel" class="header-anchor">#</a> 创建Q-tabel</h2> <p>由于每一个状态对应了三个可能采取的动作，因此Q-tabel的形状是<code>[20,20,3]</code></p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+q_table <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span>low<span class="token operator">=</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> high<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> \
+          size<span class="token operator">=</span><span class="token punctuation">(</span>DISCRETE_OS_SIZE <span class="token operator">+</span> <span class="token punctuation">[</span>env<span class="token punctuation">.</span>action_space<span class="token punctuation">.</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 注意到这里q_tabel的值都是负的</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>q_table<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>上面的代码创建了初始状态的Q-table。 接下来要做的就是如何让小车自己尝试去优化Q-table,让Q-tabel越来越准，让Q-tabel真正成为
+小车的行动指南。</p> <h2 id="更新q-tabel"><a href="#更新q-tabel" class="header-anchor">#</a> 更新Q-tabel</h2> <p>更新Q-table是有一些基本的原则的，我们先让小车不断的去尝试，当它到达小黄旗的地方我们会给它一个比较高的奖励，以此来肯定它的行为。
+在最开始Q-table还不是很好的时候，我们会采取比较多的随机动作(探索)， 随着Q-table越来越稳定，我们探索的比例便会越来越低，因为我们
+越来越相信我们的经验。</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token comment"># Q-Learning 设置</span>
+LEARNING_RATE <span class="token operator">=</span> <span class="token number">0.1</span>
+DISCOUNT <span class="token operator">=</span> <span class="token number">0.95</span>
+EPISODES <span class="token operator">=</span> <span class="token number">25000</span>
+SHOW_EVERY <span class="token operator">=</span> <span class="token number">500</span>
+<span class="token comment"># 探索，尝试随机的动作</span>
+epsilon <span class="token operator">=</span> <span class="token number">0.5</span> 
+START_EPSILON_DECAYING <span class="token operator">=</span> <span class="token number">1</span>
+END_EPSILON_DECAYING <span class="token operator">=</span> EPISODES<span class="token operator">//</span><span class="token number">2</span> <span class="token comment"># 表示在前期做一些探索，后期就不做探索了，这是一个比较好的策略</span>
+<span class="token comment"># 每一步epsilon要减小的值，也就是是说随着训练的不断进行，探索的比例会不断减小。</span>
+epsilon_decay_value <span class="token operator">=</span> epsilon<span class="token operator">/</span><span class="token punctuation">(</span>END_EPSILON_DECAYING <span class="token operator">-</span> START_EPSILON_DECAYING<span class="token punctuation">)</span>
+
+discrete_state <span class="token operator">=</span> get_discrete_state<span class="token punctuation">(</span>env<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> episode <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>EPISODES<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> episode <span class="token operator">%</span> SHOW_EVERY <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>episode<span class="token punctuation">)</span>
+        render <span class="token operator">=</span> <span class="token boolean">True</span> 
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        render <span class="token operator">=</span> <span class="token boolean">False</span>
+    discrete_state <span class="token operator">=</span> get_discrete_state<span class="token punctuation">(</span>env<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    done <span class="token operator">=</span> <span class="token boolean">False</span>
+    <span class="token keyword">while</span> <span class="token keyword">not</span> done<span class="token punctuation">:</span>
+        <span class="token comment"># 利用和探索</span>
+        <span class="token keyword">if</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> epsilon<span class="token punctuation">:</span>
+            <span class="token comment"># Get action from Q table</span>
+            action <span class="token operator">=</span> np<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>q_table<span class="token punctuation">[</span>discrete_state<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token comment"># Get random action</span>
+            action <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> env<span class="token punctuation">.</span>action_space<span class="token punctuation">.</span>n<span class="token punctuation">)</span>
+        <span class="token comment"># action = np.argmax(q_table[discrete_state])</span>
+        new_state<span class="token punctuation">,</span> reward<span class="token punctuation">,</span> done<span class="token punctuation">,</span> _ <span class="token operator">=</span> env<span class="token punctuation">.</span>step<span class="token punctuation">(</span>action<span class="token punctuation">)</span>
+        new_discrete_state <span class="token operator">=</span> get_discrete_state<span class="token punctuation">(</span>new_state<span class="token punctuation">)</span>
+        <span class="token comment"># print(reward, new_state)</span>
+        <span class="token keyword">if</span> render<span class="token punctuation">:</span>
+            env<span class="token punctuation">.</span>render<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+        <span class="token comment">#　更新Q值，也就是学习经验，这里体现了机器学习。</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> done<span class="token punctuation">:</span>
+            max_future_q <span class="token operator">=</span> np<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span>q_table<span class="token punctuation">[</span>new_discrete_state<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            current_q <span class="token operator">=</span> q_table<span class="token punctuation">[</span>discrete_state <span class="token operator">+</span> <span class="token punctuation">(</span>action<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+            new_q <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> LEARNING_RATE<span class="token punctuation">)</span> <span class="token operator">*</span> current_q <span class="token operator">+</span> LEARNING_RATE<span class="token operator">*</span><span class="token punctuation">(</span>reward <span class="token operator">+</span> DISCOUNT <span class="token operator">*</span> max_future_q<span class="token punctuation">)</span>
+            q_table<span class="token punctuation">[</span>discrete_state <span class="token operator">+</span> <span class="token punctuation">(</span>action<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> new_q
+        <span class="token keyword">elif</span> new_state<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&gt;=</span>  env<span class="token punctuation">.</span>goal_position<span class="token punctuation">:</span>
+            <span class="token comment"># 奖励就是没有惩罚</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;We made it on episode </span><span class="token interpolation"><span class="token punctuation">{</span>episode<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+            q_table<span class="token punctuation">[</span>discrete_state <span class="token operator">+</span> <span class="token punctuation">(</span>action<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>  
+        discrete_state <span class="token operator">=</span> new_discrete_state
+    
+    <span class="token comment"># 在某个区间内都有探索，不过探索的比例不断地下降</span>
+    <span class="token keyword">if</span> END_EPSILON_DECAYING <span class="token operator">&gt;=</span> episode <span class="token operator">&gt;=</span> START_EPSILON_DECAYING<span class="token punctuation">:</span>
+        epsilon <span class="token operator">-=</span> epsilon_decay_value
+env<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br></div></div><p>接下来的这个视频展示了整个学习的过程:</p> <video width="50%" controls="controls" style="display:block;margin:0 auto;"><source src="https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uPic/learn_process.mp4" type="video/mp4"></video> <p>Q-table是一种特别简单的方法，可以处理过山车这样简单的问题。但遇到复杂的问题，若是还有这种方法，那么就会出现问题了。
+因此有了新的一种方法，叫做Deep Q-learning, 也就是使用神经网络去代替这个Q-tabel。在接下来的章节中我会讲到。那我们到时再见哦。</p> <div id="lv-container" data-id="city" data-uid="MTAyMC80NTA5OS8yMTYxNg=="><noscript>为正常使用来必力评论功能请激活JavaScript</noscript></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/ml/RL_Practice/a_start_to_use_Gym.html" class="prev">
+        开始使用Gym
+      </a></span> <span class="next"><a href="/ml/RL_Practice/c_deep_q_learning.html">
+        DQN: 一个好的开始
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.2f9808b5.js" defer></script><script src="/assets/js/5.5be22c85.js" defer></script><script src="/assets/js/106.6ffb9931.js" defer></script><script src="/assets/js/22.9bca349d.js" defer></script>
+  </body>
+</html>

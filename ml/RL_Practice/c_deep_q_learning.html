@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>DQN: 一个好的开始 | Way To Machine Learning</title>
+    <meta name="description" content=" ">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="icon" href="/logo.svg">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="msapplication-TileColor" content="#000000">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css">
+    
+    <link rel="preload" href="/assets/css/0.styles.20991f8c.css" as="style"><link rel="preload" href="/assets/js/app.2f9808b5.js" as="script"><link rel="preload" href="/assets/js/5.5be22c85.js" as="script"><link rel="preload" href="/assets/js/107.bc567323.js" as="script"><link rel="preload" href="/assets/js/22.9bca349d.js" as="script"><link rel="prefetch" href="/assets/js/1.1d775e1b.js"><link rel="prefetch" href="/assets/js/10.083d1548.js"><link rel="prefetch" href="/assets/js/100.05597e80.js"><link rel="prefetch" href="/assets/js/101.31a23ef5.js"><link rel="prefetch" href="/assets/js/102.14cea9c2.js"><link rel="prefetch" href="/assets/js/103.0010eae9.js"><link rel="prefetch" href="/assets/js/104.6db8c9c6.js"><link rel="prefetch" href="/assets/js/105.504bf4d3.js"><link rel="prefetch" href="/assets/js/106.6ffb9931.js"><link rel="prefetch" href="/assets/js/108.f1c2e50c.js"><link rel="prefetch" href="/assets/js/109.777102ad.js"><link rel="prefetch" href="/assets/js/11.ecd9305e.js"><link rel="prefetch" href="/assets/js/110.c1a3fc89.js"><link rel="prefetch" href="/assets/js/111.231b2cb8.js"><link rel="prefetch" href="/assets/js/112.c0e98c74.js"><link rel="prefetch" href="/assets/js/113.bbb9e129.js"><link rel="prefetch" href="/assets/js/114.367eea1f.js"><link rel="prefetch" href="/assets/js/115.f42e89d8.js"><link rel="prefetch" href="/assets/js/116.79f1f1a2.js"><link rel="prefetch" href="/assets/js/117.3da3f11d.js"><link rel="prefetch" href="/assets/js/118.1a35a14c.js"><link rel="prefetch" href="/assets/js/119.f2537db2.js"><link rel="prefetch" href="/assets/js/12.bee72ee2.js"><link rel="prefetch" href="/assets/js/120.0adc5cf8.js"><link rel="prefetch" href="/assets/js/121.40b98d67.js"><link rel="prefetch" href="/assets/js/122.a9fb6b63.js"><link rel="prefetch" href="/assets/js/123.ffb2e3eb.js"><link rel="prefetch" href="/assets/js/124.5c170e24.js"><link rel="prefetch" href="/assets/js/125.f51896ce.js"><link rel="prefetch" href="/assets/js/126.13337ca3.js"><link rel="prefetch" href="/assets/js/127.c27ab429.js"><link rel="prefetch" href="/assets/js/128.c7a47b28.js"><link rel="prefetch" href="/assets/js/129.409eab1a.js"><link rel="prefetch" href="/assets/js/13.f33f1e60.js"><link rel="prefetch" href="/assets/js/130.c5699ea4.js"><link rel="prefetch" href="/assets/js/131.09d315a3.js"><link rel="prefetch" href="/assets/js/132.9fbfbefe.js"><link rel="prefetch" href="/assets/js/133.a85afcb0.js"><link rel="prefetch" href="/assets/js/134.a8961135.js"><link rel="prefetch" href="/assets/js/135.b8beffd9.js"><link rel="prefetch" href="/assets/js/136.74479c69.js"><link rel="prefetch" href="/assets/js/137.a3b91940.js"><link rel="prefetch" href="/assets/js/138.2856ceb8.js"><link rel="prefetch" href="/assets/js/139.f521558b.js"><link rel="prefetch" href="/assets/js/14.3270a5a1.js"><link rel="prefetch" href="/assets/js/140.c2bc3cf3.js"><link rel="prefetch" href="/assets/js/141.c0412bd8.js"><link rel="prefetch" href="/assets/js/142.7f348940.js"><link rel="prefetch" href="/assets/js/143.a1ebf024.js"><link rel="prefetch" href="/assets/js/144.19896f76.js"><link rel="prefetch" href="/assets/js/145.a564d47e.js"><link rel="prefetch" href="/assets/js/146.1a536af8.js"><link rel="prefetch" href="/assets/js/147.15220144.js"><link rel="prefetch" href="/assets/js/148.abf671bb.js"><link rel="prefetch" href="/assets/js/149.d43abbd0.js"><link rel="prefetch" href="/assets/js/15.4dd4c12f.js"><link rel="prefetch" href="/assets/js/150.d33295bc.js"><link rel="prefetch" href="/assets/js/151.608be654.js"><link rel="prefetch" href="/assets/js/152.20258027.js"><link rel="prefetch" href="/assets/js/153.f70acd5e.js"><link rel="prefetch" href="/assets/js/154.b8525aa8.js"><link rel="prefetch" href="/assets/js/155.a41a1317.js"><link rel="prefetch" href="/assets/js/156.a001c873.js"><link rel="prefetch" href="/assets/js/157.64091ba5.js"><link rel="prefetch" href="/assets/js/158.68992239.js"><link rel="prefetch" href="/assets/js/159.3e6ab0f4.js"><link rel="prefetch" href="/assets/js/16.26a5046e.js"><link rel="prefetch" href="/assets/js/160.fd81bd59.js"><link rel="prefetch" href="/assets/js/161.f2d1951f.js"><link rel="prefetch" href="/assets/js/162.e8c75e03.js"><link rel="prefetch" href="/assets/js/163.ea5bacb7.js"><link rel="prefetch" href="/assets/js/164.3de07231.js"><link rel="prefetch" href="/assets/js/165.49db50bf.js"><link rel="prefetch" href="/assets/js/166.60c9fdc9.js"><link rel="prefetch" href="/assets/js/167.4578295e.js"><link rel="prefetch" href="/assets/js/168.a3eb528e.js"><link rel="prefetch" href="/assets/js/169.ba3c1f77.js"><link rel="prefetch" href="/assets/js/17.19821f4a.js"><link rel="prefetch" href="/assets/js/170.f5d2c9be.js"><link rel="prefetch" href="/assets/js/171.aed2c8c4.js"><link rel="prefetch" href="/assets/js/172.c7aad879.js"><link rel="prefetch" href="/assets/js/173.592c424e.js"><link rel="prefetch" href="/assets/js/174.e908b40a.js"><link rel="prefetch" href="/assets/js/175.2bd1fdb1.js"><link rel="prefetch" href="/assets/js/176.9ce28557.js"><link rel="prefetch" href="/assets/js/177.edb8361d.js"><link rel="prefetch" href="/assets/js/178.1874321c.js"><link rel="prefetch" href="/assets/js/179.7d10cb3e.js"><link rel="prefetch" href="/assets/js/18.bedfcd06.js"><link rel="prefetch" href="/assets/js/180.6596c9a5.js"><link rel="prefetch" href="/assets/js/181.0c73f4ac.js"><link rel="prefetch" href="/assets/js/182.86ffaa16.js"><link rel="prefetch" href="/assets/js/183.b9b5012d.js"><link rel="prefetch" href="/assets/js/184.6af16c4a.js"><link rel="prefetch" href="/assets/js/185.5a0d205a.js"><link rel="prefetch" href="/assets/js/186.484093e8.js"><link rel="prefetch" href="/assets/js/19.a4ec96de.js"><link rel="prefetch" href="/assets/js/2.8dff0620.js"><link rel="prefetch" href="/assets/js/20.e11c2b65.js"><link rel="prefetch" href="/assets/js/21.4d365135.js"><link rel="prefetch" href="/assets/js/23.57f877c0.js"><link rel="prefetch" href="/assets/js/24.60c2ff49.js"><link rel="prefetch" href="/assets/js/25.ae9fcc4b.js"><link rel="prefetch" href="/assets/js/26.df23623d.js"><link rel="prefetch" href="/assets/js/27.4a570cc5.js"><link rel="prefetch" href="/assets/js/28.ed03c100.js"><link rel="prefetch" href="/assets/js/29.d7248aed.js"><link rel="prefetch" href="/assets/js/30.30811ef7.js"><link rel="prefetch" href="/assets/js/31.7593da2c.js"><link rel="prefetch" href="/assets/js/32.645d550b.js"><link rel="prefetch" href="/assets/js/33.42510bc1.js"><link rel="prefetch" href="/assets/js/34.059f5cd4.js"><link rel="prefetch" href="/assets/js/35.35cc2ad8.js"><link rel="prefetch" href="/assets/js/36.63ab4f88.js"><link rel="prefetch" href="/assets/js/37.3a40b428.js"><link rel="prefetch" href="/assets/js/38.db16b8d9.js"><link rel="prefetch" href="/assets/js/39.4b1d0182.js"><link rel="prefetch" href="/assets/js/40.cb781bcf.js"><link rel="prefetch" href="/assets/js/41.7ec182ad.js"><link rel="prefetch" href="/assets/js/42.4d886a4b.js"><link rel="prefetch" href="/assets/js/43.5e011000.js"><link rel="prefetch" href="/assets/js/44.f431cae8.js"><link rel="prefetch" href="/assets/js/45.3d6942db.js"><link rel="prefetch" href="/assets/js/46.a3a01c60.js"><link rel="prefetch" href="/assets/js/47.4e7a0faa.js"><link rel="prefetch" href="/assets/js/48.4251fa73.js"><link rel="prefetch" href="/assets/js/49.0e8e0f83.js"><link rel="prefetch" href="/assets/js/50.d09b6aec.js"><link rel="prefetch" href="/assets/js/51.2b07371f.js"><link rel="prefetch" href="/assets/js/52.1b73df6e.js"><link rel="prefetch" href="/assets/js/53.14902e53.js"><link rel="prefetch" href="/assets/js/54.d3f3b689.js"><link rel="prefetch" href="/assets/js/55.457c9328.js"><link rel="prefetch" href="/assets/js/56.e653e50f.js"><link rel="prefetch" href="/assets/js/57.0cce41f1.js"><link rel="prefetch" href="/assets/js/58.e1f4b13d.js"><link rel="prefetch" href="/assets/js/59.20d66923.js"><link rel="prefetch" href="/assets/js/6.b870c351.js"><link rel="prefetch" href="/assets/js/60.4a13bca1.js"><link rel="prefetch" href="/assets/js/61.eb81ebd4.js"><link rel="prefetch" href="/assets/js/62.292ac53d.js"><link rel="prefetch" href="/assets/js/63.9c4f5172.js"><link rel="prefetch" href="/assets/js/64.a22c86f0.js"><link rel="prefetch" href="/assets/js/65.9bbb629e.js"><link rel="prefetch" href="/assets/js/66.9275c1e4.js"><link rel="prefetch" href="/assets/js/67.04cd0239.js"><link rel="prefetch" href="/assets/js/68.91c0363b.js"><link rel="prefetch" href="/assets/js/69.97da9fba.js"><link rel="prefetch" href="/assets/js/7.af56ef51.js"><link rel="prefetch" href="/assets/js/70.620f2b9b.js"><link rel="prefetch" href="/assets/js/71.731258b8.js"><link rel="prefetch" href="/assets/js/72.dfc04b9b.js"><link rel="prefetch" href="/assets/js/73.2f3ed3e2.js"><link rel="prefetch" href="/assets/js/74.37299168.js"><link rel="prefetch" href="/assets/js/75.fd1ba02b.js"><link rel="prefetch" href="/assets/js/76.61ae490e.js"><link rel="prefetch" href="/assets/js/77.4eff448c.js"><link rel="prefetch" href="/assets/js/78.478ea4c9.js"><link rel="prefetch" href="/assets/js/79.789d36c5.js"><link rel="prefetch" href="/assets/js/8.b8495681.js"><link rel="prefetch" href="/assets/js/80.e3e8c172.js"><link rel="prefetch" href="/assets/js/81.105d5e89.js"><link rel="prefetch" href="/assets/js/82.61676fc7.js"><link rel="prefetch" href="/assets/js/83.90598205.js"><link rel="prefetch" href="/assets/js/84.5772ed90.js"><link rel="prefetch" href="/assets/js/85.15e3dc93.js"><link rel="prefetch" href="/assets/js/86.42794481.js"><link rel="prefetch" href="/assets/js/87.ab776019.js"><link rel="prefetch" href="/assets/js/88.ee4b88de.js"><link rel="prefetch" href="/assets/js/89.a06417e5.js"><link rel="prefetch" href="/assets/js/9.ca3e4dbc.js"><link rel="prefetch" href="/assets/js/90.9d6ff92a.js"><link rel="prefetch" href="/assets/js/91.e29c20ba.js"><link rel="prefetch" href="/assets/js/92.fc5e69b2.js"><link rel="prefetch" href="/assets/js/93.17da5aa5.js"><link rel="prefetch" href="/assets/js/94.f0010390.js"><link rel="prefetch" href="/assets/js/95.a1da3134.js"><link rel="prefetch" href="/assets/js/96.2f6ee939.js"><link rel="prefetch" href="/assets/js/97.9506ddc0.js"><link rel="prefetch" href="/assets/js/98.70441e21.js"><link rel="prefetch" href="/assets/js/99.a2fe6234.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.20c8dd6c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.20991f8c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container ml-class"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Way To Machine Learning</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools" class="dropdown-title"><span class="title">Tools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/linux/learn_linux_by_doing/" class="nav-link">
+  动手学Linux
+</a></li><li class="dropdown-item"><!----> <a href="/linux/linux_tools/" class="nav-link">
+  Linux工具箱
+</a></li><li class="dropdown-item"><!----> <a href="/linux/daily_cmd/" class="nav-link">
+  命令行日常
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/python/use_pi_to_learn_python/" class="nav-link">
+  用树莓派入门Python
+</a></li><li class="dropdown-item"><!----> <a href="/python/daily_python/" class="nav-link">
+  Python日常
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ML" class="dropdown-title"><span class="title">ML</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ml/CNN/" class="nav-link">
+  CNN
+</a></li><li class="dropdown-item"><!----> <a href="/ml/RNN/" class="nav-link">
+  RNN
+</a></li><li class="dropdown-item"><!----> <a href="/ml/GAN/" class="nav-link">
+  GAN
+</a></li><li class="dropdown-item"><!----> <a href="/ml/TF/" class="nav-link">
+  Tensorflow
+</a></li><li class="dropdown-item"><!----> <a href="/ml/PyTorch/" class="nav-link">
+  PyTorch
+</a></li><li class="dropdown-item"><!----> <a href="/ml/RL_Theory/" class="nav-link">
+  RL理论
+</a></li><li class="dropdown-item"><!----> <a href="/ml/RL_Practice/" class="nav-link router-link-active">
+  RL实践
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Projects/" class="nav-link">
+  实战项目
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Experience/" class="nav-link">
+  ML经验
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Information_Theory/" class="nav-link">
+  信息论
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Others/" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div> <a href="https://github.com/way2ml/way2ml" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools" class="dropdown-title"><span class="title">Tools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/linux/learn_linux_by_doing/" class="nav-link">
+  动手学Linux
+</a></li><li class="dropdown-item"><!----> <a href="/linux/linux_tools/" class="nav-link">
+  Linux工具箱
+</a></li><li class="dropdown-item"><!----> <a href="/linux/daily_cmd/" class="nav-link">
+  命令行日常
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/python/use_pi_to_learn_python/" class="nav-link">
+  用树莓派入门Python
+</a></li><li class="dropdown-item"><!----> <a href="/python/daily_python/" class="nav-link">
+  Python日常
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ML" class="dropdown-title"><span class="title">ML</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ml/CNN/" class="nav-link">
+  CNN
+</a></li><li class="dropdown-item"><!----> <a href="/ml/RNN/" class="nav-link">
+  RNN
+</a></li><li class="dropdown-item"><!----> <a href="/ml/GAN/" class="nav-link">
+  GAN
+</a></li><li class="dropdown-item"><!----> <a href="/ml/TF/" class="nav-link">
+  Tensorflow
+</a></li><li class="dropdown-item"><!----> <a href="/ml/PyTorch/" class="nav-link">
+  PyTorch
+</a></li><li class="dropdown-item"><!----> <a href="/ml/RL_Theory/" class="nav-link">
+  RL理论
+</a></li><li class="dropdown-item"><!----> <a href="/ml/RL_Practice/" class="nav-link router-link-active">
+  RL实践
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Projects/" class="nav-link">
+  实战项目
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Experience/" class="nav-link">
+  ML经验
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Information_Theory/" class="nav-link">
+  信息论
+</a></li><li class="dropdown-item"><!----> <a href="/ml/Others/" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div> <a href="https://github.com/way2ml/way2ml" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/ml/RL_Practice/" class="sidebar-link">强化学习实践</a></li><li><a href="/ml/RL_Practice/a_start_to_use_Gym.html" class="sidebar-link">开始使用Gym</a></li><li><a href="/ml/RL_Practice/b_q_learning.html" class="sidebar-link">Q-learning</a></li><li><a href="/ml/RL_Practice/c_deep_q_learning.html" class="active sidebar-link">DQN: 一个好的开始</a></li><li><a href="/ml/RL_Practice/c_deep_q_learning_2.html" class="sidebar-link">DQN: 优化变得更完善</a></li><li><a href="/ml/RL_Practice/c_deep_q_learning_3.html" class="sidebar-link">DQN: 使用武功秘籍</a></li><li><a href="/ml/RL_Practice/d_create_env.html" class="sidebar-link">创建自己的强化学习环境</a></li><li><a href="/ml/RL_Practice/a2c.html" class="sidebar-link">A2C 策略优化&amp;&amp;值函数优化</a></li><li><a href="/ml/RL_Practice/PPO.html" class="sidebar-link">PPO 高效的学习算法</a></li><li><a href="/ml/RL_Practice/continuous_action_control.html" class="sidebar-link">连续动作控制</a></li><li><a href="/ml/RL_Practice/GAIL.html" class="sidebar-link">GAIL 生成对抗模仿学习</a></li><li><a href="/ml/RL_Practice/pendulum_v0.html" class="sidebar-link">Pendulum-v0</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="dqn-一个好的开始"><a href="#dqn-一个好的开始" class="header-anchor">#</a> DQN: 一个好的开始</h1> <p>所谓　Deep Q-Learning　就是使用神经网络去找到从状态到动作的映射，可以理解为利用神经网络去模拟一个Q-Table。而使用神经网络的原因是神经网络
+可以处理更为复杂的环境。接下来使用DQN来解决过山车的问题。</p> <p>首先我们看一下DQN的算法:</p> <p align="center"><img src="https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uPic/dqn_algorithm.png"></p> <p>根据算法我们将其转化成Python程序，如下:</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">from</span> tensorflow<span class="token punctuation">.</span>keras <span class="token keyword">import</span> models<span class="token punctuation">,</span> layers<span class="token punctuation">,</span> optimizers
+<span class="token keyword">import</span> gym 
+<span class="token keyword">from</span> collections <span class="token keyword">import</span> deque
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np 
+<span class="token keyword">import</span> random
+
+<span class="token keyword">class</span> <span class="token class-name">DQNSolver</span><span class="token punctuation">:</span>
+	<span class="token triple-quoted-string string">&quot;&quot;&quot;docstring for DQNSolver&quot;&quot;&quot;</span>
+	<span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> obervation_space<span class="token punctuation">,</span> action_space<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		self<span class="token punctuation">.</span>obervation_space <span class="token operator">=</span> obervation_space
+		self<span class="token punctuation">.</span>action_space <span class="token operator">=</span> action_space
+		<span class="token comment"># 超参数</span>
+		self<span class="token punctuation">.</span>lr <span class="token operator">=</span> <span class="token number">0.001</span>
+		<span class="token comment"># 初始化replay记忆空间</span>
+		self<span class="token punctuation">.</span>replay_size <span class="token operator">=</span> <span class="token number">2000</span>
+		self<span class="token punctuation">.</span>replay_queue <span class="token operator">=</span> deque<span class="token punctuation">(</span>maxlen<span class="token operator">=</span>self<span class="token punctuation">.</span>replay_size<span class="token punctuation">)</span>
+		self<span class="token punctuation">.</span>batch_size <span class="token operator">=</span> <span class="token number">64</span>
+		self<span class="token punctuation">.</span>discount <span class="token operator">=</span> <span class="token number">0.99</span>
+		self<span class="token punctuation">.</span>step <span class="token operator">=</span> <span class="token number">0</span>
+		self<span class="token punctuation">.</span>update_freq <span class="token operator">=</span> <span class="token number">400</span>
+		<span class="token comment"># 初始化NN</span>
+		self<span class="token punctuation">.</span>model <span class="token operator">=</span> self<span class="token punctuation">.</span>create_model<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token comment"># 初始化NN_target</span>
+		self<span class="token punctuation">.</span>model_target <span class="token operator">=</span> self<span class="token punctuation">.</span>model
+
+	<span class="token keyword">def</span> <span class="token function">create_model</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		model <span class="token operator">=</span> models<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token punctuation">[</span>
+			layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> input_dim<span class="token operator">=</span>self<span class="token punctuation">.</span>obervation_space<span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">'relu'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span>self<span class="token punctuation">.</span>action_space<span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">'linear'</span><span class="token punctuation">)</span>
+			<span class="token punctuation">]</span><span class="token punctuation">)</span>
+		model<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span>loss<span class="token operator">=</span><span class="token string">'mean_squared_error'</span><span class="token punctuation">,</span> optimizer <span class="token operator">=</span> optimizers<span class="token punctuation">.</span>Adam<span class="token punctuation">(</span>self<span class="token punctuation">.</span>lr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span> model 
+
+	<span class="token comment"># epsilon random to get action</span>
+	<span class="token keyword">def</span> <span class="token function">action</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> state<span class="token punctuation">,</span> epsilon<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token comment"># 这里有个疑问，这里用的正态随机 ???</span>
+		<span class="token keyword">if</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> epsilon<span class="token punctuation">:</span>
+			<span class="token keyword">return</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>action_space<span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">else</span><span class="token punctuation">:</span>
+			<span class="token comment"># 这里为什么有[0] ???</span>
+			<span class="token keyword">return</span> np<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>self<span class="token punctuation">.</span>model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span>state<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+	<span class="token comment"># Store transition</span>
+	<span class="token keyword">def</span> <span class="token function">store</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> state<span class="token punctuation">,</span> action<span class="token punctuation">,</span> reward<span class="token punctuation">,</span> next_state<span class="token punctuation">,</span> done<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		self<span class="token punctuation">.</span>replay_queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">,</span> reward<span class="token punctuation">,</span> next_state<span class="token punctuation">,</span> done<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+	<span class="token keyword">def</span> <span class="token function">sample_batch</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>replay_queue<span class="token punctuation">)</span> <span class="token operator">&lt;</span> self<span class="token punctuation">.</span>replay_size<span class="token punctuation">:</span>
+			<span class="token keyword">return</span> <span class="token boolean">None</span>
+		<span class="token keyword">else</span><span class="token punctuation">:</span>
+			minibatch <span class="token operator">=</span> random<span class="token punctuation">.</span>sample<span class="token punctuation">(</span>self<span class="token punctuation">.</span>replay_queue<span class="token punctuation">,</span> self<span class="token punctuation">.</span>batch_size<span class="token punctuation">)</span>
+			<span class="token keyword">return</span> minibatch
+
+	<span class="token keyword">def</span> <span class="token function">train</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		minibatch <span class="token operator">=</span> self<span class="token punctuation">.</span>sample_batch<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token keyword">if</span> minibatch <span class="token operator">==</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+			<span class="token comment"># print('Ooops, no batch')</span>
+			<span class="token keyword">return</span>
+		
+		current_states <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span>transition<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token keyword">for</span> transition <span class="token keyword">in</span> minibatch<span class="token punctuation">]</span><span class="token punctuation">)</span>
+		next_states <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span>transition<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token keyword">for</span> transition <span class="token keyword">in</span> minibatch<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+		<span class="token comment"># print(current_states,current_states.shape)</span>
+		current_qs_list <span class="token operator">=</span> self<span class="token punctuation">.</span>model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>current_states<span class="token punctuation">)</span>
+		future_qs_list <span class="token operator">=</span> self<span class="token punctuation">.</span>model_target<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>next_states<span class="token punctuation">)</span>
+
+		X <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+		Y <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+		<span class="token keyword">for</span> index<span class="token punctuation">,</span> <span class="token punctuation">(</span>current_states<span class="token punctuation">,</span>action<span class="token punctuation">,</span>reward<span class="token punctuation">,</span>new_current_states<span class="token punctuation">,</span>done<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>minibatch<span class="token punctuation">)</span><span class="token punctuation">:</span>
+			<span class="token keyword">if</span> done<span class="token punctuation">:</span>
+				new_q <span class="token operator">=</span> reward
+			<span class="token keyword">else</span><span class="token punctuation">:</span>
+				max_future_q <span class="token operator">=</span> np<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span>future_qs_list<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span>
+				new_q <span class="token operator">=</span> reward <span class="token operator">+</span> self<span class="token punctuation">.</span>discount <span class="token operator">*</span> max_future_q
+			current_qs <span class="token operator">=</span> current_qs_list<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+			<span class="token comment"># 用计算所得的新的q值去替换掉原来的对应这个动作的值?? </span>
+			current_qs<span class="token punctuation">[</span>action<span class="token punctuation">]</span> <span class="token operator">=</span> new_q
+
+			X<span class="token punctuation">.</span>append<span class="token punctuation">(</span>current_states<span class="token punctuation">)</span>
+			Y<span class="token punctuation">.</span>append<span class="token punctuation">(</span>current_qs<span class="token punctuation">)</span>
+
+		<span class="token comment"># verbose 是干嘛用的??</span>
+		self<span class="token punctuation">.</span>model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>Y<span class="token punctuation">)</span><span class="token punctuation">,</span> verbose <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+		self<span class="token punctuation">.</span>step <span class="token operator">+=</span> <span class="token number">1</span>
+		<span class="token keyword">if</span> self<span class="token punctuation">.</span>step <span class="token operator">%</span> self<span class="token punctuation">.</span>update_freq <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+			<span class="token comment"># print('Target model updated')</span>
+			self<span class="token punctuation">.</span>model_target<span class="token punctuation">.</span>set_weights<span class="token punctuation">(</span>self<span class="token punctuation">.</span>model<span class="token punctuation">.</span>get_weights<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+			self<span class="token punctuation">.</span>step <span class="token operator">=</span> <span class="token number">0</span>
+
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span>env_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token comment"># 准备环境</span>
+	env <span class="token operator">=</span> gym<span class="token punctuation">.</span>make<span class="token punctuation">(</span>env_name<span class="token punctuation">)</span>
+	observation_space <span class="token operator">=</span> env<span class="token punctuation">.</span>observation_space<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+	action_space <span class="token operator">=</span> env<span class="token punctuation">.</span>action_space<span class="token punctuation">.</span>n 
+	<span class="token keyword">print</span><span class="token punctuation">(</span>observation_space<span class="token punctuation">,</span> action_space<span class="token punctuation">)</span>
+	dqn_solver <span class="token operator">=</span> DQNSolver<span class="token punctuation">(</span>observation_space<span class="token punctuation">,</span> action_space<span class="token punctuation">)</span>
+
+	<span class="token comment"># 开始训练</span>
+	<span class="token comment"># 表示玩1000次游戏</span>
+	episodes <span class="token operator">=</span> <span class="token number">5000</span>
+	<span class="token comment"># 每一轮游戏里面玩的步数</span>
+	steps <span class="token operator">=</span> <span class="token number">200</span>
+	scores <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+	render <span class="token operator">=</span> <span class="token boolean">False</span>
+	<span class="token keyword">for</span> episode <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>episodes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		state <span class="token operator">=</span> env<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		score <span class="token operator">=</span> <span class="token number">0</span>
+		done <span class="token operator">=</span> <span class="token boolean">False</span> 
+		<span class="token keyword">for</span> step <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>steps<span class="token punctuation">)</span><span class="token punctuation">:</span>
+			<span class="token keyword">if</span> render<span class="token punctuation">:</span>
+				env<span class="token punctuation">.</span>render<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			epsilon <span class="token operator">=</span> <span class="token number">0.1</span>
+			action <span class="token operator">=</span> dqn_solver<span class="token punctuation">.</span>action<span class="token punctuation">(</span>state<span class="token operator">=</span>state<span class="token punctuation">,</span> epsilon<span class="token operator">=</span>epsilon<span class="token punctuation">)</span>
+			next_state<span class="token punctuation">,</span> reward<span class="token punctuation">,</span> done<span class="token punctuation">,</span> _ <span class="token operator">=</span> env<span class="token punctuation">.</span>step<span class="token punctuation">(</span>action<span class="token punctuation">)</span>
+			<span class="token keyword">if</span> next_state<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&gt;=</span>  env<span class="token punctuation">.</span>goal_position<span class="token punctuation">:</span>
+				<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'I made it.'</span><span class="token punctuation">)</span>
+				<span class="token comment"># 需要手动给0, 因为gym永远都给-1</span>
+				reward <span class="token operator">=</span> <span class="token number">0</span>
+			score <span class="token operator">+=</span> reward
+			dqn_solver<span class="token punctuation">.</span>store<span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">,</span> reward<span class="token punctuation">,</span> next_state<span class="token punctuation">,</span> done<span class="token punctuation">)</span>
+			state <span class="token operator">=</span> next_state
+			dqn_solver<span class="token punctuation">.</span>train<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			<span class="token keyword">if</span> done<span class="token punctuation">:</span>
+				<span class="token keyword">break</span>
+
+		scores<span class="token punctuation">.</span>append<span class="token punctuation">(</span>score<span class="token punctuation">)</span>	
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Eps:{} Cur:{:.2f} Min:{:.2f} Anv:{:.2f} Max:{:.2f}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>episode<span class="token punctuation">,</span> score<span class="token punctuation">,</span> <span class="token builtin">min</span><span class="token punctuation">(</span>scores<span class="token punctuation">)</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>scores<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">max</span><span class="token punctuation">(</span>scores<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">if</span> np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>scores<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">30</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token number">170</span><span class="token punctuation">:</span>
+			render <span class="token operator">=</span>  <span class="token boolean">True</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&quot;__main__&quot;</span><span class="token punctuation">:</span>
+	env_name <span class="token operator">=</span> <span class="token string">&quot;MountainCar-v0&quot;</span>
+	main<span class="token punctuation">(</span>env_name<span class="token operator">=</span>env_name<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br></div></div><p>大概经过几百个episode的训练就可以得到一个很好的神经网络来解决这个问题了。
+接下来，我会添加一些辅助代码来完善这个程序。我们到时候见。
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NTA5OS8yMTYxNg=="><noscript>为正常使用来必力评论功能请激活JavaScript</noscript></div></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/ml/RL_Practice/b_q_learning.html" class="prev">
+        Q-learning
+      </a></span> <span class="next"><a href="/ml/RL_Practice/c_deep_q_learning_2.html">
+        DQN: 优化变得更完善
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.2f9808b5.js" defer></script><script src="/assets/js/5.5be22c85.js" defer></script><script src="/assets/js/107.bc567323.js" defer></script><script src="/assets/js/22.9bca349d.js" defer></script>
+  </body>
+</html>
