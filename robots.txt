@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Sitemap: https:/www.way2ml.com/sitemap.xml
+Host: https://www.way2ml.com
