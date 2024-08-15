@@ -1,0 +1,3 @@
+[submodule "themes/hugo-science"]
+	path = themes/hugo-science
+	url = https://github.com/way2ml/hugo-science.git
