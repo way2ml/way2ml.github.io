@@ -1,6 +1,6 @@
 ---
-author: "Hugo Authors"
-title: "Markdown Syntax and Math Typesetting Guide"
+author: "Hugo Authors and Jie Huang"
+title: "Author Guidelines for Markdown Syntax and Math Typesetting"
 date: "2019-03-11"
 description: "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags: [
@@ -12,11 +12,9 @@ categories: [
 series: ["Themes Guide"]
 aliases: ["migrate-from-jekyl"]
 ---
-
-This article offers a sample of basic Markdown syntax and math typesetting that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme. 🙈
+This guide covers essential Markdown syntax and math typesetting for authors using Hugo. It details headings, paragraphs, blockquotes, tables, code blocks, lists, and symbol usage. The document also explains how to embed rich content with Hugo’s shortcodes and create diagrams using Mermaid. Additionally, it outlines how to enable mathematical notation with KaTeX, providing both global and per-page configuration steps.
 <!--more-->
 
-## Markdown Syntax
 ### Headings
 
 The following HTML `<h2>`—`<h6>` elements represent five levels of section headings. `<h1>` is for Title. `<h2>` is the highest section level while `<h6>` is the lowest. With `numberedSubtitles` param enabled, items will be numbered
@@ -165,40 +163,7 @@ For a complete list of available HTML entities, refer to Wikipedia’s page on [
 
 [This is a comment that will be hidden.]: #
 
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
-
-### Placeholder Text
-Lorem est tota propiore conpellat pectoribus de pectora summo. <!--more-->Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.
-
-1. Exierant elisi ambit vivere dedere
-2. Duce pollice
-3. Eris modo
-4. Spargitque ferrea quos palude
-
-Rursus nulli murmur; hastile inridet ut ab gravi sententia! Nomine potitus silentia flumen, sustinet placuit petis in dilapsa erat sunt. Atria tractus malis.
-
-1. Comas hunc haec pietate fetum procerum dixit
-2. Post torum vates letum Tiresia
-3. Flumen querellas
-4. Arcanaque montibus omnes
-5. Quidem et
-
-Victa caducifer, malo vulnere contra dicere aurato, ludit regale, voca! Retorsit colit est profanae esse virescere furit nec; iaculi matertera et visa est, viribus. Divesque creatis, tecta novat collumque vulnus est, parvas. **Faces illo pepulere** tempus adest. Tendit flamma, ab opes virum sustinet, sidus sequendo urbis. Iubar proles corpore raptos vero auctor imperium; sed et huic: manus caeli Lelegas tu lux. Verbis obstitit intus oblectamina fixis linguisque ausus sperare Echionides cornuaque tenent clausit possit. Omnia putatur. Praeteritae refert ausus; ferebant e primus lora nutat, vici quae mea ipse. Et iter nil spectatae vulnus haerentia iuste et exercebat, sui et.
-
-Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel **mitis temploque** vocatus, inque alis, *oculos nomen* non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem Propoetides **parte**.
-
-### Emoji
-The [`emojify`](https://gohugo.io/functions/emojify/) function can be called directly in templates or [Inline Shortcodes](https://gohugo.io/templates/shortcode-templates/#inline-shortcodes).
-
-To enable emoji globally, set `enableEmoji` to `true` in your site's [configuration](https://gohugo.io/getting-started/configuration/) and then you can type emoji shorthand codes directly in content files; e.g.
+<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format. H<sub>2</sub>O X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup> Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session. Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures. The [`emojify`](https://gohugo.io/functions/emojify/) function can be called directly in templates or [Inline Shortcodes](https://gohugo.io/templates/shortcode-templates/#inline-shortcodes). To enable emoji globally, set `enableEmoji` to `true` in your site's [configuration](https://gohugo.io/getting-started/configuration/) and then you can type emoji shorthand codes directly in content files; e.g.
 
 <p><span class="nowrap"><span class="emojify">🙈</span> <code>:see_no_evil:</code></span>  <span class="nowrap"><span class="emojify">🙉</span> <code>:hear_no_evil:</code></span>  <span class="nowrap"><span class="emojify">🙊</span> <code>:speak_no_evil:</code></span></p>
 <br>
@@ -215,12 +180,9 @@ The [Emoji cheat sheet](http://www.emoji-cheat-sheet.com/) is a useful reference
 }
 ```
 
-## Math Typesetting
+### Math Typesetting
 
-Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.
-<!--more-->
-
-In this example we will be using [$\KaTeX$](https://katex.org/)
+Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries. In this example we will be using [$\KaTeX$](https://katex.org/)
 
 - Create a partial under `/layouts/partials/math.html`
 - Within this partial reference the [Auto-render Extension](https://katex.org/docs/autorender.html) or host these scripts locally.
@@ -241,7 +203,6 @@ In this example we will be using [$\KaTeX$](https://katex.org/)
 Inline math: $\varphi = 1+\frac{1}{1+\frac{1}{1+\cdots}}$
 </p>
 
-Block math:
 $$
 \mathcal L_{\mathcal T}(\vec{\lambda})
 = \sum_{(\mathbf{x},\mathbf{s})\in \mathcal T}
@@ -250,34 +211,31 @@ $$
 $$
 
 
-## Rich Content
+### Rich Content
 Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes) for rich content, along with a [Privacy Config](https://gohugo.io/about/hugo-and-gdpr/) and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.
 
-### YouTube Privacy Enhanced Shortcode
+YouTube Privacy Enhanced Shortcode
 
 {{< youtube ZJthWmvUzzc >}}
 
 <br>
 
----
 
-### Twitter Simple Shortcode
+Twitter Simple Shortcode
 
 {{< tweet user="SanDiegoZoo" id="1453110110599868418" >}}
 
 <br>
 
----
 
-### Vimeo Simple Shortcode
+Vimeo Simple Shortcode
 
 {{< vimeo_simple 48912912 >}}
 
 <br>
 
----
 
-### Mermaid
+Mermaid
 
 Flowchart
 
