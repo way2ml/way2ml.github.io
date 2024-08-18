@@ -2,7 +2,8 @@
 author: Jie Huang
 title: Information Measurement and Distribution Comparison
 date: 2024-08-10
-description: A brief guide to mermaid diagrams
+description: A brief guide to information measurement.
+draft: true
 categories:
   - Information
 tags:
