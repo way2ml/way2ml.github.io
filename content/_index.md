@@ -7,7 +7,7 @@ Welcome to our site! We are passionate about understanding physics through tools
 **Jie Huang**, Shiben Li\*, Xinghua Zhang\*, and **Gang Huang**, Neural network model for structure factor of polymer systems, [J. Chem. Phys.](https://aip.scitation.org/doi/10.1063/5.0022464) 150, 2020.    
 
 ## News and events
-2024.09.17 Jie talks in [MLM2024](https://mlm2024.aalto.fi/), Kanazawa, Japan.
+2024.09.17 Jie talks in [MLM2024](https://mlm2024.aalto.fi/), [Kanazawa](https://maps.app.goo.gl/P2S8cGEBmEZ6CMrSA), Japan.  
 2023.05.03 Jie joins the [SIN](https://www.aalto.fi/en/department-of-applied-physics/surfaces-and-interfaces-at-the-nanoscale-sin) group in [Aalto University](https://www.aalto.fi/en) as a doctoral researcher, working with [Prof. Adam Foster](https://scholar.google.com/citations?user=I0n9QYcAAAAJ).  
 2022.10.27 Jie is invited to share his experiences with the group of [Prof. Shiben Li](https://slxy.wzu.edu.cn/lishiben.pdf) at Wenzhou University. [View slides](https://nbviewer.org/github/HuangJiaLian/DataBase0/blob/master/uPic/2022_10_27_19_HuangJie_Thursday.pdf).  
 2022.08.31 Jie presents his work to the group members of Prof. Cai in University of Macau. [View slides](https://nbviewer.org/github/HuangJiaLian/DataBase0/blob/master/uPic/2022_08_31_13_HuangUMSlides.pdf).   
@@ -17,4 +17,4 @@ Welcome to our site! We are passionate about understanding physics through tools
 ## Updates
 2024.08.17 Our website has been redesigned using [Hugo](https://gohugo.io/) as the generator, with inspiration from [TeXify3](https://github.com/michaelneuper/hugo-texify3) and [KaTeX](https://katex.org/).  
 2021.10.23 An [Online Forum](https://github.com/way2ml/forum/discussions) based on Github Discussions is added to the top right corner of website.  
-2019.01.31 [Way To Machine Learning](https://way2ml.github.io/) is launched in [Chengdu, China](https://goo.gl/maps/Hjto2WtzYHeCBsmQ9).  
+2019.01.31 [Way To Machine Learning](https://way2ml.github.io/) is launched in [Chengdu](https://goo.gl/maps/Hjto2WtzYHeCBsmQ9), China.  
