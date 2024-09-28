@@ -1,7 +1,7 @@
 Welcome to our site! We are passionate about understanding physics through tools like computer simulations and machine learning. Our comprehensive articles cover topics in machine learning, information theory, physics, and more, reflecting our ongoing research journey. Documenting our work helps us deepen our understanding, and we hope it benifits others as well. We look forward to sharing our work and discussing with you. Cheers! 
 
 ## Publications
-**Gang Huang** and **Jie Huang**\*, Revisiting the thickness of the air-water interface from two extremes of interface hydrogen bond dynamics, [arXiv](https://arxiv.org/abs/2204.13941), 2204.13941, 2024.   
+**Gang Huang** and **Jie Huang**\*, Revisiting the thickness of the air-water interface from two extremes of interface hydrogen bond dynamics, [J. Chem. Theory Comput.](https://doi.org/10.1021/acs.jctc.4c00457), 2024.   
 **Jie Huang**, Bowen Wang, Hejin Yan and Yongqing Cai\*, Mechanism of interaction of water above MAPbI3 perovskite nanocluster, [J. Phys. Chem. Lett.](https://pubs.acs.org/doi/10.1021/acs.jpclett.3c02807) 15, 2024.   
 **Jie Huang**, **Gang Huang**\*, and Shiben Li\*, A machine learning model to classify dynamic processes in liquid water, [ChemPhysChem](https://chemistry-europe.onlinelibrary.wiley.com/doi/epdf/10.1002/cphc.202100599), 23, 2022.  
 **Jie Huang**, Shiben Li\*, Xinghua Zhang\*, and **Gang Huang**, Neural network model for structure factor of polymer systems, [J. Chem. Phys.](https://aip.scitation.org/doi/10.1063/5.0022464) 150, 2020.    
