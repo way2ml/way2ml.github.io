@@ -2,8 +2,8 @@ Welcome to our site! We are passionate about understanding physics through tools
 
 
 ## News and events
-2024.09.24 Our latest [paper](https://doi.org/10.1021/acs.jctc.4c00457) about the thickness of air-water interface is accepted by [J. Chem. Theory Comput.](https://doi.org/10.1021/acs.jctc.4c00457). [View on arXiv](https://arxiv.org/abs/2204.13941).
-2024.09.17 Jie gives his first talk in [MLM2024](https://mlm2024.aalto.fi/), [Kanazawa](https://maps.app.goo.gl/P2S8cGEBmEZ6CMrSA), Japan. [View slides](https://cdn.jsdelivr.net/gh/HuangJiaLian/DataBase0@master/uPic/2024-09-17-17-14-Talk_Kanazawa.pdf).
+2024.09.24 Our latest [paper](https://doi.org/10.1021/acs.jctc.4c00457) about the thickness of air-water interface is accepted by [J. Chem. Theory Comput.](https://doi.org/10.1021/acs.jctc.4c00457). [View on arXiv](https://arxiv.org/abs/2204.13941). 
+2024.09.17 Jie gives his first talk in [MLM2024](https://mlm2024.aalto.fi/), [Kanazawa](https://maps.app.goo.gl/P2S8cGEBmEZ6CMrSA), Japan. [View slides](https://cdn.jsdelivr.net/gh/HuangJiaLian/DataBase0@master/uPic/2024-09-17-17-14-Talk_Kanazawa.pdf). 
 2023.05.03 Jie joins the [SIN](https://www.aalto.fi/en/department-of-applied-physics/surfaces-and-interfaces-at-the-nanoscale-sin) group in [Aalto University](https://www.aalto.fi/en) as a doctoral researcher, working with [Prof. Adam Foster](https://scholar.google.com/citations?user=I0n9QYcAAAAJ).  
 2022.10.27 Jie is invited to share his experiences with the group of [Prof. Shiben Li](https://slxy.wzu.edu.cn/lishiben.pdf) at Wenzhou University. [View slides](https://nbviewer.org/github/HuangJiaLian/DataBase0/blob/master/uPic/2022_10_27_19_HuangJie_Thursday.pdf).  
 2022.08.31 Jie presents his work to the group members of Prof. Cai in University of Macau. [View slides](https://nbviewer.org/github/HuangJiaLian/DataBase0/blob/master/uPic/2022_08_31_13_HuangUMSlides.pdf).   
