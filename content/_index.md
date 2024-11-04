@@ -2,7 +2,7 @@ Welcome to our site! We are passionate about understanding physics through tools
 
 
 ## News and events
-2024.11.04 Jie gives his doctral midterm presentation, N204 Nanotalo, Aalto University. [View reports](https://cdn.jsdelivr.net/gh/HuangJiaLian/DataBase0@master/uPic/2024-10-14-14-11-Jie_s_Midterm_Report_compressed.pdf).   
+2024.11.04 Jie gives his doctral midterm presentation, N204 Nanotalo, Aalto University. [View reports](https://cdn.jsdelivr.net/gh/HuangJiaLian/DataBase0@master/uPic/2024-10-14-14-11-Jie_s_Midterm_Report_compressed.pdf) [View slides](https://cdn.jsdelivr.net/gh/HuangJiaLian/DataBase0@master/uPic/2024-11-04-15-39-MidtermSlides-compressed.pdf). Thanks to my referee [Johannes Haataja](https://www.researchgate.net/profile/Johannes-Haataja) and coordinator [Jose Lado](https://x.com/jlado_phys).   
 2024.09.24 [Our paper](https://doi.org/10.1021/acs.jctc.4c00457) about the thickness of air-water interface is accepted by J. Chem. Theory Comput. [View on arXiv](https://arxiv.org/abs/2204.13941).      
 2024.09.17 Jie gives his first talk in [MLM2024](https://mlm2024.aalto.fi/), [Kanazawa](https://maps.app.goo.gl/P2S8cGEBmEZ6CMrSA), Japan. [View slides](https://cdn.jsdelivr.net/gh/HuangJiaLian/DataBase0@master/uPic/2024-09-17-17-14-Talk_Kanazawa.pdf).      
 2023.05.03 Jie joins the [SIN](https://www.aalto.fi/en/department-of-applied-physics/surfaces-and-interfaces-at-the-nanoscale-sin) group in [Aalto University](https://www.aalto.fi/en) as a doctoral researcher, working with [Prof. Adam Foster](https://scholar.google.com/citations?user=I0n9QYcAAAAJ).    
