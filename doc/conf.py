@@ -44,7 +44,7 @@ html_theme_options = {
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/huangjialian",
+            "url": "https://github.com/way2ml/way2ml.github.io",
             "icon": "fab fa-github",
         },
         {
