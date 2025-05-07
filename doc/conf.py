@@ -34,6 +34,13 @@ html_sidebars = {
 
 html_logo = "_static/logo.png"
 html_favicon = '_static/favicon.ico'
+html_context = {
+    "display_github": True,
+    "github_user": "way2ml",         # your GitHub username
+    "github_repo": "way2ml.github.io", # your repository name
+    "github_version": "main",        # branch name
+    "doc_path": "doc",               # path to your docs root in the repo
+}
 html_theme_options = {
     "logo": {
         "image_light": "logo.png",  # shown in light mode
@@ -74,5 +81,7 @@ html_theme_options = {
         },
     ],
     "navbar_end": ["navbar-icon-links"],  # ensures they go top right
+    "use_edit_page_button": True, 
 }
+
 
