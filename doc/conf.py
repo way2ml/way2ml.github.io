@@ -41,6 +41,7 @@ html_context = {
     "github_version": "main",        # branch name
     "doc_path": "doc",               # path to your docs root in the repo
 }
+html_show_sourcelink = False # It's useless after we have edit on github
 html_theme_options = {
     "logo": {
         "image_light": "logo.png",  # shown in light mode
