@@ -19,7 +19,7 @@ Gang Huang and **Jie Huang**\*, Revisiting the thickness of the air-water interf
 **Jie Huang**, Shiben Li\*, Xinghua Zhang\*, and Gang Huang, Neural network model for structure factor of polymer systems, [J. Chem. Phys.](https://aip.scitation.org/doi/10.1063/5.0022464) 150, 2020. [Codes](https://github.com/HuangJiaLian/NN_For_Structure_Factor)  
 
 # Updates
-2025.05.07 Our website moves to [Sphinx](https://www.sphinx-doc.org/en/master/)  
+2025.05.07 Our website moves to [Sphinx](https://www.sphinx-doc.org/en/master/).  
 2024.08.17 Our website has been redesigned using [Hugo](https://gohugo.io/) as the generator, with inspiration from [TeXify3](https://github.com/michaelneuper/hugo-texify3) and [KaTeX](https://katex.org/).  
 2021.10.23 An [Online Forum](https://github.com/way2ml/forum/discussions) based on Github Discussions is added to the top right corner of website.  
 2019.01.31 [Way To Machine Learning](https://way2ml.github.io/) is launched in [Chengdu](https://goo.gl/maps/Hjto2WtzYHeCBsmQ9), China.  
