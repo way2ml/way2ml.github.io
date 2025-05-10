@@ -1,5 +1,10 @@
 Hi, I'm Jie Huang. Welcome to my site! I'm passionate about understanding physics through tools like computer simulations and machine learning. My past comprehensive articles cover topics in machine learning, information theory, physics, and more, reflecting my ongoing research journey. Documenting my work helps me deepen my understanding, and I hope it benefits others as well. I look forward to sharing my work and discussing with you. Cheers! 
 
+# Contents
+```{toctree}
+:maxdepth: 1
+gitflow.md
+```
 
 # News and events
 2025.05.06 Jie contributes a talk at [ML4MD2025](https://sites.utu.fi/ml4md2025/), Aalto University, Espoo, Finland. [View slides](http://raw.githubusercontent.com/HuangJiaLian/DataBase0/refs/heads/master/uPic/2025-05-07-20-50-slide.pdf). Happy to talk Prof. [Taylor Sparks](https://profiles.faculty.utah.edu/u0203991), meet old colleague [Rasmus Nilsson](https://orcid.org/0009-0004-9618-2562), and know [Zhengtao Zhou](https://www.researchgate.net/profile/Zhengtao-Zhou-2).   
