@@ -3,7 +3,7 @@ Hi, I'm Jie Huang. Welcome to my site! I'm passionate about understanding physic
 # Contents
 ```{toctree}
 :maxdepth: 1
-gitflow.md
+2024.05.10 The Minimal Git Workflow I Use in My Research <gitflow.md>
 ```
 
 # News and events
