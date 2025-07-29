@@ -1,6 +1,6 @@
-# The Minimal Git Workflow I Use in My Research
+# The Minimal Git Workflow 
 ```{figure} ../data/github_workflow/Github-Workflow.png
-Fig. 1. The git workflow I used in my research [1]. This git workflow consists of the following three parts as shown in Fig. 2-4.
+Fig. 1. The git workflow I used in my research [1]. This workflow consists of the following three parts as shown in Fig. 2-4.
 ```
 
 ```{figure} ../data/github_workflow/Github-Workflow-1.png
