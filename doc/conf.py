@@ -26,6 +26,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
+html_css_files = ['custom.css']
 
 # Hide Left sidebar
 html_sidebars = {
@@ -80,6 +81,16 @@ html_theme_options = {
             "url": "https://linkedin.com/in/jiehuang-fi",
             "icon": "fab fa-linkedin",
         },
+        {
+            "name": "ORCID",
+            "url": "https://orcid.org/0000-0003-3560-283X",
+            "icon": "fab fa-orcid",
+        },
+        {
+            "name": "Google Scholar",
+            "url": "https://scholar.google.com/citations?user=238kWMkAAAAJ&hl=en",
+            "icon": "fab fa-google-scholar",
+        }
     ],
     "navbar_end": ["navbar-icon-links"],  # ensures they go top right
     "use_edit_page_button": True, 
