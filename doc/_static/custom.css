@@ -1,0 +1,45 @@
+/* Custom CSS to increase main content width and center align */
+
+/* Add rounded corners to all images */
+img {
+    border-radius: 15px;
+}
+
+/* Increase the max-width of the main content area */
+.bd-main .bd-content {
+    max-width: 100% !important;
+}
+
+/* Adjust the article container width and center it */
+.bd-article-container {
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Increase the width of the main article content */
+article.bd-article {
+    max-width: none !important;
+}
+
+/* Center the main container */
+.bd-container {
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Center the main content area */
+.bd-main {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Ensure content doesn't get too wide on very large screens */
+@media (min-width: 1200px) {
+    .bd-main .bd-content .bd-article-container {
+        max-width: 1400px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
