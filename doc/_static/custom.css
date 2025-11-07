@@ -1,10 +1,5 @@
 /* Custom CSS to increase main content width and center align */
 
-/* Add rounded corners to all images */
-img {
-    border-radius: 15px;
-}
-
 /* Increase the max-width of the main content area */
 .bd-main .bd-content {
     max-width: 100% !important;
@@ -35,6 +30,39 @@ article.bd-article {
     margin-right: auto !important;
 }
 
+.article-metadata {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 0.25rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* Footer inline layout - centered */
+.bd-footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* center content horizontally */
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.bd-footer__inner .footer-items__start,
+.bd-footer__inner .footer-items__end,
+.bd-footer__inner .footer-item {
+    display: contents;
+}
+
+.bd-footer__inner .footer-item p {
+    display: inline;
+    margin: 0;
+}
+
+.bd-footer__inner .footer-item p br {
+    display: none;
+}
+
 /* Ensure content doesn't get too wide on very large screens */
 @media (min-width: 1200px) {
     .bd-main .bd-content .bd-article-container {
@@ -42,4 +70,28 @@ article.bd-article {
         margin-left: auto !important;
         margin-right: auto !important;
     }
+}
+
+/* Add rounded corners to all images */
+img {
+    border-radius: 5px !important;
+    overflow: hidden;
+}
+
+/* Also apply to images in figures */
+figure img {
+    border-radius: 5px !important;
+    overflow: hidden;
+}
+
+/* Apply to images in content area */
+.bd-article img {
+    border-radius: 5px !important;
+    overflow: hidden;
+}
+
+/* Apply to images in main content */
+.bd-main img {
+    border-radius: 5px !important;
+    overflow: hidden;
 }

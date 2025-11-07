@@ -1,4 +1,11 @@
-# The Minimal Git Workflow 
+---
+title: The minimal Git workflow I use in my research
+date: 2025-05-10
+author: Jie Huang
+---
+
+# The minimal git workflow 
+
 ```{figure} ../data/github_workflow/Github-Workflow.png
 Fig. 1. The git workflow I used in my research [1]. This workflow consists of the following three parts as shown in Fig. 2-4.
 ```

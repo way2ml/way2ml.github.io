@@ -16,6 +16,36 @@ release = '0.0.1'
 
 extensions = ['myst_parser', 'sphinx.ext.mathjax', 'sphinx_tabs.tabs']
 
+# MyST parser configuration
+myst_enable_extensions = [
+    "colon_fence",
+    "deflist",
+    "html_image",
+]
+
+# Configure MyST to use YAML front matter
+myst_substitutions = {}
+
+def setup(app):
+    app.add_css_file('custom.css')
+    app.add_js_file('article-metadata.js')
+    
+    # Add a function to process page metadata from MyST front matter
+    def add_metadata_to_context(app, pagename, templatename, context, doctree):
+        if doctree is not None:
+            # Get metadata from docinfo which is where MyST stores front matter
+            metadata = {}
+            if hasattr(doctree, 'settings') and hasattr(doctree.settings, 'env'):
+                env = doctree.settings.env
+                if hasattr(env, 'metadata') and pagename in env.metadata:
+                    metadata = env.metadata[pagename]
+            
+            # Make metadata available in templates
+            if metadata:
+                context['meta'] = metadata
+    
+    app.connect('html-page-context', add_metadata_to_context)
+
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
@@ -26,7 +56,6 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
-html_css_files = ['custom.css']
 
 # Hide Left sidebar
 html_sidebars = {
@@ -50,6 +79,9 @@ html_theme_options = {
         "text": "Way To Machine Learning",
     },
     "navbar_start": ["navbar-logo"],
+    "navbar_center": ["navbar-nav"],
+    "show_nav_level": 1,
+    "show_prev_next": False,
     "icon_links": [
         {
             "name": "GitHub",
@@ -93,7 +125,7 @@ html_theme_options = {
         }
     ],
     "navbar_end": ["navbar-icon-links"],  # ensures they go top right
-    "use_edit_page_button": True, 
+    "use_edit_page_button": False, 
 }
 
 
