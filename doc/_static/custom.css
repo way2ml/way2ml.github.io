@@ -68,6 +68,23 @@ article.bd-article {
     display: none !important;
 }
 
+/* Embedded CV PDF styling */
+#cv-pdf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#cv-pdf canvas {
+    width: min(100%, 900px);
+    height: auto;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+}
+
 /* Ensure content doesn't get too wide on very large screens */
 @media (min-width: 1200px) {
     .bd-main .bd-content .bd-article-container {

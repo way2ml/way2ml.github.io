@@ -6,8 +6,13 @@ date: 2025-11-08
 
 # Curriculum Vitae
 
-<object data="_static/docs/jiehuang.pdf" type="application/pdf" width="100%" height="1800">
-  <p>Your browser does not display embedded PDFs. You can <a href="_static/docs/jiehuang.pdf" target="_blank" rel="noopener">open the CV in a new tab</a>.</p>
-</object>
+<p><a href="_static/docs/jiehuang.pdf" target="_blank" rel="noopener">Download the PDF</a></p>
 
-![](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/screenshot_20251107_223449.png)
+<div id="cv-pdf" data-pdf="_static/docs/jiehuang.pdf"></div>
+
+<noscript>
+  <p>Your browser does not display embedded PDFs without JavaScript. You can <a href="_static/docs/jiehuang.pdf" target="_blank" rel="noopener">open the CV in a new tab</a>.</p>
+</noscript>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.js" crossorigin="anonymous"></script>
+<script src="_static/js/cv-pdf.js"></script>
