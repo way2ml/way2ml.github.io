@@ -12,4 +12,6 @@
 - 2022.10.27 Jie is invited to share his experiences with the group of [Prof. Shiben Li](https://slxy.wzu.edu.cn/lishiben.pdf) at Wenzhou University. [View slides](https://nbviewer.org/github/HuangJiaLian/DataBase0/blob/master/uPic/2022_10_27_19_HuangJie_Thursday.pdf).  
 - 2022.08.31 Jie presents his work to the group members of Prof. Cai at the University of Macau. [View slides](https://nbviewer.org/github/HuangJiaLian/DataBase0/blob/master/uPic/2022_08_31_13_HuangUMSlides.pdf).   
 - 2022.08.08 Jie starts his role as a research assistant in [Prof. Yongqing Cai](https://iapme.um.edu.mo/staff/academic-staff/cai-yongqing/)'s group at the [IAPME](https://iapme.um.edu.mo/), [University of Macau](https://www.um.edu.mo/).  
-- 2021.09.01 [Jie](cv) completes his master's degree at [Wenzhou University](https://www.wzu.edu.cn/en/About.htm) with [honors](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uPic/2022_06_17_01_Jack.png), under the guidance of [Prof. Shiben Li](https://slxy.wzu.edu.cn/lishiben.pdf).  
+- 2021.09.01 [Jie](cv) completes his master's degree at [Wenzhou University](https://www.wzu.edu.cn/en/About.htm) with [honors](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uPic/2022_06_17_01_Jack.png), under the guidance of [Prof. Shiben Li](https://slxy.wzu.edu.cn/lishiben.pdf).
+
+![](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/screenshot_20251107_223449.png)
