@@ -63,6 +63,11 @@ article.bd-article {
     display: none;
 }
 
+/* Hide breadcrumb header strip */
+.bd-header-article {
+    display: none !important;
+}
+
 /* Ensure content doesn't get too wide on very large screens */
 @media (min-width: 1200px) {
     .bd-main .bd-content .bd-article-container {
