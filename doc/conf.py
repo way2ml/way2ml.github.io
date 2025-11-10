@@ -21,7 +21,10 @@ myst_enable_extensions = [
     "colon_fence",
     "deflist",
     "html_image",
+    "amsmath",
+    "dollarmath",
 ]
+math_number_all = True
 
 # Configure MyST to use YAML front matter
 myst_substitutions = {}
