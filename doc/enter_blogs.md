@@ -1,6 +1,7 @@
 # Blogs
-
-- [The minimal git workflow in my research](gitflow)
+- [How to use tmux to accelate my research](blogs/tmux)
+- [The minimal git workflow in my research](blogs/gitflow)
+- [Sphinx basics needed for documenting](blogs/sphinx)
 - [How to Take Photos with Timestamps on iPhone or iPad](https://medium.com/@jackhuang.wz/how-to-take-photos-with-timestamps-on-iphone-or-ipad-90f4372b081c)
 - [Generate Music From Scratch Using Python](https://medium.com/@jackhuang.wz/generate-music-from-scratch-using-python-53c0fedd0031)
 - [Two Steps To Turn A Python Script Into A macOS Application Installer](https://medium.com/@jackhuang.wz/in-just-two-steps-you-can-turn-a-python-script-into-a-macos-application-installer-6e21bce2ee71)

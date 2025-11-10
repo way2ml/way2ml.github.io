@@ -12,7 +12,7 @@ Hei, welcome to my homepage! My name is <a href="_static/docs/jiehuang.pdf" targ
 :hidden:
 :maxdepth: 1
 
-Blogs <blogs.md>
+Blogs <enter_blogs.md>
 News <news.md>
 Publications <publications.md>
 Updates <updates.md>
