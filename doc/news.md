@@ -1,5 +1,5 @@
 # News 
-- 2025.11.10 Theo Nguyen learns how to spin a square cushion. I learn a new word [camel pack] from him. Pablo learns the Chinese 4th tone by pretending to be shot.  
+- 2025.11.10 Theo Nguyen learns how to spin a square cushion. I learn a new word [camel pack](https://en.wikipedia.org/wiki/Hydration_pack) from him. Pablo learns the Chinese 4th tone by pretending to be shot.  
 - 2025.11.09 Chenyi, Azin, [Nan Cao](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/IMG_0668.jpeg), Pablo, Pamela Ngui,  Sanni, Davis Sterns, Theo Nguyen and Jie have [potluck dinner](https://en.wikipedia.org/wiki/Potluck). We listen to music, spin the book, build a Chrismas tree, play the [werewolves](https://en.wikipedia.org/wiki/The_Werewolves_of_Millers_Hollow), and have a wonderful night.     
 - 2025.11.01 Our work about improving structure discvery of AFM images ([arxiv 2509.02240](https://arxiv.org/abs/2509.02240)) is accepted by [npj Computational Materials](https://www.nature.com/npjcompumats/).  
 - 2025.08.07 Jie contributes a talk at [NCAFM-2025 conference](https://www.nims.go.jp/group/Nanoprobe/NC-AFM2025/Index.html) in Toyama, Japan. [View abstract](https://www.nims.go.jp/group/Nanoprobe/NC-AFM2025/Abstract/S11-2_Jie%20Huang.pdf) or [slides](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/NCAFM_Jie_Huang.pdf).     
