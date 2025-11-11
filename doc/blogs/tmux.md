@@ -60,13 +60,6 @@ Then update the configuration with this command
 tmux source-file ~/.tmux.conf
 ```
 
-## How to add image with caption
-This is test to add image with 
-```{figure} ../../data/github_workflow/Github-Workflow-2.png
-Figure 1. This is test to add image with caption. The grammar is
-different from the common markdown format.
-```
-
 ## References
 
 

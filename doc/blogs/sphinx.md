@@ -4,6 +4,23 @@ date: 2025-11-10
 author: Jie Huang
 ---
 # Basics
+## Console
+
+```console
+$ mkdir doc-example
+$ cd doc-example
+$ sphinx-quickstart
+```
+
+You probably noticed that there's a handy **Copy** button when you hover around the block.
+To enable this feature, you need `pip install sphinx-copybutton`, then enable it in `conf.py`
+by add to extention list.
+```python
+extensions = [
+    # ... your other extensions ...
+    "sphinx_copybutton",
+]
+```
 
 ## Latex equations
 Make sure the `conf.py` has this setting, which will auto numbering the equations.
@@ -31,6 +48,18 @@ We can use the following way to add image with caption:
 Figure 1. This is test to add image with caption. The grammar is
 different from the common markdown format.
 ```
+## Information boxes
+:::{note}
+This is a note.
+:::
+
+:::{tip}
+This is a tip.
+:::
+
+:::{warning}
+This is a warning.
+:::
 
 ## References
 
