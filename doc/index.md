@@ -5,7 +5,8 @@ date: 2025-11-09
 ---
 # Welcome
 Hei, welcome to my homepage! My name is <a href="_static/docs/jiehuang.pdf" target="_blank" rel="noopener">Jie Huang</a>. 
-Now I am a doctoral researcher at Aalto University. I use computational methods to understand the physical world; 
+Now I am a doctoral researcher at [SIN group](https://www.aalto.fi/en/department-of-applied-physics/surfaces-and-interfaces-at-the-nanoscale-sin), 
+Aalto University. I use computational methods to understand the physical world; 
 I enjoy working with computers. I use [Linux Mint](https://linuxmint.com/) by the way😃. 
 My favorate singers include Michael Jackson, Taylor Swift, S.H.E., and G.E.M. 
 Since the website update, older posts written in Chinese are temporarily missing. My past comprehensive posts cover 
