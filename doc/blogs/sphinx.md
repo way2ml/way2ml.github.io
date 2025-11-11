@@ -23,7 +23,7 @@ extensions = [
 ```
 
 ## Latex equations
-Make sure the `conf.py` has this setting, which will auto numbering the equations.
+Make sure the `conf.py` file has this setting, which will auto-number the equations.
 ```bash
 extensions = [
     "myst_parser",
@@ -45,7 +45,7 @@ e^{i\theta} = \cos(\theta) + i\sin{\theta}
 ## Image with caption
 We can use the following way to add image with caption:
 ```{figure} ../../data/github_workflow/Github-Workflow-2.png
-Figure 1. This is test to add image with caption. The grammar is
+Figure 1. This is a test to add an image with a caption. The grammar is
 different from the common markdown format.
 ```
 ## Information boxes
