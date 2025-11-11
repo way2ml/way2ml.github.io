@@ -3,7 +3,8 @@ title: How to use sphinx to document my research
 date: 2025-11-10
 author: Jie Huang
 ---
-# Basics
+# How to use sphinx to document 
+
 ## Console
 
 ```console
