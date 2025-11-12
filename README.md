@@ -1,5 +1,5 @@
 # Way To Machine Learning
-The project file for my home page: [https://way2ml.github.io/](https://way2ml.github.io/).
+The project files for my homepage: [https://way2ml.github.io/](https://way2ml.github.io/).
 
 ## Installation
 
