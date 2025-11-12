@@ -1,0 +1,19 @@
+name: way2ml 
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3
+  - sphinx
+  - numpy
+  - matplotlib
+  - pandas
+  - ase
+  - pip
+  - pip:
+      - furo
+      - myst-parser
+      - snakemake
+      - scikit-image
+      - sphinx-copybutton
+      - sphinxcontrib.bibtex
