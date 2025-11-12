@@ -38,17 +38,22 @@ myst_enable_extensions = [
 math_number_all = True
 ```
 
-This is inline math {math}`E=mc^2`, and here is seperated one:
+This is inline math {math}`E=mc^2`, and here is seperated one as shown in equation {eq}`eq:euler`.
 ```{math}
+:label: eq:euler
 e^{i\theta} = \cos(\theta) + i\sin{\theta}
 ```
 
 ## Image with caption
-We can use the following way to add image with caption:
+We can use the following way to add image with caption. The grammar is different from the common markdown format. With `numfig = True` in `conf.py`, figures will be automatically numbered across **all documents** in the toctree (not per-document), and you can reference them using `{numref}`.
+
 ```{figure} ../../data/github_workflow/Github-Workflow-2.png
-Figure 1. This is a test to add an image with a caption. The grammar is
-different from the common markdown format.
+:name: fig-test
+
+This is a test to add an image with a caption.
 ```
+As shown in {numref}`fig-test`, the figure is automatically numbered. Note that Sphinx numbers figures continuously across all documents in your documentation (like chapters in a book), so this might not be Figure 1 if there are figures in earlier documents.
+
 ## Information boxes
 :::{note}
 This is a note.
@@ -62,6 +67,25 @@ This is a tip.
 This is a warning.
 :::
 
-## References
+## Citation
+You can cite other papers easily. For example, I published my first
+research paper in 2020, which uses a neural network fit a function
+of structure factor of polymer systems {cite}`Huang2020`. Make sure
+`conf.py` has the following lines.
 
+```python
+extensions = [
+    # ...
+    'sphinxcontrib.bibtex'
+    ]
+bibtex_bibfiles = ["ref.bib"]
+```
+
+
+
+**References**
+
+```{bibliography}
+:style: unsrt
+```
 

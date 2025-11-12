@@ -15,5 +15,7 @@ dependencies:
       - myst-parser
       - snakemake
       - scikit-image
+      - pydata-sphinx-theme
+      - sphinx-tabs
       - sphinx-copybutton
       - sphinxcontrib.bibtex

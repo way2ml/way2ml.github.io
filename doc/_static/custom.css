@@ -101,3 +101,9 @@ figure img {
     border-radius: 5px !important;
     overflow: hidden;
 }
+
+/* Make figure numbers bold instead of italic */
+.caption-number {
+    font-weight: bold !important;
+    font-style: normal !important;
+}

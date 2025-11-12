@@ -14,7 +14,14 @@ release = '0.0.1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['myst_parser', 'sphinx.ext.mathjax', 'sphinx_tabs.tabs', 'sphinx_copybutton']
+extensions = [
+    'myst_parser', 
+    'sphinx.ext.mathjax', 
+    'sphinx_tabs.tabs',
+    'sphinx.ext.autosectionlabel',
+    'sphinxcontrib.bibtex'
+]
+bibtex_bibfiles = ["ref.bib"]
 
 # MyST parser configuration
 myst_enable_extensions = [
@@ -24,7 +31,25 @@ myst_enable_extensions = [
     "amsmath",
     "dollarmath",
 ]
+
+# Enable automatic figure numbering
+numfig = True
+numfig_format = {
+    'figure': 'Fig. %s',
+    'table': 'Tab. %s',
+    'code-block': 'List. %s',
+    'section': 'Sec. %s'
+}
+
+# Math numbering
 math_number_all = True
+math_numfig = True
+
+# Figure numbering depth:
+# 0 = continuous across all documents (Figure 1, 2, 3, 4, 5...)
+# 1 = restart per top-level section (Figure 1.1, 1.2, 2.1, 2.2...)
+# 2 = restart per second-level section (Figure 1.1.1, 1.1.2...)
+numfig_secnum_depth = 1
 
 # Configure MyST to use YAML front matter
 myst_substitutions = {}
@@ -128,7 +153,7 @@ html_theme_options = {
         }
     ],
     "navbar_end": ["navbar-icon-links"],  # ensures they go top right
-    "use_edit_page_button": True, 
+    "use_edit_page_button": False, 
 }
 
 
