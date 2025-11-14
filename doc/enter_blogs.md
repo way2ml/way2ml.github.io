@@ -4,6 +4,7 @@
 blogs/tmux
 blogs/gitflow
 blogs/sphinx
+blogs/linux
 ```
 [How to Take Photos with Timestamps on iPhone or iPad](https://medium.com/@jackhuang.wz/how-to-take-photos-with-timestamps-on-iphone-or-ipad-90f4372b081c)  
 [Generate Music From Scratch Using Python](https://medium.com/@jackhuang.wz/generate-music-from-scratch-using-python-53c0fedd0031)  
