@@ -1,6 +1,6 @@
 ## Publications
 
-- **Jie Huang**, Niko Oinonen, Fabio Priante, Filippo Federici Canova, Lauri Kurki, Chen Xu, and Adam S. Foster\*, Improving atomic force microscopy structure discovery via style-translation, npj Computational Materials 2025 [pdf](https://arxiv.org/abs/2509.02240)    
+- **Jie Huang**, Niko Oinonen, Fabio Priante, Filippo Federici Canova, Lauri Kurki, Chen Xu, and Adam S. Foster\*, Improving atomic force microscopy structure discovery via style-translation, npj Computational Materials 2025 [pdf](https://arxiv.org/pdf/2509.02240)    
 - Jonas Heggemann, **Jie Huang**, Simon Aeschlimann, Simon Spiller, Adam S Foster\*, and Philipp Rahe\*, Sidestepping Intermolecular Hydrogen Bonds: How Single Water Molecules Adsorb and Assemble on the Calcite (104)-(2x1) Surface, ACS Nano 2025 [pdf](./_static/publications/2025_ACS_Nano.pdf)    
 - Gang Huang and **Jie Huang**\*, Revisiting the thickness of the air-water interface from two extremes of interface hydrogen bond dynamics, [J. Chem. Theory Comput.](https://doi.org/10.1021/acs.jctc.4c00457) 2024. [Codes](https://github.com/hg08/hb_ihb)     
 - **Jie Huang**, Bowen Wang, Hejin Yan and Yongqing Cai\*, Mechanism of interaction of water above MAPbI3 perovskite nanocluster, [J. Phys. Chem. Lett.](https://pubs.acs.org/doi/10.1021/acs.jpclett.3c02807) 15, 2024. [Codes](https://github.com/HuangJiaLian/MAPbI3-Water)  
