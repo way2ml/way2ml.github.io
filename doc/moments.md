@@ -1,7 +1,7 @@
 # Moments
 - 2025.11.20 I played floorball with Voitto Känkänen, Rafael Nuñez Palacio, Laura Fieber, Matthew Herbst, and Anna Kobets.   
 - 2025.11.13 I played floorball with Erik Härkönen, Valtteri Turkki, Anna Kobets, Voitto Känkänen, Matthew Herbst and Nan Cao.  
-- 2025.11.12 We attended the Flight [Sitz](https://en.wikipedia.org/wiki/Sittning), spent a wonderful night. [Photo before the party.](./_static/moments/20251113_guys.png) Pablo, ABC Bulb, MJ, and Theo. Theo told us one of his dreams is to master Japanese, since he likes reading manga. We became friends in Duolingo. [This photo was taken at the end of the party.](./_static/moments/20251113_all.png)
+- 2025.11.12 We attended the Flight [Sitz](https://en.wikipedia.org/wiki/Sittning), spent a wonderful night. <a href="./_static/moments/20251113_guys.png" target="_blank" rel="noopener">[Photo before the party.]</a> Pablo, ABC Bulb, MJ, and Theo. Theo told us that one of his dreams is to master Japanese, as he enjoys reading manga. We became friends in Duolingo. <a href="./_static/moments/20251113_all.png" target="_blank" rel="noopener">[This photo was taken at the end of the party.]</a>
 Checkin, Nostalgia, ABC Bulb, Theo, MJ, Burnout and Pablo.  We were looking pretty hammered (ABC Bulb taught me this word).  
 - 2025 11.11 My neighbour's house was broken into. I learned the kids' names: Summer and Sandy. 
 - 2025.11.10 Theo Nguyen learns how to spin a square cushion. I learned a new word [camel pack](https://en.wikipedia.org/wiki/Hydration_pack) from him. Pablo learns the Chinese 4th tone by pretending to be shot.
