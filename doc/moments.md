@@ -1,4 +1,5 @@
 # Moments
+- 2025.11.22 We went to [Oodi Helsinki Central Library](https://oodihelsinki.fi/en/), then headed for the [sompasauna](https://www.sompasauna.fi/). It's raining and snowing; I jumped into the sea four times. It was amazing. Without them, I would never do such things alone. Thanks, guys. 
 - 2025.11.20 I played floorball with Voitto Känkänen, Rafael Nuñez Palacio, Laura Fieber, Matthew Herbst, and Anna Kobets.   
 - 2025.11.13 I played floorball with Erik Härkönen, Valtteri Turkki, Anna Kobets, Voitto Känkänen, Matthew Herbst and Nan Cao.  
 - 2025.11.12 We attended the Flight [Sitz](https://en.wikipedia.org/wiki/Sittning), spent a wonderful night. <a href="./_static/moments/20251113_guys.png" target="_blank" rel="noopener">[Photo before the party.]</a> Pablo, ABC Bulb, MJ, and Theo. Theo told us that one of his dreams is to master Japanese, as he enjoys reading manga. We became friends in Duolingo. <a href="./_static/moments/20251113_all.png" target="_blank" rel="noopener">[This photo was taken at the end of the party.]</a>
