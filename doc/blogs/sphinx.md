@@ -1,9 +1,9 @@
 ---
-title: How to use sphinx to document my research
+title: How to use Sphinx to document my research
 date: 2025-11-10
 author: Jie Huang
 ---
-# How to use sphinx to document 
+# How to use Sphinx to document 
 
 ## Console
 
@@ -15,7 +15,7 @@ $ sphinx-quickstart
 
 You probably noticed that there's a handy **Copy** button when you hover around the block.
 To enable this feature, you need `pip install sphinx-copybutton`, then enable it in `conf.py`
-by add to extention list.
+by adding to the extension list.
 ```python
 extensions = [
     # ... your other extensions ...
@@ -38,14 +38,14 @@ myst_enable_extensions = [
 math_number_all = True
 ```
 
-This is inline math {math}`E=mc^2`, and here is seperated one as shown in equation {eq}`eq:euler`.
+This is inline math {math}`E=mc^2`, and here is a separated one as shown in equation {eq}`eq:euler`.
 ```{math}
 :label: eq:euler
 e^{i\theta} = \cos(\theta) + i\sin{\theta}
 ```
 
 ## Image with caption
-We can use the following way to add image with caption. The grammar is different from the common markdown format. With `numfig = True` in `conf.py`, figures will be automatically numbered across **all documents** in the toctree (not per-document), and you can reference them using `{numref}`.
+We can use the following way to add an image with a caption. The grammar is different from the common Markdown format. With `numfig = True` in `conf.py`, figures will be automatically numbered across **all documents** in the toctree (not per-document), and you can reference them using `{numref}`.
 
 ```{figure} ../../data/github_workflow/Github-Workflow-2.png
 :name: fig-test
@@ -69,8 +69,8 @@ This is a warning.
 
 ## Citation
 You can cite other papers easily. For example, I published my first
-research paper in 2020, which uses a neural network fit a function
-of structure factor of polymer systems {cite}`Huang2020`. Make sure
+research paper in 2020, which uses a neural network to fit a function
+of the structure factor of polymer systems {cite}`Huang2020`. Make sure
 `conf.py` has the following lines.
 
 ```python
