@@ -92,6 +92,12 @@ prefix + ": Split the window horizontally
 prefix + z: Maximize the current pane
 ```
 
+## How to copy a piece of text in a tmux pane?
+```bash
+Shift (Option in Mac) + (selection text)  # Select and Copy
+Command + V  # Paste 
+```
+
 ## References
 
 
