@@ -6,8 +6,32 @@ author: Jie Huang
 
 # Tmux is your friend
 
-## How to save and restore sessions? 
+## What is tmux?
+Tmux is a terminal multiplexer. It allows you to create several pseudo-terminals from a single terminal. It is useful for running multiple programs with a single connection, such as when you are connecting to a machine using SSH.
 
+## Main concepts
+Tmux has three levels: sessions, windows, and panes. 
+A tmux session is a persistent terminal environment that can contain multiple windows and panes, allowing you to run and manage several processes in a single terminal window. Tmux sessions can help you to manage multiple projects, eg, different sessions can be created for different projects.
+An example using common session commands is as follows.
+
+```bash
+tmux new -s afm # create a new session named 'afm'
+tmux new -s paper_writing # create another session for writing paper.
+tmux switch -t paper_writing # switch to the session 'paper_writing'.
+tmux switch -t afm # switch to the session 'afm'.
+```
+Even you turn off the terminal, you only use 
+```bash
+tmux attach -t afm
+```
+or 
+```bash
+tmux attach -t 0
+```
+Then, all windows, comands, and processes will restore the state you are last time. Note: 0, is the the index of the session you want to reattach.
+
+
+## How to save and restore sessions? 
 ```bash
 # Fix color umatched
 set-option -sa terminal-overrides ",xterm*:Tc"
@@ -58,6 +82,14 @@ Then update the configuration with this command
 
 ```bash
 tmux source-file ~/.tmux.conf
+```
+
+## Useful commands
+
+```bash
+prefix + %: Split the window vertically
+prefix + ": Split the window horizontally
+prefix + z: Maximize the current pane
 ```
 
 ## References
