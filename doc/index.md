@@ -6,15 +6,10 @@ date: 2025-11-09
 # Welcome
 Hi, welcome to my homepage! My name is <a href="_static/docs/jiehuang.pdf" target="_blank" rel="noopener">Jie Huang</a>. 
 I am currently a doctoral researcher in the Surfaces and Interfaces at the Nanoscale ([SIN](https://www.aalto.fi/en/department-of-applied-physics/surfaces-and-interfaces-at-the-nanoscale-sin)) 
-group at the Department of Applied Physics, Aalto University. I use computational methods to study nature.
-
-I enjoy working with computers. I use [Linux Mint](https://linuxmint.com/) by the way. 
-My favourite singers include Michael Jackson, Taylor Swift, S.H.E., and G.E.M. 
-
-Since the website update, older posts written in Chinese are temporarily missing. My past comprehensive posts cover 
+group at the Department of Applied Physics, Aalto University. I use computational methods to study nature. Since the 
+website update, older posts written in Chinese are temporarily missing. My past comprehensive posts cover 
 topics in machine learning, information theory, physics, and more, reflecting my ongoing research journey. 
-Documenting my work helps me deepen my understanding. Now, I want to find the freedom in writing. I'll pay 
-less attention to the accuracy since ideas in my head are more important than the language. 
+
 
 ![](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/screenshot_20251107_223449.png)
 
