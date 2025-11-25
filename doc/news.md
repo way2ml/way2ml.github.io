@@ -13,4 +13,3 @@
 - 2022.08.08 Jie starts his role as a research assistant in [Prof. Yongqing Cai](https://iapme.um.edu.mo/staff/academic-staff/cai-yongqing/)'s group at the [IAPME](https://iapme.um.edu.mo/), [University of Macau](https://www.um.edu.mo/).  
 - 2021.09.01 Jie completes his master's degree at [Wenzhou University](https://www.wzu.edu.cn/en/About.htm) with [honors](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uPic/2022_06_17_01_Jack.png), under the guidance of [Prof. Shiben Li](https://slxy.wzu.edu.cn/lishiben.pdf).
 
-![](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/screenshot_20251107_223449.png)
