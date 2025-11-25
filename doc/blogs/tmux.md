@@ -54,6 +54,12 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
 ```
+3) Reload TMUX environment so TPM is sourced:
+```bash
+# type this in terminal if tmux is already running
+tmux source ~/.tmux.conf
+```
+Done.
 
 ```bash
 # Fix color umatched
