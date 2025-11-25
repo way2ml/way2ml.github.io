@@ -14,13 +14,10 @@ Checkin, Nostalgia, ABC Bulb, Theo, MJ, Burnout and Pablo.  We were looking pret
 - 2019.01.31 [Way To Machine Learning](https://way2ml.github.io/) is launched in [Chengdu](https://goo.gl/maps/Hjto2WtzYHeCBsmQ9), China.  
 
 <iframe
-    src="//music.163.com/outchain/player?type=4&id=348244114&auto=0&height=430"
+    src="//music.163.com/outchain/player?type=4&id=348244114&auto=0&height=300"
     frameborder="0"
     marginwidth="0"
     marginheight="0"
     width="100%"
-    height="430">
+    height="300">
 </iframe>
-
-
-![](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/screenshot_20251107_223449.png)
