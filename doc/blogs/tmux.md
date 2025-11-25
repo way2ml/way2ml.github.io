@@ -13,17 +13,18 @@ Tmux is a terminal multiplexer. It allows you to create several pseudo-terminals
 ## Main concepts
 Tmux has three levels: sessions, windows, and panes. 
 A tmux session is a persistent terminal environment that can contain multiple windows and panes, allowing you to run and manage several processes in a single terminal window. Tmux sessions can help you to manage multiple projects, eg, different sessions can be created for different projects.
-An example using common session commands is as follows.
+
+Common session commands are as follows.
 
 ```bash
 tmux new -s afm # create a new session named 'afm'
-tmux new -s paper_writing # create another session for writing paper.
+tmux new -s paper_writing # create another session for writing a paper.
 tmux switch -t paper_writing # switch to the session 'paper_writing'.
 tmux switch -t afm # switch to the session 'afm'.
 ```
 Even you turn off the terminal, you only use 
 ```bash
-tmux attach -t afm
+tmux attach -t afm # reattach the session 'afm'
 ```
 or 
 ```bash
@@ -31,6 +32,12 @@ tmux attach -t 0
 ```
 Then, all windows, comands, and processes will restore the state where you were at last time. Note: Here，0, is the index of the session you want to reattach.
 
+Some other useful session commands are:
+```bash
+tmux ls # list the sessions
+tmux kill-session -t mysession # kill the session named 'mysession'
+tmux rename-session -t old new # Rename the old session to a new session name.
+```
 
 ## How to save and restore sessions? 
 
