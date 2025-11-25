@@ -29,10 +29,32 @@ or
 ```bash
 tmux attach -t 0
 ```
-Then, all windows, comands, and processes will restore the state you are last time. Note: 0, is the the index of the session you want to reattach.
+Then, all windows, comands, and processes will restore the state where you were at last time. Note: Here，0, is the index of the session you want to reattach.
 
 
 ## How to save and restore sessions? 
+
+1) First, install TPM, Tmux Plugin Manager.
+Requirements: tmux version 1.9 (or higher), git, bash.
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+2) Put this at the bottom of `~/.tmux.conf`:
+```bash
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'github_username/plugin_name#branch'
+# set -g @plugin 'git@github.com:user/plugin'
+# set -g @plugin 'git@bitbucket.com:user/plugin'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+```
+
 ```bash
 # Fix color umatched
 set-option -sa terminal-overrides ",xterm*:Tc"
