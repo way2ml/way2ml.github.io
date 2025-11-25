@@ -59,7 +59,7 @@ run '~/.tmux/plugins/tpm/tpm'
 # type this in terminal if tmux is already running
 tmux source ~/.tmux.conf
 ```
-Done.
+TPM is installed.
 
 ```bash
 # Fix color umatched
