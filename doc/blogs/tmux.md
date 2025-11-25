@@ -60,6 +60,7 @@ run '~/.tmux/plugins/tpm/tpm'
 tmux source ~/.tmux.conf
 ```
 TPM is installed.
+Then, hit prefix + I to fetch the plugin and source it. We should now be able to use the plugin.
 
 ```bash
 # Fix color umatched
