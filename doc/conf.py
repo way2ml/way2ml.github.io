@@ -69,6 +69,7 @@ myst_substitutions = {}
 def setup(app):
     app.add_css_file('custom.css')
     app.add_js_file('article-metadata.js')
+    app.add_js_file('lightbox.js')
     
     # Add a function to process page metadata from MyST front matter
     def add_metadata_to_context(app, pagename, templatename, context, doctree):
