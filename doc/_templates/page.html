@@ -10,6 +10,11 @@
       <meta name="article-author" content="{{ meta.get('author') }}" />
     {% endif %}
   {% endif %}
+  <meta name="github-user" content="{{ github_user }}" />
+  <meta name="github-repo" content="{{ github_repo }}" />
+  <meta name="github-branch" content="{{ github_version }}" />
+  <meta name="doc-path" content="{{ doc_path }}" />
+  <meta name="page-name" content="{{ pagename }}" />
 {% endblock %}
 
 {% block article %}

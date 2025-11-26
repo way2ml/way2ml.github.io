@@ -154,6 +154,7 @@ html_theme_options = {
     ],
     "navbar_end": ["navbar-icon-links"],  # ensures they go top right
     "use_edit_page_button": True, 
+    "secondary_sidebar_items": [], # Remove right sidebar
 }
 
 
