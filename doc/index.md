@@ -1,8 +1,3 @@
----
-title: Welcome
-author: Jie Huang
-date: 2025-11-09
----
 # Welcome
 Hi, welcome to my homepage! My name is <a href="_static/docs/jiehuang.pdf" target="_blank" rel="noopener">Jie Huang</a>. 
 I am currently a doctoral researcher in the Surfaces and Interfaces at the Nanoscale ([SIN](https://www.aalto.fi/en/department-of-applied-physics/surfaces-and-interfaces-at-the-nanoscale-sin)) 
