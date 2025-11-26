@@ -4,7 +4,7 @@ date: 2025-11-10
 author: Jie Huang, Gang Huang
 ---
 
-# Tmux is your friend
+# Tmux is your good friend
 ![](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/screenshot_20251124_184829.png)
 
 ## What is tmux?
