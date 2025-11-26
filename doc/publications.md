@@ -11,5 +11,7 @@
 - A machine learning model to classify dynamic processes in liquid water - Jie Huang, Gang Huang, and Shiben Li
   - ChemPhysChem, 23 (2022) 42 <a href="./_static/publications/2021_CPC_cover.pdf" target="_blank" rel="noopener">[cover]</a> <a href="./_static/publications/2021_CPC.pdf" target="_blank" rel="noopener">[pdf]</a>  
 - Neural network model for structure factor of polymer systems - Jie Huang, Shiben Li, Xinghua Zhang, and Gang Huang 
-  - J. Chem. Phys. 153 (2020) 124902 <a href="https://github.com/HuangJiaLian/NN_For_Structure_Factor" target="_blank" rel="noopener">[code]</a> <a href="./_static/publications/2020_JCP.pdf" target="_blank" rel="noopener">[pdf]</a>   
+  - J. Chem. Phys. 153 (2020) 124902 <a href="https://github.com/HuangJiaLian/NN_For_Structure_Factor" target="_blank" rel="noopener">[code]</a> <a href="./_static/publications/2020_JCP.pdf" target="_blank" rel="noopener">[pdf]</a>
+
+![](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/screenshot_20251126_235229.png)
 
