@@ -88,10 +88,10 @@ main {
   flex-direction: row !important;
   align-items: center !important;
   padding: 0 !important;
-  margin: 0 0 0.5rem 0 !important;
+  margin: 0 !important;
   border: none !important;
   background: transparent !important;
-  gap: 0.75rem !important;
+  gap: 0.5rem !important;
 }
 
 /* Hide the "X reactions" title */
@@ -99,9 +99,10 @@ main {
   display: none !important;
 }
 
-/* Make reaction buttons row inline */
+/* Make reaction buttons row inline - remove margin */
 .gsc-reactions > div {
   margin-top: 0 !important;
+  margin-bottom: 0 !important;
   justify-content: flex-start !important;
 }
 
