@@ -19,51 +19,51 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // --- Handle Metadata (Date/Author) and Edit Link ---
-  var metaDiv = null;
+  var metaDiv = document.createElement('div');
+  metaDiv.className = 'article-metadata';
   
-  if (dateEl || authorEl) {
-      metaDiv = document.createElement('div');
-      metaDiv.className = 'article-metadata';
-      
-      var formatted = [];
-      if (dateEl) {
-        var isoDate = dateEl.getAttribute('content');
-        var parsedDate = new Date(isoDate);
-        if (!Number.isNaN(parsedDate.valueOf())) {
-          formatted.push(
-            'Published: ' +
-              parsedDate.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })
-          );
-        } else {
-          formatted.push('Published: ' + isoDate);
-        }
-      }
+  var formatted = [];
+  
+  // Add date if available
+  if (dateEl) {
+    var isoDate = dateEl.getAttribute('content');
+    var parsedDate = new Date(isoDate);
+    if (!Number.isNaN(parsedDate.valueOf())) {
+      formatted.push(
+        'Published: ' +
+          parsedDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })
+      );
+    } else {
+      formatted.push('Published: ' + isoDate);
+    }
+  }
 
-      if (authorEl) {
-        formatted.push('By ' + authorEl.getAttribute('content'));
-      }
+  // Add author if available
+  if (authorEl) {
+    formatted.push('By ' + authorEl.getAttribute('content'));
+  }
 
-      // Add Edit on GitHub link inline
-      if (githubUserEl && githubRepoEl && githubBranchEl && docPathEl && pageNameEl) {
-        var user = githubUserEl.getAttribute('content');
-        var repo = githubRepoEl.getAttribute('content');
-        var branch = githubBranchEl.getAttribute('content');
-        var docPath = docPathEl.getAttribute('content');
-        var pageName = pageNameEl.getAttribute('content');
-        
-        var extension = '.md'; 
-        var url = `https://github.com/${user}/${repo}/edit/${branch}/${docPath}/${pageName}${extension}`;
-        
-        formatted.push(`<a href="${url}" target="_blank" rel="noopener noreferrer" class="edit-link"><i class="fab fa-github"></i> Edit this page on GitHub</a>`);
-      }
+  // Always add Edit on GitHub link if we have the required info
+  if (githubUserEl && githubRepoEl && githubBranchEl && docPathEl && pageNameEl) {
+    var user = githubUserEl.getAttribute('content');
+    var repo = githubRepoEl.getAttribute('content');
+    var branch = githubBranchEl.getAttribute('content');
+    var docPath = docPathEl.getAttribute('content');
+    var pageName = pageNameEl.getAttribute('content');
+    
+    var extension = '.md'; 
+    var url = `https://github.com/${user}/${repo}/edit/${branch}/${docPath}/${pageName}${extension}`;
+    
+    formatted.push(`<a href="${url}" target="_blank" rel="noopener noreferrer" class="edit-link"><i class="fab fa-github"></i> Edit this page on GitHub</a>`);
+  }
 
-      if (formatted.length > 0) {
-        metaDiv.innerHTML = formatted.join(' • ');
-        heading.insertAdjacentElement('afterend', metaDiv);
-      }
+  // Only insert if we have something to show
+  if (formatted.length > 0) {
+    metaDiv.innerHTML = formatted.join(' • ');
+    heading.insertAdjacentElement('afterend', metaDiv);
   }
 });
