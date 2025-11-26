@@ -23,6 +23,7 @@ extensions = [
     'myst_parser', 
     'sphinx.ext.mathjax', 
     'sphinx_tabs.tabs',
+    'sphinx_copybutton',
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.bibtex',
     'per_page_numfig',  # Custom extension for per-document figure numbering
