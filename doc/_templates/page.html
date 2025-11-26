@@ -19,6 +19,10 @@
 
 {% block article %}
   {{ super() }}
+{% endblock %}
+
+{% block docs_body %}
+  {{ super() }}
   
   {# Giscus Comments Section - only show if comment: True in front matter #}
   {% if meta and meta.get('comment') %}

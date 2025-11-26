@@ -60,17 +60,14 @@ def setup(app):
     
     # Add a function to process page metadata from MyST front matter
     def add_metadata_to_context(app, pagename, templatename, context, doctree):
-        if doctree is not None:
-            # Get metadata from docinfo which is where MyST stores front matter
-            metadata = {}
-            if hasattr(doctree, 'settings') and hasattr(doctree.settings, 'env'):
-                env = doctree.settings.env
-                if hasattr(env, 'metadata') and pagename in env.metadata:
-                    metadata = env.metadata[pagename]
-            
-            # Make metadata available in templates
-            if metadata:
-                context['meta'] = metadata
+        # Get metadata from the build environment
+        metadata = {}
+        env = app.builder.env
+        if hasattr(env, 'metadata') and pagename in env.metadata:
+            metadata = dict(env.metadata[pagename])
+        
+        # Make metadata available in templates
+        context['meta'] = metadata
     
     app.connect('html-page-context', add_metadata_to_context)
 
