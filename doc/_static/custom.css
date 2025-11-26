@@ -129,3 +129,21 @@ figure img {
     color: #0366d6;
     text-decoration: underline;
 }
+
+/* Header navbar - align logo text with main content */
+.bd-header__inner {
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 1.5rem !important;
+}
+
+/* Move logo image to the left so the text aligns with content */
+.navbar-brand.logo {
+    margin-left: -1.1rem !important; /* Push logo left so text aligns */
+}
+
+.navbar-brand.logo .logo__image {
+    margin-right: 0.5rem;
+}
