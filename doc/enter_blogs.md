@@ -1,6 +1,10 @@
+---
+comment: True
+---
 # Blogs
-Here are all the blogs, including all the tools I use in my daily life. It's hard to cover everything in a topic. So my approach is to document while I use them, and keep
-updating along the way. 
+Here you'll find all my blogs, along with the tools I rely on in my daily work and life. It’s impossible to cover everything at once, 
+so my approach is to document things as I use them and keep refining along the way. If you come across any interesting tools or topics, 
+feel free to share them in the comments. I would really appreciate it.
 
 ```{toctree}
 :maxdepth: 1
