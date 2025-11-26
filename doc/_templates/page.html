@@ -28,15 +28,7 @@
   {% if meta and meta.get('comment') %}
   <article class="bd-article">
     <div class="giscus-container" style="margin-top: 2rem;">
-      <div class="giscus-header">
-        <span class="giscus-title">Comments 💬</span>
-        <span class="giscus-stats">
-          <span id="giscus-comment-count">0 comments</span>,
-          <span id="giscus-reaction-count">0 reactions</span>
-          <span id="giscus-reactions"></span>
-          — <a href="https://giscus.app" target="_blank" rel="noopener noreferrer">powered by giscus</a>
-        </span>
-      </div>
+      <h2 style="margin-bottom: 1rem;">Comments 💬</h2>
       <script src="https://giscus.app/client.js"
               data-repo="way2ml/comments"
               data-repo-id="R_kgDOGRwKvQ"
@@ -45,54 +37,13 @@
               data-mapping="pathname"
               data-strict="0"
               data-reactions-enabled="1"
-              data-emit-metadata="1"
+              data-emit-metadata="0"
               data-input-position="top"
-              data-theme="preferred_color_scheme"
+              data-theme="https://way2ml.github.io/_static/giscus-custom.css"
               data-lang="en"
               data-loading="lazy"
               crossorigin="anonymous"
               async>
-      </script>
-      <script>
-        window.addEventListener('message', function(event) {
-          if (event.origin !== 'https://giscus.app') return;
-          if (!(typeof event.data === 'object' && event.data.giscus)) return;
-          
-          var giscusData = event.data.giscus;
-          if ('discussion' in giscusData) {
-            var discussion = giscusData.discussion;
-            
-            // Update comment count
-            var commentCount = discussion.totalCommentCount || 0;
-            var commentEl = document.getElementById('giscus-comment-count');
-            if (commentEl) {
-              commentEl.textContent = commentCount + (commentCount === 1 ? ' comment' : ' comments');
-            }
-            
-            // Update reaction count and icons
-            var reactions = discussion.reactions || {};
-            var totalReactions = reactions.totalCount || 0;
-            var reactionCountEl = document.getElementById('giscus-reaction-count');
-            if (reactionCountEl) {
-              reactionCountEl.textContent = totalReactions + (totalReactions === 1 ? ' reaction' : ' reactions');
-            }
-            
-            // Show reaction icons
-            var reactionsEl = document.getElementById('giscus-reactions');
-            if (reactionsEl && reactions) {
-              var icons = [];
-              if (reactions.THUMBS_UP > 0) icons.push('👍' + reactions.THUMBS_UP);
-              if (reactions.THUMBS_DOWN > 0) icons.push('👎' + reactions.THUMBS_DOWN);
-              if (reactions.LAUGH > 0) icons.push('😄' + reactions.LAUGH);
-              if (reactions.HOORAY > 0) icons.push('🎉' + reactions.HOORAY);
-              if (reactions.CONFUSED > 0) icons.push('😕' + reactions.CONFUSED);
-              if (reactions.HEART > 0) icons.push('❤️' + reactions.HEART);
-              if (reactions.ROCKET > 0) icons.push('🚀' + reactions.ROCKET);
-              if (reactions.EYES > 0) icons.push('👀' + reactions.EYES);
-              reactionsEl.textContent = icons.length > 0 ? ' ' + icons.join(' ') : '';
-            }
-          }
-        });
       </script>
     </div>
   </article>
