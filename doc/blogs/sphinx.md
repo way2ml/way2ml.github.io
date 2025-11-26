@@ -96,7 +96,7 @@ bibtex_bibfiles = ["ref.bib"]
 
 
 
-**References**
+## References
 
 ```{bibliography}
 :style: unsrt
