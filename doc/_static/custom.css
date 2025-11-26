@@ -1,23 +1,5 @@
 /* Custom CSS to increase main content width and center align */
 
-:root,
-html:not([data-theme]),
-html[data-theme="light"] {
-    --pst-color-secondary: #111111;
-    --pst-color-secondary-highlight: #000000;
-    --pst-color-secondary-text: #f1f1f1;
-    --pst-color-secondary-highlight-text: #f1f1f1;
-    --pst-color-link-hover: #000000;
-}
-
-html[data-theme="dark"] {
-    --pst-color-secondary: #f5f5f5;
-    --pst-color-secondary-highlight: #ffffff;
-    --pst-color-secondary-text: #14181e;
-    --pst-color-secondary-highlight-text: #14181e;
-    --pst-color-link-hover: #f5f5f5;
-}
-
 /* Increase the max-width of the main content area */
 .bd-main .bd-content {
     max-width: 100% !important;
@@ -137,7 +119,7 @@ figure img {
 }
 
 .article-metadata .edit-link:hover {
-    color: #000000;
+    color: #0366d6;
     text-decoration: underline;
 }
 
@@ -168,32 +150,6 @@ figure img {
     padding-right: 1rem !important;
 }
 
-/* Header hover overrides */
-.bd-header a:hover,
-.bd-header a:focus,
-.bd-header button:hover,
-.bd-header button:focus {
-    color: #000000 !important;
-}
-
-/* Heading anchor hover override */
-.bd-article .headerlink,
-.bd-article .toc-backref {
-    color: #111111 !important;
-}
-
-.bd-article .headerlink:visited,
-.bd-article .toc-backref:visited {
-    color: #111111 !important;
-}
-
-.bd-article .headerlink:hover,
-.bd-article .headerlink:focus,
-.bd-article .toc-backref:hover,
-.bd-article .toc-backref:focus {
-    color: #000000 !important;
-}
-
 /* Giscus comment header styling */
 .giscus-header {
     display: flex;
@@ -220,7 +176,7 @@ figure img {
 }
 
 .giscus-stats a:hover {
-    color: #000000;
+    color: #0366d6;
     text-decoration: underline;
 }
 
