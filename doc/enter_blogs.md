@@ -1,6 +1,3 @@
----
-comment: True
----
 # Blogs
 ```{toctree}
 :maxdepth: 1
