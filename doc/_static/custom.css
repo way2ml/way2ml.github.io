@@ -113,21 +113,18 @@ figure img {
     font-style: normal !important;
 }
 
-.article-footer-edit {
-    margin-top: 0rem;
-    padding-top: 0rem;
-    text-align: left;
-}
-
-.article-footer-edit a {
+.article-metadata .edit-link {
     color: #586069;
     text-decoration: none;
-    font-size: 0.9em;
 }
 
-.article-footer-edit a:hover {
+.article-metadata .edit-link:hover {
     color: #0366d6;
     text-decoration: underline;
+}
+
+.article-metadata .edit-link i {
+    margin-right: 3px;
 }
 
 /* Header navbar - align logo text with main content */
@@ -136,7 +133,7 @@ figure img {
     margin-left: auto !important;
     margin-right: auto !important;
     padding-left: 0 !important;
-    padding-right: 1.5rem !important;
+    padding-right: 0 !important;
 }
 
 /* Move logo image to the left so the text aligns with content */
@@ -146,4 +143,9 @@ figure img {
 
 .navbar-brand.logo .logo__image {
     margin-right: 0.5rem;
+}
+
+/* Align navbar icon links with main content on the right */
+.navbar-header-items__end {
+    padding-right: 1rem !important;
 }
