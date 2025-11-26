@@ -24,6 +24,20 @@ document.addEventListener('DOMContentLoaded', function () {
   
   var formatted = [];
   
+  // Always add Edit on GitHub link FIRST if we have the required info
+  if (githubUserEl && githubRepoEl && githubBranchEl && docPathEl && pageNameEl) {
+    var user = githubUserEl.getAttribute('content');
+    var repo = githubRepoEl.getAttribute('content');
+    var branch = githubBranchEl.getAttribute('content');
+    var docPath = docPathEl.getAttribute('content');
+    var pageName = pageNameEl.getAttribute('content');
+    
+    var extension = '.md'; 
+    var url = `https://github.com/${user}/${repo}/edit/${branch}/${docPath}/${pageName}${extension}`;
+    
+    formatted.push(`<a href="${url}" target="_blank" rel="noopener noreferrer" class="edit-link"><i class="fab fa-github"></i> Edit this page on GitHub</a>`);
+  }
+
   // Add date if available
   if (dateEl) {
     var isoDate = dateEl.getAttribute('content');
@@ -45,20 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Add author if available
   if (authorEl) {
     formatted.push('By ' + authorEl.getAttribute('content'));
-  }
-
-  // Always add Edit on GitHub link if we have the required info
-  if (githubUserEl && githubRepoEl && githubBranchEl && docPathEl && pageNameEl) {
-    var user = githubUserEl.getAttribute('content');
-    var repo = githubRepoEl.getAttribute('content');
-    var branch = githubBranchEl.getAttribute('content');
-    var docPath = docPathEl.getAttribute('content');
-    var pageName = pageNameEl.getAttribute('content');
-    
-    var extension = '.md'; 
-    var url = `https://github.com/${user}/${repo}/edit/${branch}/${docPath}/${pageName}${extension}`;
-    
-    formatted.push(`<a href="${url}" target="_blank" rel="noopener noreferrer" class="edit-link"><i class="fab fa-github"></i> Edit this page on GitHub</a>`);
   }
 
   // Only insert if we have something to show
