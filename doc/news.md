@@ -1,5 +1,5 @@
 ---
-comment: True
+comment: False
 ---
 # News 
 - 2025.11.01 Our work about improving structure discvery of AFM images ([arxiv 2509.02240](https://arxiv.org/abs/2509.02240)) is accepted by [npj Computational Materials](https://www.nature.com/npjcompumats/).  
