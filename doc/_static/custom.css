@@ -38,14 +38,20 @@ article.bd-article {
     font-style: italic;
 }
 
-/* Footer inline layout - centered */
+/* Footer inline layout - left aligned */
 .bd-footer__inner {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* center content horizontally */
+    justify-content: flex-start; /* align content to the left */
     align-items: center;
     gap: 0.5rem;
-    text-align: center;
+    text-align: left;
+    width: 100%;
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 3rem !important; /* 1rem container + 2rem article padding */
+    padding-right: 1.5rem !important;
 }
 
 .bd-footer__inner .footer-items__start,
@@ -67,7 +73,6 @@ article.bd-article {
 .bd-header-article {
     display: none !important;
 }
-
 
 /* Ensure content doesn't get too wide on very large screens */
 @media (min-width: 1200px) {
@@ -106,4 +111,21 @@ figure img {
 .caption-number {
     font-weight: bold !important;
     font-style: normal !important;
+}
+
+.article-footer-edit {
+    margin-top: 0rem;
+    padding-top: 0rem;
+    text-align: left;
+}
+
+.article-footer-edit a {
+    color: #586069;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.article-footer-edit a:hover {
+    color: #0366d6;
+    text-decoration: underline;
 }

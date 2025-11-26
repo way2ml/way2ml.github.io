@@ -8,13 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var docPathEl = document.querySelector('meta[name="doc-path"]');
   var pageNameEl = document.querySelector('meta[name="page-name"]');
 
-  var hasMetadata = dateEl || authorEl;
-  var hasGithub = githubUserEl && githubRepoEl && githubBranchEl && docPathEl && pageNameEl;
-
-  if (!hasMetadata && !hasGithub) {
-    return;
-  }
-
   var article = document.querySelector('article.bd-article');
   if (!article) {
     return;
@@ -25,44 +18,41 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  var metaDiv = document.createElement('div');
-  metaDiv.className = 'article-metadata';
+  // --- Handle Metadata (Date/Author) ---
+  if (dateEl || authorEl) {
+      var metaDiv = document.createElement('div');
+      metaDiv.className = 'article-metadata';
+      
+      var formatted = [];
+      if (dateEl) {
+        var isoDate = dateEl.getAttribute('content');
+        var parsedDate = new Date(isoDate);
+        if (!Number.isNaN(parsedDate.valueOf())) {
+          formatted.push(
+            'Published: ' +
+              parsedDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })
+          );
+        } else {
+          formatted.push('Published: ' + isoDate);
+        }
+      }
 
-  var formatted = [];
-  if (dateEl) {
-    var isoDate = dateEl.getAttribute('content');
-    var parsedDate = new Date(isoDate);
-    if (!Number.isNaN(parsedDate.valueOf())) {
-      formatted.push(
-        'Published: ' +
-          parsedDate.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          })
-      );
-    } else {
-      formatted.push('Published: ' + isoDate);
-    }
+      if (authorEl) {
+        formatted.push('By ' + authorEl.getAttribute('content'));
+      }
+
+      if (formatted.length > 0) {
+        metaDiv.textContent = formatted.join(' • ');
+        heading.insertAdjacentElement('afterend', metaDiv);
+      }
   }
 
-  if (authorEl) {
-    formatted.push('By ' + authorEl.getAttribute('content'));
-  }
-
-  if (formatted.length > 0) {
-    var textSpan = document.createElement('span');
-    textSpan.textContent = formatted.join(' • ');
-    metaDiv.appendChild(textSpan);
-  }
-
-  if (hasGithub) {
-    if (formatted.length > 0) {
-        var separator = document.createElement('span');
-        separator.textContent = ' • ';
-        metaDiv.appendChild(separator);
-    }
-    
+  // --- Handle Edit on GitHub (Bottom of page) ---
+  if (githubUserEl && githubRepoEl && githubBranchEl && docPathEl && pageNameEl) {
     var user = githubUserEl.getAttribute('content');
     var repo = githubRepoEl.getAttribute('content');
     var branch = githubBranchEl.getAttribute('content');
@@ -70,18 +60,25 @@ document.addEventListener('DOMContentLoaded', function () {
     var pageName = pageNameEl.getAttribute('content');
     
     // Construct URL
-    // Assuming .md for now as per user context
     var extension = '.md'; 
     var url = `https://github.com/${user}/${repo}/edit/${branch}/${docPath}/${pageName}${extension}`;
     
+    var editDiv = document.createElement('div');
+    editDiv.className = 'article-footer-edit';
+    
     var link = document.createElement('a');
     link.href = url;
-    link.textContent = 'Edit on GitHub';
+    link.textContent = 'Edit this page on GitHub';
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
     
-    metaDiv.appendChild(link);
+    // Add an icon
+    var icon = document.createElement('i');
+    icon.className = 'fab fa-github';
+    icon.style.marginRight = '5px';
+    link.prepend(icon);
+    
+    editDiv.appendChild(link);
+    article.appendChild(editDiv);
   }
-
-  heading.insertAdjacentElement('afterend', metaDiv);
 });

@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Way To Machine Learning'
-copyright = '2025, Jie Huang'
+copyright = '2025, Way To Machine Learning'
 author = 'Jie Huang'
 release = '0.0.1'
 
