@@ -24,7 +24,7 @@ extensions = [
 ]
 ```
 
-## Latex equations
+## Latex equation
 Make sure the `conf.py` file has this setting, which will auto-number the equations.
 ```bash
 extensions = [
@@ -45,7 +45,7 @@ $$
 e^{i\theta} = \cos(\theta) + i\sin{\theta}
 $$ (eq:euler)
 
-You can also use inline dollar symbol to write equation like this $a^2 + b^2 = c^2$, or seperated 
+You can also use an inline dollar symbol to write an equation like this $a^2 + b^2 = c^2$, or separated 
 equations like this. 
 
 $$
@@ -67,7 +67,7 @@ This is a test to add an image with a caption.
 ```
 As shown in {numref}`fig-test`, the figure is automatically numbered. Note that Sphinx numbers figures continuously across all documents in your documentation (like chapters in a book), so this might not be Figure 1 if there are figures in earlier documents.
 
-## Information boxes
+## Information box
 :::{note}
 This is a note.
 :::
