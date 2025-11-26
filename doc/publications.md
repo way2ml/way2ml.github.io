@@ -1,6 +1,3 @@
----
-comment: False
----
 # Publications
 
 - Improving atomic force microscopy structure discovery via style-translation - Jie Huang, Niko Oinonen, Fabio Priante, Filippo Federici Canova, Lauri Kurki, Chen Xu, and Adam S. Foster
