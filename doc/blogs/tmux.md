@@ -2,6 +2,7 @@
 title: How to use tmux to smooth my workflow
 date: 2025-11-10
 author: Jie Huang, Gang Huang
+comment: True
 ---
 
 # Tmux is your good friend
