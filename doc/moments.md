@@ -13,6 +13,7 @@ comment: True
     width="100%"
     height="300">
 </iframe>
+
 - 2025.11.22 We went to [Oodi Helsinki Central Library](https://oodihelsinki.fi/en/), then headed for the [sompasauna](https://www.sompasauna.fi/). It's raining and snowing; I jumped into the sea four times. It was amazing. Without them, I would never do such things alone. Thanks, guys. 
 - 2025.11.20 I played floorball with Voitto Känkänen, Rafael Nuñez Palacio, Laura Fieber, Matthew Herbst, and Anna Kobets.   
 - 2025.11.13 I played floorball with Erik Härkönen, Valtteri Turkki, Anna Kobets, Voitto Känkänen, Matthew Herbst and Nan Cao.  
