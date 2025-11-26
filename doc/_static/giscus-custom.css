@@ -69,55 +69,78 @@ main {
   --color-danger-emphasis: #cf222e;
   --color-done-fg: #8250df;
   --color-neutral-emphasis-plus: #24292f;
+  --color-social-reaction-bg-hover: var(--color-scale-gray-1, #eaeef2);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-1, #b6e3ff);
 }
 
-/* === Custom layout: all in one line === */
+/* === Custom layout: everything in one line === */
 
-/* Make reactions section inline */
+/* Make the main container a flex row */
+.gsc-main {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Reactions section - inline, no border/background */
 .gsc-reactions {
+  order: -1 !important;
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
   padding: 0 !important;
-  margin: 0 !important;
+  margin: 0 0 0.5rem 0 !important;
   border: none !important;
   background: transparent !important;
+  gap: 0.75rem !important;
 }
 
-/* Hide the "X reactions" title text */
-.gsc-reactions .gsc-reactions-count {
+/* Hide the "X reactions" title */
+.gsc-reactions-count {
   display: none !important;
 }
 
-/* Make reaction buttons inline and smaller */
-.gsc-reactions .gsc-reactions-buttons {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 0.25rem !important;
+/* Make reaction buttons row inline */
+.gsc-reactions > div {
+  margin-top: 0 !important;
   justify-content: flex-start !important;
 }
 
-.gsc-reactions .gsc-social-reaction-summary-item {
-  padding: 2px 8px !important;
-  font-size: 0.85em !important;
-}
-
-/* Style the main header area to be inline */
-.gsc-comments > .gsc-header {
+/* Comments header - make it inline with reactions */
+.gsc-header {
   display: flex !important;
   flex-wrap: wrap !important;
   align-items: center !important;
-  gap: 0.75rem !important;
-  margin-bottom: 1rem !important;
+  gap: 0.5rem !important;
 }
 
-/* Comment count styling */
+.gsc-left-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+/* Comment count */
 .gsc-comments-count {
-  font-weight: normal !important;
+  margin: 0 !important;
+  font-size: 1rem !important;
+}
+
+/* Separator dot */
+.gsc-comments-count-separator {
   margin: 0 !important;
 }
 
-/* Keep sorting buttons on the right */
-.gsc-header-buttons {
+/* Replies count */
+.gsc-replies-count {
+  margin: 0 !important;
+}
+
+/* "powered by giscus" text */
+.gsc-left-header > em {
+  margin-left: 0.25rem !important;
+}
+
+/* Sort buttons on the right */
+.gsc-right-header {
   margin-left: auto !important;
 }
