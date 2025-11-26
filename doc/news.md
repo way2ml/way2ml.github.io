@@ -1,6 +1,3 @@
----
-comment: False
----
 # News 
 - 2025.11.01 Our work about improving structure discvery of AFM images ([arxiv 2509.02240](https://arxiv.org/abs/2509.02240)) is accepted by [npj Computational Materials](https://www.nature.com/npjcompumats/).  
 - 2025.08.07 Jie contributes a talk at [NCAFM-2025 conference](https://www.nims.go.jp/group/Nanoprobe/NC-AFM2025/Index.html) in Toyama, Japan. [View abstract](https://www.nims.go.jp/group/Nanoprobe/NC-AFM2025/Abstract/S11-2_Jie%20Huang.pdf) or [slides](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/NCAFM_Jie_Huang.pdf).     
