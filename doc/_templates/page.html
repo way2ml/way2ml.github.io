@@ -26,25 +26,27 @@
   
   {# Giscus Comments Section - only show if comment: True in front matter #}
   {% if meta and meta.get('comment') %}
-  <div class="giscus-container" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--pst-color-border);">
-    <h2 style="margin-bottom: 1rem;">💬 Comments</h2>
-    <script src="https://giscus.app/client.js"
-            data-repo="way2ml/comments"
-            data-repo-id="R_kgDOGRwKvQ"
-            data-category="General"
-            data-category-id="DIC_kwDOGRwKvc4ChuA7"
-            data-mapping="pathname"
-            data-strict="0"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="top"
-            data-theme="preferred_color_scheme"
-            data-lang="en"
-            data-loading="lazy"
-            crossorigin="anonymous"
-            async>
-    </script>
-  </div>
+  <article class="bd-article">
+    <div class="giscus-container" style="margin-top: 2rem;">
+      <h2 style="margin-bottom: 1rem;">Comments 💬</h2>
+      <script src="https://giscus.app/client.js"
+              data-repo="way2ml/comments"
+              data-repo-id="R_kgDOGRwKvQ"
+              data-category="General"
+              data-category-id="DIC_kwDOGRwKvc4ChuA7"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="preferred_color_scheme"
+              data-lang="en"
+              data-loading="lazy"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+  </article>
   {% endif %}
 {% endblock %}
 
