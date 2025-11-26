@@ -1,0 +1,19 @@
+{% extends "!page.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {% if meta %}
+    {% if meta.get('date') %}
+      <meta name="article-date" content="{{ meta.get('date') }}" />
+    {% endif %}
+    {% if meta.get('author') %}
+      <meta name="article-author" content="{{ meta.get('author') }}" />
+    {% endif %}
+  {% endif %}
+{% endblock %}
+
+{% block article %}
+  {{ super() }}
+{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
