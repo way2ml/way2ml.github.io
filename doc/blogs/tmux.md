@@ -13,7 +13,7 @@ Tmux is a terminal multiplexer. It allows you to create several pseudo-terminals
 
 ## Main concepts
 Tmux has three levels: sessions, windows, and panes. 
-A tmux session is a persistent terminal environment that can contain multiple windows and panes, allowing you to run and manage several processes in a single terminal window. Tmux sessions can help you to manage multiple projects, eg, different sessions can be created for different projects.
+A tmux session is a persistent terminal environment that can contain multiple windows and panes, allowing you to run and manage several processes in a single terminal window. Tmux sessions can help you manage multiple projects, eg, different sessions can be created for different projects.
 
 Common session commands are as follows.
 
@@ -23,7 +23,7 @@ tmux new -s paper_writing # create another session for writing a paper.
 tmux switch -t paper_writing # switch to the session 'paper_writing'.
 tmux switch -t afm # switch to the session 'afm'.
 ```
-Even you turn off the terminal, you only use 
+Even if you turn off the terminal, you only use 
 ```bash
 tmux attach -t afm # reattach the session 'afm'
 ```
@@ -31,7 +31,7 @@ or
 ```bash
 tmux attach -t 0
 ```
-Then, all windows, comands, and processes will restore the state where you were at last time. Note: Here，0, is the index of the session you want to reattach.
+Then, all windows, commands, and processes will restore the state where you were last time. Note: Here，0 is the index of the session you want to reattach.
 
 Some other useful session commands are:
 ```bash
@@ -59,10 +59,10 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 # set -g @plugin 'git@github.com:user/plugin'
 # set -g @plugin 'git@bitbucket.com:user/plugin'
 
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+# Initialise TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
 ```
-3) Reload TMUX environment so TPM is sourced:
+3) Reload the TMUX environment so TPM is sourced:
 ```bash
 # type this in terminal if tmux is already running
 tmux source ~/.tmux.conf
@@ -71,7 +71,7 @@ TPM is installed.
 Then, hit prefix + I to fetch the plugin and source it. We should now be able to use the plugin.
 
 ```bash
-# Fix color umatched
+# Fix colour unmatched
 set-option -sa terminal-overrides ",xterm*:Tc"
 
 set -g mouse on
@@ -101,13 +101,13 @@ set -g @plugin 'tmux-plugins/tmux-yank'
 set -g @plugin 'nordtheme/tmux'
 set -g @plugin 'tmux-plugins/tmux-resurrect' # Restore tmux environment after system restart.
 
-# init TPM (must at the end)
+# init TPM (must be at the end)
 run '~/.tmux/plugins/tpm/tpm'
 ```
-The plugin [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) is used to realise restore tmux environment. The keys for save and 
+The plugin [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) is used to realise restoring the tmux environment. The keys for saving and 
 restore the environment is `Ctrl b s/r`.
 
-## How to start new panel with current path? 
+## How to start a new panel with the current path? 
 Add the following two lines in the configuration 
 file `~/.tmux.conf`
 
@@ -127,7 +127,7 @@ tmux source-file ~/.tmux.conf
 ```bash
 prefix + %: Split the window vertically
 prefix + ": Split the window horizontally
-prefix + z: Maximize the current pane
+prefix + z: Maximise the current pane
 ```
 
 ## How to copy a piece of text in a tmux pane?
