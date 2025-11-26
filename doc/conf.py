@@ -3,6 +3,11 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+# Add custom extensions path
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent / '_extensions'))
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
@@ -19,9 +24,13 @@ extensions = [
     'sphinx.ext.mathjax', 
     'sphinx_tabs.tabs',
     'sphinx.ext.autosectionlabel',
-    'sphinxcontrib.bibtex'
+    'sphinxcontrib.bibtex',
+    'per_page_numfig',  # Custom extension for per-document figure numbering
 ]
 bibtex_bibfiles = ["ref.bib"]
+
+# Prefix section labels with document name to avoid duplicates
+autosectionlabel_prefix_document = True
 
 # MyST parser configuration
 myst_enable_extensions = [
@@ -33,6 +42,8 @@ myst_enable_extensions = [
 ]
 
 # Enable automatic figure numbering
+# Note: numfig counts figures across ALL documents, not per-page
+# Set to False if you want per-page numbering (must be done manually)
 numfig = True
 numfig_format = {
     'figure': 'Fig. %s',
