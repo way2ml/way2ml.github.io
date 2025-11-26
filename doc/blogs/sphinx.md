@@ -6,7 +6,8 @@ comment: True
 ---
 # How to use Sphinx to document 
 If you want to know how the following features are implemented, you can just click *Edit this page on GitHub* 
-to see the source markdown file. 
+above to see the source markdown file. For any questions and comments, please leave them in the comment box 
+at the end.
 
 ## Console
 
