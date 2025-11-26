@@ -65,7 +65,12 @@ We can use the following way to add an image with a caption. The grammar is diff
 
 This is a test to add an image with a caption.
 ```
-As shown in {numref}`fig-test`, the figure is automatically numbered. Note that Sphinx numbers figures continuously across all documents in your documentation (like chapters in a book), so this might not be Figure 1 if there are figures in earlier documents.
+As shown in {numref}`fig-test`, the figure is automatically numbered. Note that Sphinx numbers figures 
+continuously across all documents in your documentation (like chapters in a book), so this might not be
+Figure 1 if there are figures in earlier documents. To reset the figure number for each page, I created
+an extension `doc/_extensions/per_page_numfig.py`, which can be found [here](https://github.com/way2ml/way2ml.github.io/blob/main/doc/_extensions/per_page_numfig.py). 
+If you enable it in `conf.py` like `extensions = ['_extensions.per_page_numfig']`, the figure numbers for
+all the figures would be correct. 
 
 ## Information box
 :::{note}
