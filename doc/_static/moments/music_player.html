@@ -13,47 +13,62 @@
             justify-content: center;
             min-height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-color: #f8f9fa;
             padding: 20px;
             box-sizing: border-box;
         }
         h1 {
-            color: white;
+            color: #333;
             margin-bottom: 30px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         .player-container {
             background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             width: 100%;
-            max-width: 400px;
+            max-width: 600px;
         }
         .back-link {
-            margin-top: 20px;
-            color: white;
+            margin-top: 30px;
+            color: #666;
             text-decoration: none;
             font-size: 14px;
-            opacity: 0.9;
         }
         .back-link:hover {
-            opacity: 1;
+            color: #0366d6;
             text-decoration: underline;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+            }
+            h1 {
+                color: #f1f1f1;
+            }
+            .player-container {
+                background: #2d2d2d;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            }
+            .back-link {
+                color: #aaa;
+            }
+            .back-link:hover {
+                color: #58a6ff;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>🎵 Songs I Sang</h1>
     <div class="player-container">
-        <iframe src="//music.163.com/outchain/player?type=4&id=348244114&auto=0&height=300" 
+        <iframe src="//music.163.com/outchain/player?type=4&id=348244114&auto=0&height=430" 
                 frameborder="0" 
                 marginwidth="0" 
                 marginheight="0" 
                 width="100%" 
-                height="300">
+                height="450">
         </iframe>
     </div>
-    <a href="javascript:history.back()" class="back-link">← Back to Moments</a>
+    <a href="../../moments.html" class="back-link">← Back to Moments</a>
 </body>
 </html>
