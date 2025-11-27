@@ -4,7 +4,7 @@ comment: True
 ---
 
 # Moments
-- 2025.11.27 I went for floorball with Ruslan Ershov, Clara Isabel Prêcheur Llarena, Laura Fieber, Erik Härkönen, Rafael Nuñez Palacio, Voitto Känkänen, Anna Kobets, and Valtteri Turkki. Clara knows some Chinese. Cool.
+- 2025.11.27 I went for floorball with Ruslan Ershov, Clara Isabel Prêcheur Llarena, Laura Fieber, Erik Härkönen, Rafael Nuñez Palacio, Voitto Känkänen, Anna Kobets, and Valtteri Turkki. Clara knows some Chinese. Ruslan has worked since high school.
 - 2025.11.26 I added the feature of comments to this website. It snowed heavily outside. I wished Gang a happy birthday.
 - 2025.11.25 I was searching for a picture of my own for the office profile. Then I found some songs I sang many years ago. I'm glad I have recorded these songs. It's an excellent gift.
   <iframe src="//music.163.com/outchain/player?type=4&id=348244114&auto=0&height=300" frameborder="0" marginwidth="0" marginheight="0" width="100%" height="250"> </iframe>   
