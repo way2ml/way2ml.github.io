@@ -211,9 +211,9 @@ main {
   margin: 0 !important;
 }
 
-/* "powered by giscus" text */
+/* "powered by giscus" text - hide it */
 .gsc-left-header > em {
-  margin-left: 0.25rem !important;
+  display: none !important;
 }
 
 /* Sort buttons on the right */
