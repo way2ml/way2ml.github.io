@@ -211,9 +211,13 @@ main {
   margin: 0 !important;
 }
 
-/* "powered by giscus" text - hide it */
-.gsc-left-header > em {
-  display: none !important;
+/* "powered by giscus" text - hide it by setting font-size to 0 on parent and restoring on children */
+.gsc-left-header {
+  font-size: 0 !important;
+}
+
+.gsc-left-header > .gsc-comments-count {
+  font-size: 1rem !important;
 }
 
 /* Sort buttons on the right */
