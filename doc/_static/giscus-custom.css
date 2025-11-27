@@ -224,3 +224,10 @@ main {
 .gsc-right-header {
   margin-left: auto !important;
 }
+
+/* Hide "– powered by giscus" link */
+a.Link--secondary[href="https://giscus.app"],
+.gsc-left-header em,
+.gsc-left-header a[href*="giscus"] {
+  display: none !important;
+}
