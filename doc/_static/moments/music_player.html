@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs I Sang - Way To Machine Learning</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: white;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .player-container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 400px;
+        }
+        .back-link {
+            margin-top: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎵 Songs I Sang</h1>
+    <div class="player-container">
+        <iframe src="//music.163.com/outchain/player?type=4&id=348244114&auto=0&height=300" 
+                frameborder="0" 
+                marginwidth="0" 
+                marginheight="0" 
+                width="100%" 
+                height="300">
+        </iframe>
+    </div>
+    <a href="javascript:history.back()" class="back-link">← Back to Moments</a>
+</body>
+</html>
