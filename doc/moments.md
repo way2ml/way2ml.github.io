@@ -4,7 +4,7 @@ comment: True
 ---
 
 # Moments
-- 2025.11.29 We went to Tallinn and experienced [Tallinn's medieval Restaurant: Olde Hansa](https://www.oldehansa.ee/). We enjoyed the street performance by an old man, who can sing songs in any language. I had a haircut, guys can tell the difference. I was happy today. 
+- 2025.11.29 We went to Tallinn and experienced [Tallinn's medieval Restaurant: Olde Hansa](https://www.oldehansa.ee/). I like being tipsy in that under dim candlelight. Torrin taught this new word tipsy today. We enjoyed the street performance by an old man, who can sing songs in any language. I had a haircut, guys can tell the difference. I was happy today. 
 - 2025.11.27 I went for floorball with Ruslan Ershov, Clara Isabel Prêcheur Llarena, Laura Fieber, Erik Härkönen, Rafael Nuñez Palacio, Voitto Känkänen, Anna Kobets, and Valtteri Turkki. Clara knows Chinese. Ruslan has worked since high school.
 - 2025.11.26 I added the feature of comments to this website. It snowed heavily outside. I wished Gang a happy birthday.
 - 2025.11.25 I was searching for a picture of my own for the office profile. Then I found <a href="./_static/moments/music_player.html" target="_blank" rel="noopener">some songs I sang</a> years ago. I'm glad I have recorded these songs. It's an excellent gift. It reminds me that I do love singing.     
