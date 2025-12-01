@@ -11,14 +11,12 @@ feel free to share them in the comments. I would really appreciate it.
 blogs/tmux
 blogs/gitflow
 blogs/sphinx
-blogs/linux
 ```
 
 ```{blog-cards}
 blogs/tmux
 blogs/gitflow
 blogs/sphinx
-blogs/linux
 ```
 
 <div class="blog-card">
