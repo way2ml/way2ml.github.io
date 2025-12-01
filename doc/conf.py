@@ -27,6 +27,7 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.bibtex',
     'per_page_numfig',  # Custom extension for per-document figure numbering
+    'blog_cards',  # Custom extension for blog card listings
 ]
 bibtex_bibfiles = ["ref.bib"]
 

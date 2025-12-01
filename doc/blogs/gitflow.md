@@ -3,6 +3,7 @@ title: The minimal Git workflow I use in my research
 date: 2025-05-10
 author: Jie Huang
 comment: True
+description: A minimal Git workflow for research projects. This guide covers the essential workflow using feature branches, pull requests, and organized codebase management. Perfect for researchers who want to keep their code versioned without getting overwhelmed by complex Git strategies. Learn how to create feature branches for new changes, commit and push your work to GitHub, and merge your changes back to the main branch through pull requests.
 ---
 
 # The minimal git workflow 

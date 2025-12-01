@@ -3,6 +3,7 @@ title: How to use Sphinx to document my research
 date: 2025-11-10
 author: Jie Huang
 comment: True
+description: A comprehensive guide to using Sphinx for documentation. If you want to know how the features on this site are implemented, you can click Page source in the footer to see the source markdown file. This guide covers console commands, code blocks with syntax highlighting, admonitions for notes and warnings, tabs for organizing content, figures with captions, mathematical equations using LaTeX, citations with BibTeX, and more.
 ---
 # How to use Sphinx to document 
 If you want to know how the following features are implemented, you can just click **Page source** below in the footer 

@@ -3,6 +3,7 @@ title: How to use tmux to smooth my workflow
 date: 2025-11-10
 author: Jie Huang, Gang Huang
 comment: True
+description: Tmux is a terminal multiplexer that allows you to create several pseudo-terminals from a single terminal. It is useful for running multiple programs with a single connection, such as when connecting via SSH. This guide covers the three main concepts of tmux - sessions, windows, and panes. You'll learn how to create and manage sessions for different projects, save and restore your tmux environment using plugins like tmux-resurrect, and use essential commands for splitting windows and navigating between panes.
 ---
 
 # Tmux is your good friend
