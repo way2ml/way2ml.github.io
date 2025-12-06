@@ -19,3 +19,4 @@ dependencies:
       - sphinx-tabs
       - sphinx-copybutton
       - sphinxcontrib.bibtex
+      - git+https://github.com/HuangJiaLian/sphinx-molview.git
