@@ -104,8 +104,8 @@ bibtex_bibfiles = ["ref.bib"]
 ```
 
 ## Molecular visualisation
-For visulising the molecular structure, I created [sphinx-molview](https://github.com/HuangJiaLian/sphinx-molview). You can 
-install and enable it `conf.py` by add it to the list of extensions:
+To visualise molecular structures, I created [sphinx-molview](https://github.com/HuangJiaLian/sphinx-molview). You can 
+install it by using `pip install git+https://github.com/HuangJiaLian/sphinx-molview.git` and enable it `conf.py` by adding it to the list of extensions:
 
 ```python
 extensions = [
@@ -113,7 +113,7 @@ extensions = [
     'sphinx_molview', 
     ]
 ```
-This plugin support `.xyz` and `POSCAR` format at this moment. 
+This plugin supports `.xyz` and `POSCAR` format at this moment. 
 ```{molview} https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/251206_225424_POSCAR 
 :format: poscar
 :caption: Water molecules
