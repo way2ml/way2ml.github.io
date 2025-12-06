@@ -28,6 +28,7 @@ extensions = [
     'sphinxcontrib.bibtex',
     'per_page_numfig',  # Custom extension for per-document figure numbering
     'blog_cards',  # Custom extension for blog card listings
+    'sphinx_molview', # To view molecular structures
 ]
 bibtex_bibfiles = ["ref.bib"]
 
