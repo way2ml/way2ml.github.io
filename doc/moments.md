@@ -4,6 +4,9 @@ comment: True
 ---
 
 # Moments
+- 2025.12.06 I published [https://github.com/HuangJiaLian/sphinx-molview], a Sphinx extension for interactive 3D molecular visualization using 3Dmol.js. With the help of AI, I can build anything I need. You can find an example [here](https://way2ml.github.io/blogs/sphinx.html#molecular-visualisation). 
+- 2025.12.06 I published [twoCC](https://github.com/HuangJiaLian/twoCC), a Chrome extension that displays two subtitle tracks simultaneously on MasterClass videos. Perfect for language learners who want to see both English and their native language side by side!
+- 2025.12.05 I upgraded [up2git](https://github.com/HuangJiaLian/Up2Git), including the icon, and `deb` package. 
 - 2025.11.29 We went to Tallinn and experienced [Tallinn's medieval Restaurant: Olde Hansa](https://www.oldehansa.ee/). I like being tipsy in that under dim candlelight. Torrin taught this new word tipsy today. We enjoyed the street performance by an old man, who can sing songs in any language. I had a haircut, guys can tell the difference. I was happy today. <a href="./_static/moments/20251129_myStar.jpg" target="_blank" rel="noopener">[Photo at mystar]</a> 
 - 2025.11.27 I went for floorball with Ruslan Ershov, Clara Isabel Prêcheur Llarena, Laura Fieber, Erik Härkönen, Rafael Nuñez Palacio, Voitto Känkänen, Anna Kobets, and Valtteri Turkki. Clara knows Chinese. Ruslan has worked since high school.
 - 2025.11.26 I added the feature of comments to this website. It snowed heavily outside. I wished Gang a happy birthday.
