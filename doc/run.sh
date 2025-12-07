@@ -6,7 +6,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOC_DIR="$SCRIPT_DIR"
-PDF_PATH="$DOC_DIR/_static/docs/jiehuang.pdf"
+PDF_PATH="$DOC_DIR/_static/cv/jiehuang.pdf"
 PDF_URL="https://raw.githubusercontent.com/HuangJiaLian/CV/master/simple/jiehuang.pdf"
 
 show_help() {
