@@ -164,6 +164,30 @@ Shift (Option in Mac) + (selection text)  # Select and Copy
 Command + V  # Paste 
 ```
 
+## Force tmux to update DISPLAY each time
+This setting is useful when you try to show gui interface tool
+like `ase gui POSCAR` to show some window. If you load tmux
+session, when using `ase gui POSCAR`, you may met errors like this
+```bash
+TclError: couldn't connect to display "localhost:17.0" To get a full traceback
+```
+
+This error is caused by the fact that tmux remember the old DISPLAY variable.
+You can just add this to `~/.tmux.conf`:
+
+```bash
+set -ga update-environment "DISPLAY SSH_CONNECTION SSH_CLIENT XAUTHORITY"
+``` 
+
+Then reload:
+```bash
+tmux source-file ~/.tmux.conf
+```
+This makes tmux automatically import your current DISPLAY from SSH. Then 
+you can use gui service without any problem. Yeah, I know there are lot of 
+settings. But tmux is like vim. It's not easy at the begining. Once you
+get used to it, you will love it. 
+
 ## References
 
 ```{bibliography}
