@@ -107,6 +107,23 @@ run '~/.tmux/plugins/tpm/tpm'
 ```
 The plugin [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) is used to realise restoring the tmux environment. The keys for saving and 
 restoring the environment are `Ctrl b s/r`.
+
+For simplicity, I just use one session in one computer since in one session you can create
+lots of windows; and in one window you can split multiple panels. I use this following 
+alias for creating or reloading this session:
+
+```bash
+alias Jtmux='tmux has-session -t moreluck 2>/dev/null && tmux attach -t moreluck || tmux new -s moreluck'
+```
+
+This alias will create a new session called "moreluck" if there's no session in this name; or load it if 
+it exists. I wish you had more luck by using this alias.  If you already had lots of sessions, you can 
+simply using this command to start over:
+
+```bash
+tmux kill-server
+```
+
 ## Enable mouse 
 By default, if you need to switch between windows or switch between panels in a window, you need to use shortcuts to achieve this. However, I think using
 mouse is also very handy in a lot of scenarios. To enable the mouse, you need to add another line in the `~/.tmux.conf` file:
