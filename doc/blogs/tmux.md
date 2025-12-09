@@ -116,7 +116,7 @@ set -g mouse on
 ```
 
 Through this setting, you can click the window indicator at the bottom to switch between windows as well as switch panels in a window by using your mouse.
-For Mac users, if you are using iTerm2, you also need to `Enable mouse reporting` in the `Settings-Profiles-Terminal`. [1]  
+For Mac users, if you are using iTerm2, you also need to `Enable mouse reporting` in the `Settings-Profiles-Terminal` {cite}`murray2020tmuxmouse`.
 
 ## How to start a new panel with the current path? 
 Add the following two lines in the configuration 
@@ -149,5 +149,6 @@ Command + V  # Paste
 
 ## References
 
-1. 
-
+```{bibliography}
+:style: unsrt
+```
