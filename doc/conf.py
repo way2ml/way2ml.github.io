@@ -32,6 +32,9 @@ extensions = [
 ]
 bibtex_bibfiles = ["ref.bib"]
 
+# Suppress duplicate label warnings for local bibliographies
+suppress_warnings = ["bibtex.duplicate_label"]
+
 # Prefix section labels with document name to avoid duplicates
 autosectionlabel_prefix_document = True
 

@@ -10,7 +10,7 @@ description: Tmux is a terminal multiplexer that allows you to create several ps
 ![](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/screenshot_20251124_184829.png)
 
 ## What is tmux?
-Tmux is a terminal multiplexer. It allows you to create several pseudo-terminals from a single terminal. It is useful for running multiple programs with a single connection, such as when you are connecting to a machine using SSH.
+[Tmux](https://github.com/tmux/tmux/wiki) is a terminal multiplexer. It allows you to create several pseudo-terminals from a single terminal. It is useful for running multiple programs with a single connection, such as when you are connecting to a machine using SSH.
 
 ## Main concepts
 Tmux has three levels: sessions, windows, and panes. 
@@ -150,5 +150,6 @@ Command + V  # Paste
 ## References
 
 ```{bibliography}
+:filter: docname in docnames
 :style: unsrt
 ```

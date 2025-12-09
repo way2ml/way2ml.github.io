@@ -129,6 +129,7 @@ This plugin supports `.xyz` and `POSCAR` format at this moment.
 ## References
 
 ```{bibliography}
+:filter: docname in docnames
 :style: unsrt
 ```
 
