@@ -106,7 +106,17 @@ set -g @plugin 'tmux-plugins/tmux-resurrect' # Restore tmux environment after sy
 run '~/.tmux/plugins/tpm/tpm'
 ```
 The plugin [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) is used to realise restoring the tmux environment. The keys for saving and 
-restore the environment is `Ctrl b s/r`.
+restoring the environment are `Ctrl b s/r`.
+## Enable mouse 
+By default, if you need to switch between windows or switch between panels in a window, you need to use shortcuts to achieve this. However, I think using
+mouse is also very handy in a lot of scenarios. To enable the mouse, you need to add another line in the `~/.tmux.conf` file:
+
+```bash
+set -g mouse on
+```
+
+Through this setting, you can click the window indicator at the bottom to switch between windows as well as switch panels in a window by using your mouse.
+For Mac users, if you are using iTerm2, you also need to `Enable mouse reporting` in the `Settings-Profiles-Terminal`. [1]  
 
 ## How to start a new panel with the current path? 
 Add the following two lines in the configuration 
@@ -139,4 +149,5 @@ Command + V  # Paste
 
 ## References
 
+1. 
 
