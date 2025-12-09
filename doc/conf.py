@@ -30,7 +30,7 @@ extensions = [
     'blog_cards',  # Custom extension for blog card listings
     'sphinx_molview', # To view molecular structures
 ]
-bibtex_bibfiles = ["ref.bib"]
+bibtex_bibfiles = ["_static/ref.bib"]
 
 # Suppress duplicate label warnings for local bibliographies
 suppress_warnings = ["bibtex.duplicate_label"]
