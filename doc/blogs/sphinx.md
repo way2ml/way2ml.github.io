@@ -3,7 +3,7 @@ title: How to use Sphinx to document my research
 date: 2025-11-10
 author: Jie Huang
 comment: True
-description: A comprehensive guide to using Sphinx for documentation. If you want to know how the features on this site are implemented, you can click Page source in the footer to see the source markdown file. This guide covers console commands, code blocks with syntax highlighting, admonitions for notes and warnings, tabs for organizing content, figures with captions, mathematical equations using LaTeX, citations with BibTeX, and more.
+description: A comprehensive guide to using Sphinx for documentation. If you want to know how the features on this site are implemented, you can click Page source in the footer to see the source markdown file. This guide covers console commands, code blocks with syntax highlighting, admonitions for notes and warnings, tabs for organising content, figures with captions, mathematical equations using LaTeX, citations with BibTeX, and more.
 ---
 # How to use Sphinx to document 
 If you want to know how the following features are implemented, you can just click **Page source** below in the footer 
@@ -92,7 +92,14 @@ This is a warning.
 ## Citation
 You can cite other papers easily. For example, I published my first
 research paper in 2020, which uses a neural network to fit a function
-of the structure factor of polymer systems {cite}`Huang2020`. Make sure
+of the structure factor of polymer systems {cite}`Huang2020`. To achieve
+this feature, you need to install the BibTeX support through 
+
+```bash
+pip install sphinxcontrib-bibtex
+```
+
+and then make sure
 `conf.py` has the following lines.
 
 ```python
