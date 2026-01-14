@@ -8,11 +8,14 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent / '_extensions'))
 
+import datetime
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Way To Machine Learning'
-copyright = '2025, Way To Machine Learning'
+current_year = datetime.date.today().year
+copyright = f"{current_year}, Way To Machine Learning"
 author = 'Jie Huang'
 release = '0.0.1'
 
