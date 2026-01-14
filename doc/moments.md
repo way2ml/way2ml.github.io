@@ -4,6 +4,7 @@ comment: True
 ---
 
 # Moments
+- 2026.01.14 I bought a book, TUHAT SANAA, to learn Finnish. The audio can be found [here](https://otava.fi/nemo/tuhatsanaa/aantamisohjeet-suomeksi/).  
 - 2025.12.16 Fillipo talked with me about the affordable 3D printer [Bambu Lab A13D](https://eu.store.bambulab.com/products/a1?id=599117150694776844). I was drawn to this tiny printer and want to buy one next year. I can buy interesting items [here](https://makerworld.com/en).
 - 2025.12.13 I went to <a href="./_static/moments/20251213_davis.jpeg" target="_blank" rel="noopener">[Davis]</a>'s home for sauna and dinner. We had [Sauerkraut](https://en.wikipedia.org/wiki/Sauerkraut) with sausage for Xmas dinner. After dinner, we wrote a story with <a href="./_static/moments/20251213_type.jpeg" target="_blank" rel="noopener">[the typewriter]</a> I brought. We had a wonderful, <a href="./_static/moments/20251213_story.jpeg" target="_blank" rel="noopener">[mysterious story]</a>. Then we went to the nightclub. This was my first time going to a nightclub. It's like a group of people meditating in the loud music. So many things happened today. <a href="./_static/moments/20251213_smile.jpeg" target="_blank" rel="noopener">[Three of us]</a>.
 - 2025.12.11 I went to the Xmas party with Nan, Farzin, and Arzin. I spent a good night. <a href="./_static/moments/20251211_xmas.jpg" target="_blank" rel="noopener">[Getting tipsy]</a> 
