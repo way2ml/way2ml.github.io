@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Blogs &#8212; Way To Machine Learning 0.0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=f31f7f3d" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://3dmol.org/build/3Dmol-min.js"></script>
+    <script src="_static/mol-viewer.js?v=bf506b58"></script>
+    <script src="_static/article-metadata.js?v=deda2c05"></script>
+    <script src="_static/lightbox.js?v=e8dcba6a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'enter_blogs';</script>
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tmux is your good friend" href="blogs/tmux.html" />
+    <link rel="prev" title="Publications" href="publications.html" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    
+  
+  <meta name="github-user" content="way2ml" />
+  <meta name="github-repo" content="way2ml.github.io" />
+  <meta name="github-branch" content="main" />
+  <meta name="doc-path" content="doc" />
+  <meta name="page-name" content="enter_blogs" />
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Way To Machine Learning</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="news.html">
+    News
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="publications.html">
+    Publications
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Blogs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="moments.html">
+    Moments
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/way2ml/way2ml.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.researchgate.net/profile/Jie_Huang136" title="ResearchGate" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-researchgate fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">ResearchGate</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@jackhuang.wz" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com//@way2ml" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/jackhuang_wz" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://linkedin.com/in/jiehuang-fi" title="LinkedIn" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://orcid.org/0000-0003-3560-283X" title="ORCID" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-orcid fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">ORCID</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://scholar.google.com/citations?user=238kWMkAAAAJ&hl=en" title="Google Scholar" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-google-scholar fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Google Scholar</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="news.html">
+    News
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="publications.html">
+    Publications
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Blogs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="moments.html">
+    Moments
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/way2ml/way2ml.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.researchgate.net/profile/Jie_Huang136" title="ResearchGate" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-researchgate fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">ResearchGate</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@jackhuang.wz" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com//@way2ml" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/jackhuang_wz" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://linkedin.com/in/jiehuang-fi" title="LinkedIn" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://orcid.org/0000-0003-3560-283X" title="ORCID" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-orcid fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">ORCID</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://scholar.google.com/citations?user=238kWMkAAAAJ&hl=en" title="Google Scholar" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-google-scholar fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Google Scholar</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Blogs</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+  
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="blogs">
+<h1>Blogs<a class="headerlink" href="#blogs" title="Link to this heading">#</a></h1>
+<p>Here you’ll find all my blogs, along with the tools I rely on in my daily work and life. It’s impossible to cover everything at once,
+so my approach is to document things as I use them and keep refining along the way. If you come across any interesting tools or topics,
+feel free to share them in the comments. I would really appreciate it.</p>
+<div class="toctree-wrapper compound">
+</div>
+<div class="blog-cards-container docutils container">
+<div class="blog-card">
+  <h3 class="blog-card-title"><a href="blogs/tmux.html">How to use tmux to smooth my workflow</a></h3>
+  <p class="blog-card-description">Tmux is a terminal multiplexer that allows you to create several pseudo-terminals from a single terminal. It is useful for running multiple programs with a single connection, such as when connecting via SSH. This guide covers the three main concepts of tmux - sessions, windows, and panes. You'll learn how to create and manage sessions for different projects, save and restore your tmux environment using plugins like tmux-resurrect, and use essential commands for splitting windows and navigating between panes.</p>
+  <div class="blog-card-meta">
+    <span>Date: 2025-11-10</span>
+    <span>Author: Jie Huang, Gang Huang</span>
+  </div>
+</div>
+<div class="blog-card">
+  <h3 class="blog-card-title"><a href="blogs/gitflow.html">The minimal Git workflow I use in my research</a></h3>
+  <p class="blog-card-description">A minimal Git workflow for research projects. This guide covers the essential workflow using feature branches, pull requests, and organized codebase management. Perfect for researchers who want to keep their code versioned without getting overwhelmed by complex Git strategies. Learn how to create feature branches for new changes, commit and push your work to GitHub, and merge your changes back to the main branch through pull requests.</p>
+  <div class="blog-card-meta">
+    <span>Date: 2025-05-10</span>
+    <span>Author: Jie Huang</span>
+  </div>
+</div>
+<div class="blog-card">
+  <h3 class="blog-card-title"><a href="blogs/sphinx.html">How to use Sphinx to document my research</a></h3>
+  <p class="blog-card-description">A comprehensive guide to using Sphinx for documentation. If you want to know how the features on this site are implemented, you can click Page source in the footer to see the source markdown file. This guide covers console commands, code blocks with syntax highlighting, admonitions for notes and warnings, tabs for organising content, figures with captions, mathematical equations using LaTeX, citations with BibTeX, and more.</p>
+  <div class="blog-card-meta">
+    <span>Date: 2025-11-10</span>
+    <span>Author: Jie Huang</span>
+  </div>
+</div>
+</div>
+<div class="blog-card">
+  <h3 class="blog-card-title"><a href="https://medium.com/@jackhuang.wz/how-to-take-photos-with-timestamps-on-iphone-or-ipad-90f4372b081c" target="_blank">How to Take Photos with Timestamps on iPhone or iPad</a></h3>
+  <p class="blog-card-description">The built-in Camera of iOS devices doesn't support timestamps, and I got a task from my mom to solve this. I researched and found two common solutions: installing third-party camera apps or post-processing photos. Neither is ideal. So I created a shortcut that can take photos and include timestamps automatically without the need for third-party apps or post-processing. The shortcut opens the camera, takes a photo, overlays the current timestamp onto the bottom right corner, and saves it to Photos. Just add this shortcut to your home screen and use it like the built-in Camera app.</p>
+  <div class="blog-card-meta">
+    <span>Date: October 26, 2025</span>
+    <span>Platform: Medium</span>
+  </div>
+</div>
+<div class="blog-card">
+  <h3 class="blog-card-title"><a href="https://medium.com/@jackhuang.wz/generate-music-from-scratch-using-python-53c0fedd0031" target="_blank">Generate Music From Scratch Using Python</a></h3>
+  <p class="blog-card-description">When I was a kid, I got a digital watch with Für Elise in its music library. I can still hear that digital sound many years later. Today I share the process to build a music generator from basics using Python. You'll learn about sine waves and how computers store sound using sampling rate and bit depth. Then we explore music notes, frequencies, and the equal temperament system. The guide covers playing melodies like Für Elise, adding fade in/out effects with amplitude envelopes, using a virtual capo to change pitch, and playing chords to accompany songs like Hey Jude.</p>
+  <div class="blog-card-meta">
+    <span>Date: April 27, 2022</span>
+    <span>Platform: Medium</span>
+  </div>
+</div>
+<div class="blog-card">
+  <h3 class="blog-card-title"><a href="https://medium.com/@jackhuang.wz/in-just-two-steps-you-can-turn-a-python-script-into-a-macos-application-installer-6e21bce2ee71" target="_blank">Two Steps To Turn A Python Script Into A macOS Application Installer</a></h3>
+  <p class="blog-card-description">I built a metronome using Python and wanted to share it with friends. But the software can't run unless Python is installed - not acceptable! I needed an elegant drag-and-drop installation experience on macOS. This guide shows how to turn a Python script into a stand-alone macOS application installer in just two steps: first, use PyInstaller to convert your Python script into an application bundle (.app), then use create-dmg to build a disk image (.dmg) with the familiar macOS installation window. Your friends can install your app without having Python installed.</p>
+  <div class="blog-card-meta">
+    <span>Date: April 2, 2022</span>
+    <span>Platform: Medium</span>
+  </div>
+</div>
+<div class="blog-card">
+  <h3 class="blog-card-title"><a href="https://medium.com/@jackhuang.wz/building-a-metronome-in-python-c8e16826fe4f" target="_blank">Building A Metronome In Python</a></h3>
+  <p class="blog-card-description">Slow and steady — the most common words when learning guitar. Keeping a steady rhythm is not easy, so practicing with a metronome is essential. I built a cross-platform metronome application using Python and Tkinter. Features include adjustable tempo in BPM, multiple time signatures (4/4, 3/4, 6/8), tempo markings showing Italian terms like Allegro or Andante, and a tap-to-estimate feature where you can tap along with a song to find its tempo. The guide walks through playing click sounds, building the GUI, and connecting all the components together.</p>
+  <div class="blog-card-meta">
+    <span>Date: April 1, 2022</span>
+    <span>Platform: Medium</span>
+  </div>
+</div>
+</section>
+
+
+                </article>
+              
+  
+  
+  
+  <article class="bd-article">
+    <div class="giscus-container" style="margin-top: 2rem;">
+      <script src="https://giscus.app/client.js"
+              data-repo="way2ml/comments"
+              data-repo-id="R_kgDOGRwKvQ"
+              data-category="General"
+              data-category-id="DIC_kwDOGRwKvc4ChuA7"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme="https://way2ml.github.io/_static/giscus-custom.css"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+  </article>
+  
+
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  <div class="footer-item" style="width: 100%; text-align: center;">
+    <p>
+      © Copyright 2026, <a href="https://way2ml.github.io/">Way To Machine Learning</a>. | 
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx</a>, <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>, and <a href="https://giscus.app" target="_blank" rel="noopener">Giscus</a> | 
+      <a href="_sources/enter_blogs.md.txt" rel="nofollow">Page source</a>
+    </p>
+  </div>
+</div>
+</footer>
+
+  </body>
+</html>
