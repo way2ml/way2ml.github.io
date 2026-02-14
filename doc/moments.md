@@ -4,7 +4,7 @@ comment: True
 ---
 
 # Moments
-- 2026.02.13 I played Ping-Pong with Filippo. In the evening, we, the explorers, went to Kamppi to see some Chinese events. Then we found a Asia resturant for food. After that, we went to a Karaoke bar. We sang songs and drank beer. It was fun. Thank guys. I had a great day with you. 
+- 2026.02.13 I played Ping-Pong with Filippo. In the evening, we, <a href="./_static/moments/20260213_kamppi.jpeg" target="_blank" rel="noopener">[the explorers]</a>, went to Kamppi to see some Chinese events. Then we found a Asia resturant for food. After that, we went to a Karaoke bar. We sang songs and drank beer. It was fun. Thank guys. I had a great day with you. 
 - 2026.02.12 I played floorball today. Theo joined floorball for the first time. I helped students solve their programming problems.
 - 2026.01.14 I bought a book, TUHAT SANAA, to learn Finnish. The audio can be found [here](https://otava.fi/nemo/tuhatsanaa/aantamisohjeet-suomeksi/).  
 - 2025.12.16 Fillipo talked with me about the affordable 3D printer [Bambu Lab A13D](https://eu.store.bambulab.com/products/a1?id=599117150694776844). I was drawn to this tiny printer and want to buy one next year. I can buy interesting items [here](https://makerworld.com/en).
