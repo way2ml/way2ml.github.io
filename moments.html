@@ -1,0 +1,631 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Moments &#8212; Way To Machine Learning 0.0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=f31f7f3d" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://3dmol.org/build/3Dmol-min.js"></script>
+    <script src="_static/mol-viewer.js?v=bf506b58"></script>
+    <script src="_static/article-metadata.js?v=deda2c05"></script>
+    <script src="_static/lightbox.js?v=e8dcba6a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'moments';</script>
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="How to use Sphinx to document" href="blogs/sphinx.html" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    
+  
+  <meta name="github-user" content="way2ml" />
+  <meta name="github-repo" content="way2ml.github.io" />
+  <meta name="github-branch" content="main" />
+  <meta name="doc-path" content="doc" />
+  <meta name="page-name" content="moments" />
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Way To Machine Learning</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="news.html">
+    News
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="publications.html">
+    Publications
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="enter_blogs.html">
+    Blogs
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Moments
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/way2ml/way2ml.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.researchgate.net/profile/Jie_Huang136" title="ResearchGate" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-researchgate fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">ResearchGate</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@jackhuang.wz" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com//@way2ml" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/jackhuang_wz" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://linkedin.com/in/jiehuang-fi" title="LinkedIn" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://orcid.org/0000-0003-3560-283X" title="ORCID" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-orcid fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">ORCID</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://scholar.google.com/citations?user=238kWMkAAAAJ&hl=en" title="Google Scholar" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-google-scholar fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Google Scholar</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="news.html">
+    News
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="publications.html">
+    Publications
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="enter_blogs.html">
+    Blogs
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Moments
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/way2ml/way2ml.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.researchgate.net/profile/Jie_Huang136" title="ResearchGate" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-researchgate fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">ResearchGate</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@jackhuang.wz" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com//@way2ml" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/jackhuang_wz" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://linkedin.com/in/jiehuang-fi" title="LinkedIn" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://orcid.org/0000-0003-3560-283X" title="ORCID" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-orcid fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">ORCID</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://scholar.google.com/citations?user=238kWMkAAAAJ&hl=en" title="Google Scholar" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-google-scholar fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Google Scholar</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Moments</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+  
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="moments">
+<h1>Moments<a class="headerlink" href="#moments" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>2026.02.13 I played Ping-Pong with Filippo. In the evening, we, <a href="./_static/moments/20260213_kamppi.jpeg" target="_blank" rel="noopener">[the explorers]</a>, went to Kamppi to see some Chinese events. Then we found a Asia resturant for food. After that, we went to a Karaoke bar. We sang songs and drank beer. It was fun. Thank guys. I had a great day with you.</p></li>
+<li><p>2026.02.12 I played floorball today. Theo joined floorball for the first time. I helped students solve their programming problems.</p></li>
+<li><p>2026.01.14 I bought a book, TUHAT SANAA, to learn Finnish. The audio can be found <a class="reference external" href="https://otava.fi/nemo/tuhatsanaa/aantamisohjeet-suomeksi/">here</a>.</p></li>
+<li><p>2025.12.16 Fillipo talked with me about the affordable 3D printer <a class="reference external" href="https://eu.store.bambulab.com/products/a1?id=599117150694776844">Bambu Lab A13D</a>. I was drawn to this tiny printer and want to buy one next year. I can buy interesting items <a class="reference external" href="https://makerworld.com/en">here</a>.</p></li>
+<li><p>2025.12.13 I went to <a href="./_static/moments/20251213_davis.jpeg" target="_blank" rel="noopener">[Davis]</a>’s home for sauna and dinner. We had <a class="reference external" href="https://en.wikipedia.org/wiki/Sauerkraut">Sauerkraut</a> with sausage for Xmas dinner. After dinner, we wrote a story with <a href="./_static/moments/20251213_type.jpeg" target="_blank" rel="noopener">[the typewriter]</a> I brought. We had a wonderful, <a href="./_static/moments/20251213_story.jpeg" target="_blank" rel="noopener">[mysterious story]</a>. Then we went to the nightclub. This was my first time going to a nightclub. It’s like a group of people meditating in the loud music. So many things happened today. <a href="./_static/moments/20251213_smile.jpeg" target="_blank" rel="noopener">[Three of us]</a>.</p></li>
+<li><p>2025.12.11 I went to the Xmas party with Nan, Farzin, and Arzin. I spent a good night. <a href="./_static/moments/20251211_xmas.jpg" target="_blank" rel="noopener">[Getting tipsy]</a></p></li>
+<li><p>2025.12.09 I participated in the Aalto event “Doctoral Career Conversations: Finding Your Next Step” hosted by Susanna Saarinen. She introduced <a class="reference external" href="https://ek.fi/en/">ek.fi</a> to us.  Laura gave me a very good suggestion about needle testing, which I can try while working in the industry during my PhD. Another colleague recommended <a class="reference external" href="https://www.eiturbanmobility.eu/what-we-offer/education-and-training/doctoral-training-programme/">EIT Doctoral Training Networking</a> to me. Enate was wondering whether to pursue a PhD in her field. “Good luck, Jie.” She told me at the very last minute.  Thank you all. Then I met Xuliang Luo from <a class="reference external" href="https://www.aalto.fi/en/department-of-applied-physics/complex-systems-and-materials-csm">CSM</a> group.</p></li>
+<li><p>2025.12.07 Invited by <a href="./_static/moments/20251207_HaoxuanYou.jpeg" target="_blank" rel="noopener">[Haoxuan]</a>, I went to his appartment having <a href="./_static/moments/20251207_HaoxuanYou_and_XiLin.jpeg" target="_blank" rel="noopener">[great lunch]</a>. I knew some friends: Xiaodan Hong, a warm and outgoing girl who loves cooking and JJ Lin; Ziyi Fang, a new PhD. He made braised pork belly with skin; Yuhuang Fang, a PhD. He looks like Yoga Lin; Zhen Lin, who just got his PhD and plans to go back to China, and another host, Xi Lin. The garlic shrimp and salmon soup he made were insanely good. Thanks, guys. This was a wonderful Sunday. <a href="./_static/moments/20251207_all.jpg" target="_blank" rel="noopener">[Photo before lunch]</a></p></li>
+<li><p>2025.12.06 With the help of AI, I can build anything I need. I published <a class="reference external" href="https://github.com/HuangJiaLian/sphinx-molview">sphinx-molview</a>, a Sphinx extension for interactive 3D molecular visualisation using 3Dmol.js.  You can find an example <a class="reference external" href="https://way2ml.github.io/blogs/sphinx.html#molecular-visualisation">here</a>. I also published <a class="reference external" href="https://github.com/HuangJiaLian/twoCC">twoCC</a>, a Chrome extension that displays two subtitle tracks simultaneously on MasterClass videos. Perfect for language learners who want to see both English and their native language side by side! I became much more powerful.</p></li>
+<li><p>2025.12.05 I upgraded <a class="reference external" href="https://github.com/HuangJiaLian/Up2Git">up2git</a>, including the icon, and <code class="docutils literal notranslate"><span class="pre">deb</span></code> package.</p></li>
+<li><p>2025.11.29 We went to Tallinn and experienced <a class="reference external" href="https://www.oldehansa.ee/">Tallinn’s medieval Restaurant: Olde Hansa</a>. I like being tipsy in that under dim candlelight. Torrin taught this new word tipsy today. We enjoyed the street performance by an old man, who can sing songs in any language. I had a haircut, guys can tell the difference. I was happy today. <a href="./_static/moments/20251129_myStar.jpg" target="_blank" rel="noopener">[Photo at mystar]</a></p></li>
+<li><p>2025.11.27 I went for floorball with Ruslan Ershov, Clara Isabel Prêcheur Llarena, Laura Fieber, Erik Härkönen, Rafael Nuñez Palacio, Voitto Känkänen, Anna Kobets, and Valtteri Turkki. Clara knows Chinese. Ruslan has worked since high school.</p></li>
+<li><p>2025.11.26 I added the feature of comments to this website. It snowed heavily outside. I wished Gang a happy birthday.</p></li>
+<li><p>2025.11.25 I was searching for a picture of my own for the office profile. Then I found <a href="./_static/moments/music_player.html" target="_blank" rel="noopener">some songs I sang</a> years ago. I’m glad I have recorded these songs. It’s an excellent gift. It reminds me that I do love singing.</p></li>
+<li><p>2025.11.22 We went to <a class="reference external" href="https://oodihelsinki.fi/en/">Oodi Helsinki Central Library</a>, then headed for the <a class="reference external" href="https://www.sompasauna.fi/">sompasauna</a>. It’s raining and snowing; I jumped into the sea four times. It was amazing. Without them, I would never do such things alone. Thanks, guys.</p></li>
+<li><p>2025.11.20 I played floorball with Voitto Känkänen, Rafael Nuñez Palacio, Laura Fieber, Matthew Herbst, and Anna Kobets.</p></li>
+<li><p>2025.11.13 I played floorball with Erik Härkönen, Valtteri Turkki, Anna Kobets, Voitto Känkänen, Matthew Herbst and Nan Cao.</p></li>
+<li><p>2025.11.12 We attended the Flight <a class="reference external" href="https://en.wikipedia.org/wiki/Sittning">Sitz</a>, spent a wonderful night. <a href="./_static/moments/20251113_guys.png" target="_blank" rel="noopener">[Photo before the party.]</a> Pablo, ABC Bulb, MJ, and Theo. Theo told us that one of his dreams is to master Japanese, as he enjoys reading manga. We became friends on Duolingo. <a href="./_static/moments/20251113_all.png" target="_blank" rel="noopener">[This photo was taken at the end of the party.]</a>
+Checkin, Nostalgia, ABC Bulb, Theo, MJ, Burnout and Pablo.  We were looking pretty hammered (ABC Bulb taught me this word).</p></li>
+<li><p>2025 11.11 My neighbour’s house was broken into. I learned the kids’ names: Summer and Sandy.</p></li>
+<li><p>2025.11.10 Theo Nguyen learns how to spin a square cushion. I learned a new word <a class="reference external" href="https://en.wikipedia.org/wiki/Hydration_pack">camel pack</a> from him. Pablo learned the Chinese 4th tone by pretending to be shot.</p></li>
+<li><p>2025.11.09 Chenyi, Azin, <a href="./_static/moments/Nan_food_making.jpeg" target="_blank" rel="noopener">[Nan Cao]</a>, Pablo, Pamela Ngui,  Sanni, Davis Sterns, Theo Nguyen and Jie have a <a class="reference external" href="https://en.wikipedia.org/wiki/Potluck">potluck dinner</a>. We listen to music, spin the book, build a Christmas tree, play the <a class="reference external" href="https://en.wikipedia.org/wiki/The_Werewolves_of_Millers_Hollow">werewolves</a>, and have a wonderful night.</p></li>
+<li><p>2025.11.08 CV link is moved <a href="_static/docs/jiehuang.pdf" target="_blank" rel="noopener">here</a>.</p></li>
+<li><p>2025.05.07 Our website moves to <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a>.</p></li>
+<li><p>2024.08.17 Our website has been redesigned using <a class="reference external" href="https://gohugo.io/">Hugo</a> as the generator, with inspiration from <a class="reference external" href="https://github.com/michaelneuper/hugo-texify3">TeXify3</a> and <a class="reference external" href="https://katex.org/">KaTeX</a>.</p></li>
+<li><p>2021.10.23 An <a class="reference external" href="https://github.com/way2ml/forum/discussions">Online Forum</a> based on GitHub Discussions is added to the top right corner of the website.</p></li>
+<li><p>2019.01.31 <a class="reference external" href="https://way2ml.github.io/">Way To Machine Learning</a> is launched in <a class="reference external" href="https://goo.gl/maps/Hjto2WtzYHeCBsmQ9">Chengdu</a>, China.</p></li>
+</ul>
+</section>
+
+
+                </article>
+              
+  
+  
+  
+  <article class="bd-article">
+    <div class="giscus-container" style="margin-top: 2rem;">
+      <script src="https://giscus.app/client.js"
+              data-repo="way2ml/comments"
+              data-repo-id="R_kgDOGRwKvQ"
+              data-category="General"
+              data-category-id="DIC_kwDOGRwKvc4ChuA7"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme="https://way2ml.github.io/_static/giscus-custom.css"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+  </article>
+  
+
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  <div class="footer-item" style="width: 100%; text-align: center;">
+    <p>
+      © Copyright 2026, <a href="https://way2ml.github.io/">Way To Machine Learning</a>. | 
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx</a>, <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>, and <a href="https://giscus.app" target="_blank" rel="noopener">Giscus</a> | 
+      <a href="_sources/moments.md.txt" rel="nofollow">Page source</a>
+    </p>
+  </div>
+</div>
+</footer>
+
+  </body>
+</html>

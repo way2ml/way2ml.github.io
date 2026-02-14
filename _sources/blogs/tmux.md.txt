@@ -1,0 +1,196 @@
+---
+title: How to use tmux to smooth my workflow
+date: 2025-11-10
+author: Jie Huang, Gang Huang
+comment: True
+description: Tmux is a terminal multiplexer that allows you to create several pseudo-terminals from a single terminal. It is useful for running multiple programs with a single connection, such as when connecting via SSH. This guide covers the three main concepts of tmux - sessions, windows, and panes. You'll learn how to create and manage sessions for different projects, save and restore your tmux environment using plugins like tmux-resurrect, and use essential commands for splitting windows and navigating between panes.
+---
+
+# Tmux is your good friend
+![](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/screenshot_20251124_184829.png)
+
+## What is tmux?
+[Tmux](https://github.com/tmux/tmux/wiki) is a terminal multiplexer. It allows you to create several pseudo-terminals from a single terminal. It is useful for running multiple programs with a single connection, such as when you are connecting to a machine using SSH.
+
+## Main concepts
+Tmux has three levels: sessions, windows, and panes. 
+A tmux session is a persistent terminal environment that can contain multiple windows and panes, allowing you to run and manage several processes in a single terminal window. Tmux sessions can help you manage multiple projects, eg, different sessions can be created for different projects.
+
+Common session commands are as follows.
+
+```bash
+tmux new -s afm # create a new session named 'afm'
+tmux new -s paper_writing # create another session for writing a paper.
+tmux switch -t paper_writing # switch to the session 'paper_writing'.
+tmux switch -t afm # switch to the session 'afm'.
+```
+Even if you turn off the terminal, you only use 
+```bash
+tmux attach -t afm # reattach the session 'afm'
+```
+or 
+```bash
+tmux attach -t 0
+```
+Then, all windows, commands, and processes will restore the state where you were last time. Note: Here，0 is the index of the session you want to reattach.
+
+Some other useful session commands are:
+```bash
+tmux ls # list the sessions
+tmux kill-session -t mysession # kill the session named 'mysession'
+tmux rename-session -t old new # Rename the old session to a new session name.
+```
+
+## How to save and restore sessions? 
+
+1) First, install TPM, Tmux Plugin Manager.
+Requirements: tmux version 1.9 (or higher), git, bash.
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+2) Put this at the bottom of `~/.tmux.conf`:
+```bash
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'github_username/plugin_name#branch'
+# set -g @plugin 'git@github.com:user/plugin'
+# set -g @plugin 'git@bitbucket.com:user/plugin'
+
+# Initialise TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+```
+3) Reload the TMUX environment so TPM is sourced:
+```bash
+# type this in terminal if tmux is already running
+tmux source ~/.tmux.conf
+```
+TPM is installed.
+Then, hit prefix + I to fetch the plugin and source it. We should now be able to use the plugin.
+
+```bash
+# Fix colour unmatched
+set-option -sa terminal-overrides ",xterm*:Tc"
+
+set -g mouse on
+set-option -g set-clipboard on
+
+# Use vim keybindings
+bind -r k select-pane -U
+bind -r j select-pane -D
+bind -r h select-pane -L
+bind -r l select-pane -R
+
+# Numbering starts at 1
+set -g base-index 1
+set -g pane-base-index 1
+set-window-option -g pane-base-index 1
+set-option -g renumber-windows on
+
+# Force tmux to open new panes/windows in the current pane's directory
+bind c new-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+bind '"' split-window -v -c "#{pane_current_path}"
+
+
+# Plugin list
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'nordtheme/tmux'
+set -g @plugin 'tmux-plugins/tmux-resurrect' # Restore tmux environment after system restart.
+
+# init TPM (must be at the end)
+run '~/.tmux/plugins/tpm/tpm'
+```
+The plugin [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) is used to realise restoring the tmux environment. The keys for saving and 
+restoring the environment are `Ctrl b s/r`.
+
+For simplicity, I just use one session in one computer since in one session you can create
+lots of windows; and in one window you can split multiple panels. I use this following 
+alias for creating or reloading this session:
+
+```bash
+alias Jtmux='tmux has-session -t moreluck 2>/dev/null && tmux attach -t moreluck || tmux new -s moreluck'
+```
+
+This alias will create a new session called "moreluck" if there's no session in this name; or load it if 
+it exists. I wish you had more luck by using this alias.  If you already had lots of sessions, you can 
+simply using this command to start over:
+
+```bash
+tmux kill-server
+```
+
+## Enable mouse 
+By default, if you need to switch between windows or switch between panels in a window, you need to use shortcuts to achieve this. However, I think using
+mouse is also very handy in a lot of scenarios. To enable the mouse, you need to add another line in the `~/.tmux.conf` file:
+
+```bash
+set -g mouse on
+```
+
+Through this setting, you can click the window indicator at the bottom to switch between windows as well as switch panels in a window by using your mouse.
+For Mac users, if you are using iTerm2, you also need to `Enable mouse reporting` in the `Settings-Profiles-Terminal` {cite}`murray2020tmuxmouse`.
+
+## How to start a new panel with the current path? 
+Add the following two lines in the configuration 
+file `~/.tmux.conf`
+
+```bash
+bind '"' split-window -v -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+```
+
+Then update the configuration with this command
+
+```bash
+tmux source-file ~/.tmux.conf
+```
+
+## Useful commands
+
+```bash
+prefix + %: Split the window vertically
+prefix + ": Split the window horizontally
+prefix + z: Maximise the current pane
+```
+
+## How to copy a piece of text in a tmux pane?
+```bash
+Shift (Option in Mac) + (selection text)  # Select and Copy
+Command + V  # Paste 
+```
+
+## Force tmux to update DISPLAY each time
+This setting is useful when you try to show gui interface tool
+like `ase gui POSCAR` to show some window. If you load tmux
+session, when using `ase gui POSCAR`, you may met errors like this
+```bash
+TclError: couldn't connect to display "localhost:17.0" To get a full traceback
+```
+
+This error is caused by the fact that tmux remember the old DISPLAY variable.
+You can just add this to `~/.tmux.conf`:
+
+```bash
+set -ga update-environment "DISPLAY SSH_CONNECTION SSH_CLIENT XAUTHORITY"
+``` 
+
+Then reload:
+```bash
+tmux source-file ~/.tmux.conf
+```
+This makes tmux automatically import your current DISPLAY from SSH. Then 
+you can use gui service without any problem. Yeah, I know there are lot of 
+settings. But tmux is like vim. It's not easy at the begining. Once you
+get used to it, you will love it. 
+
+## References
+
+```{bibliography}
+:filter: docname in docnames
+:style: unsrt
+```

@@ -1,0 +1,233 @@
+/*! MIT License - Custom Giscus theme for way2ml.github.io */
+
+/* Base variables for light mode */
+main {
+  --color-prettylights-syntax-comment: #6e7781;
+  --color-prettylights-syntax-constant: #0550ae;
+  --color-prettylights-syntax-entity: #8250df;
+  --color-prettylights-syntax-storage-modifier-import: #24292f;
+  --color-prettylights-syntax-entity-tag: #116329;
+  --color-prettylights-syntax-keyword: #cf222e;
+  --color-prettylights-syntax-string: #0a3069;
+  --color-prettylights-syntax-variable: #953800;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #82071e;
+  --color-prettylights-syntax-invalid-illegal-text: #f6f8fa;
+  --color-prettylights-syntax-invalid-illegal-bg: #82071e;
+  --color-prettylights-syntax-carriage-return-text: #f6f8fa;
+  --color-prettylights-syntax-carriage-return-bg: #cf222e;
+  --color-prettylights-syntax-string-regexp: #116329;
+  --color-prettylights-syntax-markup-list: #3b2300;
+  --color-prettylights-syntax-markup-heading: #0550ae;
+  --color-prettylights-syntax-markup-italic: #24292f;
+  --color-prettylights-syntax-markup-bold: #24292f;
+  --color-prettylights-syntax-markup-deleted-text: #82071e;
+  --color-prettylights-syntax-markup-deleted-bg: #ffebe9;
+  --color-prettylights-syntax-markup-inserted-text: #116329;
+  --color-prettylights-syntax-markup-inserted-bg: #dafbe1;
+  --color-prettylights-syntax-markup-changed-text: #953800;
+  --color-prettylights-syntax-markup-changed-bg: #ffd8b5;
+  --color-prettylights-syntax-markup-ignored-text: #eaeef2;
+  --color-prettylights-syntax-markup-ignored-bg: #0550ae;
+  --color-prettylights-syntax-meta-diff-range: #8250df;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
+  --color-btn-text: #24292f;
+  --color-btn-bg: #f6f8fa;
+  --color-btn-border: rgba(31, 35, 40, 0.15);
+  --color-btn-shadow: 0 1px 0 rgba(31, 35, 40, 0.04);
+  --color-btn-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  --color-btn-hover-bg: #f3f4f6;
+  --color-btn-hover-border: rgba(31, 35, 40, 0.15);
+  --color-btn-active-bg: hsla(220, 14%, 93%, 1);
+  --color-btn-active-border: rgba(31, 35, 40, 0.15);
+  --color-btn-selected-bg: hsla(220, 14%, 94%, 1);
+  --color-btn-primary-text: #fff;
+  --color-btn-primary-bg: #2da44e;
+  --color-btn-primary-border: rgba(31, 35, 40, 0.15);
+  --color-btn-primary-hover-bg: #2c974b;
+  --color-btn-primary-hover-border: rgba(31, 35, 40, 0.15);
+  --color-btn-primary-selected-bg: hsla(137, 55%, 36%, 1);
+  --color-btn-primary-disabled-text: rgba(255, 255, 255, 0.8);
+  --color-btn-primary-disabled-bg: #94d3a2;
+  --color-btn-primary-disabled-border: rgba(31, 35, 40, 0.15);
+  --color-fg-default: #24292f;
+  --color-fg-muted: #57606a;
+  --color-fg-subtle: #6e7781;
+  --color-canvas-default: #ffffff;
+  --color-canvas-overlay: #ffffff;
+  --color-canvas-inset: #f6f8fa;
+  --color-canvas-subtle: #f6f8fa;
+  --color-border-default: #d0d7de;
+  --color-border-muted: hsla(210, 18%, 87%, 1);
+  --color-neutral-muted: rgba(175, 184, 193, 0.2);
+  --color-accent-fg: #0969da;
+  --color-accent-emphasis: #0969da;
+  --color-accent-muted: rgba(84, 174, 255, 0.4);
+  --color-accent-subtle: #ddf4ff;
+  --color-success-fg: #1a7f37;
+  --color-attention-fg: #9a6700;
+  --color-danger-fg: #cf222e;
+  --color-danger-emphasis: #cf222e;
+  --color-done-fg: #8250df;
+  --color-neutral-emphasis-plus: #24292f;
+  --color-social-reaction-bg-hover: var(--color-scale-gray-1, #eaeef2);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-1, #b6e3ff);
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  main {
+    --color-prettylights-syntax-comment: #8b949e;
+    --color-prettylights-syntax-constant: #79c0ff;
+    --color-prettylights-syntax-entity: #d2a8ff;
+    --color-prettylights-syntax-storage-modifier-import: #c9d1d9;
+    --color-prettylights-syntax-entity-tag: #7ee787;
+    --color-prettylights-syntax-keyword: #ff7b72;
+    --color-prettylights-syntax-string: #a5d6ff;
+    --color-prettylights-syntax-variable: #ffa657;
+    --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
+    --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
+    --color-prettylights-syntax-invalid-illegal-bg: #8e1519;
+    --color-prettylights-syntax-carriage-return-text: #f0f6fc;
+    --color-prettylights-syntax-carriage-return-bg: #b62324;
+    --color-prettylights-syntax-string-regexp: #7ee787;
+    --color-prettylights-syntax-markup-list: #f2cc60;
+    --color-prettylights-syntax-markup-heading: #1f6feb;
+    --color-prettylights-syntax-markup-italic: #c9d1d9;
+    --color-prettylights-syntax-markup-bold: #c9d1d9;
+    --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
+    --color-prettylights-syntax-markup-deleted-bg: #67060c;
+    --color-prettylights-syntax-markup-inserted-text: #aff5b4;
+    --color-prettylights-syntax-markup-inserted-bg: #033a16;
+    --color-prettylights-syntax-markup-changed-text: #ffdfb6;
+    --color-prettylights-syntax-markup-changed-bg: #5a1e02;
+    --color-prettylights-syntax-markup-ignored-text: #c9d1d9;
+    --color-prettylights-syntax-markup-ignored-bg: #1158c7;
+    --color-prettylights-syntax-meta-diff-range: #d2a8ff;
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
+    --color-btn-text: #c9d1d9;
+    --color-btn-bg: #21262d;
+    --color-btn-border: rgba(240, 246, 252, 0.1);
+    --color-btn-shadow: 0 0 transparent;
+    --color-btn-inset-shadow: 0 0 transparent;
+    --color-btn-hover-bg: #30363d;
+    --color-btn-hover-border: rgba(240, 246, 252, 0.1);
+    --color-btn-active-bg: hsla(212, 12%, 18%, 1);
+    --color-btn-active-border: rgba(240, 246, 252, 0.1);
+    --color-btn-selected-bg: #161b22;
+    --color-btn-primary-text: #fff;
+    --color-btn-primary-bg: #238636;
+    --color-btn-primary-border: rgba(240, 246, 252, 0.1);
+    --color-btn-primary-hover-bg: #2ea043;
+    --color-btn-primary-hover-border: rgba(240, 246, 252, 0.1);
+    --color-btn-primary-selected-bg: #238636;
+    --color-btn-primary-disabled-text: rgba(240, 246, 252, 0.5);
+    --color-btn-primary-disabled-bg: rgba(35, 134, 54, 0.6);
+    --color-btn-primary-disabled-border: rgba(240, 246, 252, 0.1);
+    --color-fg-default: #c9d1d9;
+    --color-fg-muted: #8b949e;
+    --color-fg-subtle: #6e7681;
+    --color-canvas-default: #0d1117;
+    --color-canvas-overlay: #161b22;
+    --color-canvas-inset: #010409;
+    --color-canvas-subtle: #161b22;
+    --color-border-default: #30363d;
+    --color-border-muted: #21262d;
+    --color-neutral-muted: rgba(110, 118, 129, 0.4);
+    --color-accent-fg: #58a6ff;
+    --color-accent-emphasis: #1f6feb;
+    --color-accent-muted: rgba(56, 139, 253, 0.4);
+    --color-accent-subtle: rgba(56, 139, 253, 0.15);
+    --color-success-fg: #3fb950;
+    --color-attention-fg: #d29922;
+    --color-danger-fg: #f85149;
+    --color-danger-emphasis: #da3633;
+    --color-done-fg: #a371f7;
+    --color-neutral-emphasis-plus: #6e7681;
+    --color-social-reaction-bg-hover: rgba(110, 118, 129, 0.4);
+    --color-social-reaction-bg-reacted-hover: rgba(56, 139, 253, 0.4);
+  }
+}
+
+/* === Custom layout: everything in one line === */
+
+/* Make the main container a flex row */
+.gsc-main {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Reactions section - inline, no border/background */
+.gsc-reactions {
+  order: -1 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  gap: 0.5rem !important;
+}
+
+/* Hide the "X reactions" title */
+.gsc-reactions-count {
+  display: none !important;
+}
+
+/* Make reaction buttons row inline - remove margin */
+.gsc-reactions > div {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  justify-content: flex-start !important;
+}
+
+/* Comments header - make it inline with reactions */
+.gsc-header {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+.gsc-left-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+/* Comment count */
+.gsc-comments-count {
+  margin: 0 !important;
+  font-size: 1rem !important;
+}
+
+/* Separator dot */
+.gsc-comments-count-separator {
+  margin: 0 !important;
+}
+
+/* Replies count */
+.gsc-replies-count {
+  margin: 0 !important;
+}
+
+/* "powered by giscus" text - hide it by setting font-size to 0 on parent and restoring on children */
+.gsc-left-header {
+  font-size: 0 !important;
+}
+
+.gsc-left-header > .gsc-comments-count {
+  font-size: 1rem !important;
+}
+
+/* Sort buttons on the right */
+.gsc-right-header {
+  margin-left: auto !important;
+}
+
+/* Hide "– powered by giscus" link */
+a.Link--secondary[href="https://giscus.app"],
+.gsc-left-header em,
+.gsc-left-header a[href*="giscus"] {
+  display: none !important;
+}
