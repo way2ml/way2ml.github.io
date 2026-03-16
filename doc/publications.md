@@ -1,7 +1,7 @@
 # Publications
 
 - Improving atomic force microscopy structure discovery via style-translation - Jie Huang, Niko Oinonen, Fabio Priante, Filippo Federici Canova, Lauri Kurki, Chen Xu, and Adam S. Foster
-  - npj Computational Materials (2025) [[pdf](https://arxiv.org/pdf/2509.02240)]    
+  - arxiv (2025) [[pdf](https://arxiv.org/pdf/2509.02240)]    
 - Sidestepping Intermolecular Hydrogen Bonds: How Single Water Molecules Adsorb and Assemble on the Calcite (104)-(2x1) Surface - Jonas Heggemann, Jie Huang, Simon Aeschlimann, Simon Spiller, Adam S Foster, and Philipp Rahe
   - ACS Nano 19 (2025) 26650 <a href="./_static/publications/2025_ACS_Nano.pdf" target="_blank" rel="noopener">[pdf]</a>  
 - Revisiting the thickness of the air-water interface from two extremes of interface hydrogen bond dynamics - Gang Huang and Jie Huang
