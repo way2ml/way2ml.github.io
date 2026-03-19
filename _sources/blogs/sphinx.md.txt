@@ -1,0 +1,142 @@
+---
+title: How to use Sphinx to document my research
+date: 2025-11-10
+author: Jie Huang
+comment: True
+description: A comprehensive guide to using Sphinx for documentation. If you want to know how the features on this site are implemented, you can click Page source in the footer to see the source markdown file. This guide covers console commands, code blocks with syntax highlighting, admonitions for notes and warnings, tabs for organising content, figures with captions, mathematical equations using LaTeX, citations with BibTeX, and more.
+---
+# How to use Sphinx to document 
+If you want to know how the following features are implemented, you can just click **Page source** below in the footer 
+to see the source markdown file. For any questions and comments, please leave them in the comment box 
+at the end.
+
+## Console
+
+```console
+$ mkdir doc-example
+$ cd doc-example
+$ sphinx-quickstart
+```
+
+You probably noticed that there's a handy **Copy** button when you hover around the block.
+To enable this feature, you need `pip install sphinx-copybutton`, then enable it in `conf.py`
+by adding to the extension list.
+```python
+extensions = [
+    # ... your other extensions ...
+    "sphinx_copybutton",
+]
+```
+
+## Latex equation
+Make sure the `conf.py` file has this setting, which will auto-number the equations.
+```bash
+extensions = [
+    "myst_parser",
+]
+
+myst_enable_extensions = [
+    "amsmath",
+    "dollarmath",
+]
+
+math_number_all = True
+```
+
+This is inline math $E=mc^2$, and here is a separated one as shown in equation {eq}`eq:euler`.
+
+$$
+e^{i\theta} = \cos(\theta) + i\sin{\theta}
+$$ (eq:euler)
+
+You can also use an inline dollar symbol to write an equation like this $a^2 + b^2 = c^2$, or separated 
+equations like this. 
+
+$$
+\ln(1+x) = x - \frac{1}{2}x^2 + \frac{1}{3}x^3 - \frac{1}{4}x^4 + \frac{1}{5}x^5 - \frac{1}{6}x^6 + \cdots
+$$ (eq:natural)
+
+Equation {eq}`eq:natural` excited Newton for two reasons. First, they could be used to speed up calculations
+enormously, and second, they were relevant to a controversial problem in music theory ha was working on: how
+to divide an octave into perfectly equal musical steps without sacrificing the most pleasing harmonies of the
+traditional scale {cite}`Strogatz2019`.
+
+## Image with caption
+We can use the following way to add an image with a caption. The grammar is different from the common Markdown format. With `numfig = True` in `conf.py`, figures will be automatically numbered across **all documents** in the toctree (not per-document), and you can reference them using `{numref}`.
+
+```{figure} ../../data/github_workflow/Github-Workflow-2.png
+:name: fig-test
+
+This is a test to add an image with a caption.
+```
+As shown in {numref}`fig-test`, the figure is automatically numbered. Note that Sphinx numbers figures 
+continuously across all documents in your documentation (like chapters in a book), so this might not be
+Figure 1 if there are figures in earlier documents. To reset the figure number for each page, I created
+an extension `doc/_extensions/per_page_numfig.py`, which can be found [here](https://github.com/way2ml/way2ml.github.io/blob/main/doc/_extensions/per_page_numfig.py). 
+If you enable it in `conf.py` like `extensions = ['_extensions.per_page_numfig']`, the figure numbers for
+all the figures would be correct. 
+
+## Information box
+:::{note}
+This is a note.
+:::
+
+:::{tip}
+This is a tip.
+:::
+
+:::{warning}
+This is a warning.
+:::
+
+## Citation
+You can cite other papers easily. For example, I published my first
+research paper in 2020, which uses a neural network to fit a function
+of the structure factor of polymer systems {cite}`Huang2020`. To achieve
+this feature, you need to install the BibTeX support through 
+
+```bash
+pip install sphinxcontrib-bibtex
+```
+
+and then make sure
+`conf.py` has the following lines.
+
+```python
+extensions = [
+    # ...
+    'sphinxcontrib.bibtex'
+    ]
+bibtex_bibfiles = ["ref.bib"]
+```
+
+## Molecular visualisation
+To visualise molecular structures, I created [sphinx-molview](https://github.com/HuangJiaLian/sphinx-molview). You can 
+install it by using `pip install git+https://github.com/HuangJiaLian/sphinx-molview.git` and enable it `conf.py` by adding it to the list of extensions:
+
+```python
+extensions = [
+    # ...
+    'sphinx_molview', 
+    ]
+```
+This plugin supports `.xyz` and `POSCAR` format at this moment. 
+```{molview} https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/251206_225424_POSCAR 
+:format: poscar
+:caption: Water molecules
+:showhbonds: true
+:extendx: 0.2
+:extendy: 0.2
+:extendz: 0.2
+:zoom: 4
+:showborder: true
+:view: c*
+```
+
+## References
+
+```{bibliography}
+:filter: docname in docnames
+:style: unsrt
+```
+
