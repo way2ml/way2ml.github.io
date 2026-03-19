@@ -156,6 +156,7 @@ tmux source-file ~/.tmux.conf
 prefix + %: Split the window vertically
 prefix + ": Split the window horizontally
 prefix + z: Maximise the current pane
+prefix + ,: Rename the current window
 ```
 
 ## How to copy a piece of text in a tmux pane?
