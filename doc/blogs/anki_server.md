@@ -1,5 +1,5 @@
 ---
-title: How to self-host an Anki server 
+title: Self-hosting an Anki server on Raspberry Pi
 date: 2026-05-04
 author: Jie Huang
 comment: True
