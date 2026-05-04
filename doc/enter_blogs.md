@@ -8,16 +8,17 @@ feel free to share them in the comments. I would really appreciate it.
 
 ```{toctree}
 :hidden:
+blogs/anki_server
 blogs/tmux
 blogs/gitflow
 blogs/sphinx
 ```
 
 ```{blog-cards}
+blogs/anki_server
 blogs/tmux
 blogs/gitflow
 blogs/sphinx
-blogs/anki_server
 ```
 
 <div class="blog-card">
