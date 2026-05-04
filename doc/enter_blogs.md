@@ -17,6 +17,7 @@ blogs/sphinx
 blogs/tmux
 blogs/gitflow
 blogs/sphinx
+blogs/anki_server
 ```
 
 <div class="blog-card">
