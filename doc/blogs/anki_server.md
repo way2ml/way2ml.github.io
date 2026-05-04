@@ -49,6 +49,7 @@ SYNC_PORT=8080 \
 ```
 
 Save your username and password for later use.
+The official Anki manual includes additional setup options and notes on networking, reverse proxies, and multi-user configuration {cite}`ankiSyncServerManual`.
 
 ## Settings on clients
 Install `lame` if you want to record audio for your cards.
@@ -125,3 +126,9 @@ May 03 22:38:31 zhuque-01 python[2444]: 2026-05-03T19:38:31.373484Z  INFO listen
 ## Summary
 At this point, you have a lightweight Anki sync server running on a Raspberry Pi, a client configuration that works on Linux and mobile devices, and a systemd service that starts everything automatically after reboot. The result is simple and practical: your cards stay under your control, and your study workflow becomes a little more independent.
 It is a small project, but it is satisfying. Your Raspberry Pi is no longer just sitting there on the shelf; now it is helping you remember things.
+
+## References
+```{bibliography}
+:filter: docname in docnames
+:style: unsrt
+```
