@@ -8,6 +8,7 @@ feel free to share them in the comments. I would really appreciate it.
 
 ```{toctree}
 :hidden:
+blogs/finnish
 blogs/type
 blogs/anki_server
 blogs/tmux
@@ -16,6 +17,7 @@ blogs/sphinx
 ```
 
 ```{blog-cards}
+blogs/finnish
 blogs/type
 blogs/anki_server
 blogs/tmux
