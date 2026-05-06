@@ -7,24 +7,32 @@ description: Learn Finnish from Scratch.
 ---
 
 # Luvut
-1 2 3 4 5 6 7 8 9  10 
-yksi kaksi kolme naljä viisi kuusi seitsemän kahdeksan yhdeksän kymmenen
+| Number | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Finnish | yksi | kaksi | kolme | neljä | viisi | kuusi | seitsemän | kahdeksan | yhdeksän | kymmenen |
 
-11 12 13 14 15 16 17 18 19 20
-yksitoista kaksitoista kolmetoista neijätoista viisitoista kuusitoista seitsemäntoista kahdeksantoista yhdeksätoista kaksikymmentä
+| Number | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Finnish | yksitoista | kaksitoista | kolmetoista | neljätoista | viisitoista | kuusitoista | seitsemäntoista | kahdeksantoista | yhdeksäntoista | kaksikymmentä |
 
-100 200 300 400 500 600 700 8 00 900 1000
+| Number | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 1000 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Finnish | sata | kaksisataa | kolmesataa | neljäsataa | viisisataa | kuusisataa | seitsemänsataa | kahdeksansataa | yhdeksänsataa | tuhat |
 
 # Päivät 
-1 2 3 4 5 6 7
-maanantai tiistai keskiviikko torstai perjantai lauantai sunnuntai
+| Number | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|---|---|---|---|---|---|---|
+| Finnish | maanantai | tiistai | keskiviikko | torstai | perjantai | lauantai | sunnuntai |
 
 # Kuukaudet
-1 2 3 4 5 6 7 8 9 10 11 12 
-tammikuu helmikuu maaliskuu huhtikuu toukokuu kesäkuu heinäkuu elokuu syyskuu lokakuu marraskuu joulukuu
+| Number | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Finnish | tammikuu | helmikuu | maaliskuu | huhtikuu | toukokuu | kesäkuu | heinäkuu | elokuu | syyskuu | lokakuu | marraskuu | joulukuu |
 
-# Spring Summer Autum Winter
-kevät kesä syksy talvi
+# Spring Summer Autumn Winter
+| English | spring | summer | autumn / fall | winter |
+|---|---|---|---|---|
+| Finnish | kevät | kesä | syksy | talvi |
 
 
 ## References
