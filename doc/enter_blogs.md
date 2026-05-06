@@ -8,6 +8,7 @@ feel free to share them in the comments. I would really appreciate it.
 
 ```{toctree}
 :hidden:
+blogs/type
 blogs/anki_server
 blogs/tmux
 blogs/gitflow
@@ -15,6 +16,7 @@ blogs/sphinx
 ```
 
 ```{blog-cards}
+blogs/type
 blogs/anki_server
 blogs/tmux
 blogs/gitflow
