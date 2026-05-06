@@ -5,8 +5,8 @@ author: Jie Huang
 comment: True
 description: Learn Finnish from Scratch.
 ---
-
-# Luvut
+# Finnish  Learning Journey
+## Luvut
 | Number | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |---|---|---|---|---|---|---|---|---|---|---|
 | Finnish | yksi | kaksi | kolme | neljä | viisi | kuusi | seitsemän | kahdeksan | yhdeksän | kymmenen |
@@ -19,17 +19,17 @@ description: Learn Finnish from Scratch.
 |---|---|---|---|---|---|---|---|---|---|---|
 | Finnish | sata | kaksisataa | kolmesataa | neljäsataa | viisisataa | kuusisataa | seitsemänsataa | kahdeksansataa | yhdeksänsataa | tuhat |
 
-# Päivät 
+## Päivät 
 | Number | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 |---|---|---|---|---|---|---|---|
 | Finnish | maanantai | tiistai | keskiviikko | torstai | perjantai | lauantai | sunnuntai |
 
-# Kuukaudet
+## Kuukaudet
 | Number | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Finnish | tammikuu | helmikuu | maaliskuu | huhtikuu | toukokuu | kesäkuu | heinäkuu | elokuu | syyskuu | lokakuu | marraskuu | joulukuu |
 
-# Spring Summer Autumn Winter
+## Spring Summer Autumn Winter
 | English | spring | summer | autumn / fall | winter |
 |---|---|---|---|---|
 | Finnish | kevät | kesä | syksy | talvi |
