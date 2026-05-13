@@ -4,7 +4,7 @@ comment: True
 ---
 
 # Highlights
-- 2026.05.13 I met Jiaming Wang in the CS building at launch time. We had a nice talk. 
+- 2026.05.13 I met and talked with Jiaming Wang in the CS building at launch time. We spent Vappu together this year with Liwei Jing, Yucai Lin, and Zhineng Fei, <a href="./_static/moments/20260501_vappu.jpg" target="_blank" rel="noopener">[in Helsinki.]</a>
 - 2026.02.13 I played Ping-Pong with Filippo. In the evening, we, <a href="./_static/moments/20260213_kamppi.jpeg" target="_blank" rel="noopener">[the explorers]</a>, went to Kamppi to see some Chinese events. Then we found a Asia resturant for food. After that, we went to a Karaoke bar. We sang songs and drank beer. It was fun. Thank guys. I had a great day with you. 
 - 2026.02.12 I played floorball today. Theo joined floorball for the first time. I helped students solve their programming problems.
 - 2026.01.14 I bought a book, TUHAT SANAA, to learn Finnish. The audio can be found [here](https://otava.fi/nemo/tuhatsanaa/aantamisohjeet-suomeksi/).  
@@ -18,7 +18,7 @@ comment: True
 - 2025.11.29 We went to Tallinn and experienced [Tallinn's medieval Restaurant: Olde Hansa](https://www.oldehansa.ee/). I like being tipsy in that under dim candlelight. Torrin taught this new word tipsy today. We enjoyed the street performance by an old man, who can sing songs in any language. I had a haircut, guys can tell the difference. I was happy today. <a href="./_static/moments/20251129_myStar.jpg" target="_blank" rel="noopener">[Photo at mystar]</a> 
 - 2025.11.27 I went for floorball with Ruslan Ershov, Clara Isabel Prêcheur Llarena, Laura Fieber, Erik Härkönen, Rafael Nuñez Palacio, Voitto Känkänen, Anna Kobets, and Valtteri Turkki. Clara knows Chinese. Ruslan has worked since high school.
 - 2025.11.26 I added the feature of comments to this website. It snowed heavily outside. I wished Gang a happy birthday.
-- 2025.11.25 I was searching for a picture of my own for the office profile. Then I found <a href="./_static/moments/music_player.html" target="_blank" rel="noopener">some songs I sang</a> years ago. I'm glad I have recorded these songs. It's an excellent gift. It reminds me that I do love singing.     
+- 2025.11.25 I was searching for a picture of myself for the office profile. Then I found <a href="./_static/moments/music_player.html" target="_blank" rel="noopener">some songs I sang</a> years ago. I'm glad I have recorded these songs. It's an excellent gift. It reminds me that I do love singing.     
 - 2025.11.22 We went to [Oodi Helsinki Central Library](https://oodihelsinki.fi/en/), then headed for the [sompasauna](https://www.sompasauna.fi/). It's raining and snowing; I jumped into the sea four times. It was amazing. Without them, I would never do such things alone. Thanks, guys. 
 - 2025.11.20 I played floorball with Voitto Känkänen, Rafael Nuñez Palacio, Laura Fieber, Matthew Herbst, and Anna Kobets.   
 - 2025.11.13 I played floorball with Erik Härkönen, Valtteri Turkki, Anna Kobets, Voitto Känkänen, Matthew Herbst and Nan Cao.  
