@@ -14,5 +14,5 @@ information theory, and physics, reflecting my ongoing research journey and hobb
 News <news.md>
 Publications <publications.md>
 Blogs <enter_blogs.md>
-Moments <moments.md>
+Highlights <highlights.md>
 ```
