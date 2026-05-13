@@ -4,7 +4,7 @@ The project files for my homepage: [https://way2ml.github.io/](https://way2ml.gi
 ## Installation
 
 ```bash
-conda env create -f src/myenv.yml
+conda env create -f myenv.yml
 conda activate way2ml 
 
 ```

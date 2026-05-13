@@ -18,5 +18,6 @@ dependencies:
       - pydata-sphinx-theme
       - sphinx-tabs
       - sphinx-copybutton
+      - sphinx-design
       - sphinxcontrib.bibtex
       - git+https://github.com/HuangJiaLian/sphinx-molview.git

@@ -89,6 +89,41 @@ This is a tip.
 This is a warning.
 :::
 
+:::{dropdown} Dropdown box
+:color: primary
+:icon: info
+此开卷第一回也。作者自云：曾历过一番梦幻之后，故将真事隐去，而借
+通灵说此《石头记》一书也，故曰“甄士隐”云云。但书中所记何事何人?自己又
+云：“今风尘碌碌，一事无成，忽念及当日所有之女子：一一细考较去，觉其行止
+见识皆出我之上。我堂堂须眉诚不若彼裙钗，我实愧则有馀，悔又无益，大无可如
+何之日也。当此日，欲将已往所赖天恩祖德，锦衣纨之时，饫甘餍肥之日，背父
+兄教育之恩，负师友规训之德，以致今日一技无成、半生潦倒之罪，编述一集，以
+告天下；知我之负罪固多，然闺阁中历历有人，万不可因我之不肖，自护己短，一
+并使其泯灭也。所以蓬牖茅椽，绳床瓦灶，并不足妨我襟怀；况那晨风夕月，阶柳
+庭花，更觉得润人笔墨。我虽不学无文，又何妨用假语村言敷演出来?亦可使闺阁
+昭传。复可破一时之闷，醒同人之目，不亦宜乎？”故曰“贾雨村”云云。更于篇
+中间用“梦”“幻”等字，却是此书本旨，兼寓提醒阅者之意。
+
+To enable dropdown box, we need to `pip install sphinx-design` and set `conf.py` as:
+```
+extensions = [
+    'sphinx_design', # To show dropdown box
+]
+```
+:::
+
+## Format
+Sometimes we want to ~~strikethrough text~~.  We can enable this feature by adding
+
+```python
+myst_enable_extensions = [
+    ...,
+    "strikethrough",
+]
+``` 
+
+You can also <mark>highlight some text</mark> by using `<mark>important text</mark>`.
+
 ## Citation
 You can cite other papers easily. For example, I published my first
 research paper in 2020, which uses a neural network to fit a function

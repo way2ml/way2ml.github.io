@@ -29,6 +29,7 @@ extensions = [
     'per_page_numfig',  # Custom extension for per-document figure numbering
     'blog_cards',  # Custom extension for blog card listings
     'sphinx_molview', # To view molecular structures
+    'sphinx_design', # To show dropdown box
 ]
 bibtex_bibfiles = ["_static/ref.bib"]
 
@@ -45,6 +46,7 @@ myst_enable_extensions = [
     "html_image",
     "amsmath",
     "dollarmath",
+    "strikethrough",
 ]
 
 # Enable automatic figure numbering
