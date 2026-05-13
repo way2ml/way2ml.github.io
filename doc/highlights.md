@@ -1,9 +1,9 @@
 ---
-title: Life moments
+title: Highlights
 comment: True
 ---
 
-# Moments
+# Highlights
 - 2026.05.13 I met Jiaming Wang in the CS building at launch time. We had a nice talk. 
 - 2026.02.13 I played Ping-Pong with Filippo. In the evening, we, <a href="./_static/moments/20260213_kamppi.jpeg" target="_blank" rel="noopener">[the explorers]</a>, went to Kamppi to see some Chinese events. Then we found a Asia resturant for food. After that, we went to a Karaoke bar. We sang songs and drank beer. It was fun. Thank guys. I had a great day with you. 
 - 2026.02.12 I played floorball today. Theo joined floorball for the first time. I helped students solve their programming problems.
