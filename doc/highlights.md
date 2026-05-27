@@ -4,6 +4,7 @@ comment: True
 ---
 
 # Highlights
+- 2027.05.27 I had lunch with Nan. I knew a new old friend, Ziying, from Peter's group. I was thinking about developing tennis as my second income. I love tennis. There's no reason to say no to this kind of thing. It makes me really happy. 
 - 2026.05.26 I cycled back with Nan, and we had dinner in Tapiola. Then I cycled back through the forest. The view is so beautiful. 
 - 2026.05.13 I met and talked with Jiaming Wang in the CS building at launch time. We spent Vappu together this year with Liwei Jing, Yucai Lin, and Zhineng Fei, <a href="./_static/moments/20260501_vappu.jpg" target="_blank" rel="noopener">[in Helsinki]</a>.
 - 2026.02.13 I played Ping-Pong with Filippo. In the evening, we, <a href="./_static/moments/20260213_kamppi.jpeg" target="_blank" rel="noopener">[the explorers]</a>, went to Kamppi to see some Chinese events. Then we found a Asia resturant for food. After that, we went to a Karaoke bar. We sang songs and drank beer. It was fun. Thank guys. I had a great day with you. 
