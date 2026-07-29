@@ -1,4 +1,5 @@
 # News 
+- 2026.07.13 Our paper "[Improving atomic force microscopy structure discovery via style-translation](https://doi.org/10.1038/s41524-026-02243-2)" has finally been accepted by npj Comput. Mater. after almost a year of review! 🎉 
 - 2026.05.02 Jie starts his final year as a doctoral researcher at Aalto University. 
 - 2025.08.07 Jie contributes a talk at [NCAFM-2025 conference](https://www.nims.go.jp/group/Nanoprobe/NC-AFM2025/Index.html) in Toyama, Japan. [View abstract](https://www.nims.go.jp/group/Nanoprobe/NC-AFM2025/Abstract/S11-2_Jie%20Huang.pdf) or [slides](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/NCAFM_Jie_Huang.pdf).     
 - 2025.07.30 University of Osnabrück has published a press release  on our ACS Nano paper in collaboration with [Prof. Philipp Rahe](https://www.humboldt-foundation.de/en/connect/explore-the-humboldt-network/singleview/1147643/dr-philipp-rahe), Dr. Jonas Heggemann, Simon Aeschlimann, and Simon Spiller. [Archive](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/2025-07-30-ACSNANO.png).    
