@@ -149,8 +149,6 @@ That is all there is to it. With a single DeepSeek API key, you can power both y
 
 If you run into any issues or have questions, feel free to leave a comment below.
 
-## References
-
 ```{bibliography}
 :filter: docname in docnames
 :style: unsrt
