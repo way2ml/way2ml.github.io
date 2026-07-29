@@ -11,8 +11,8 @@ ongoing research journey and hobbies.
 :hidden:
 :maxdepth: 1
 
-News <news.md>
-Publications <publications.md>
 Blogs <enter_blogs.md>
+News <news.md>
 Highlights <highlights.md>
+Others <publications.md>
 ```
