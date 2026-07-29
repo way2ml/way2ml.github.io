@@ -14,6 +14,7 @@ blogs/anki_server
 blogs/tmux
 blogs/gitflow
 blogs/sphinx
+blogs/deepseek_agent
 ```
 
 ```{blog-cards}
@@ -23,6 +24,7 @@ blogs/anki_server
 blogs/tmux
 blogs/gitflow
 blogs/sphinx
+blogs/deepseek_agent
 ```
 
 <div class="blog-card">
