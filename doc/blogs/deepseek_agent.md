@@ -108,6 +108,8 @@ Go back to the [DeepSeek Platform](https://platform.deepseek.com/) API Keys page
 Create a separate API key named "Copilot" on the DeepSeek Platform — this keeps usage tracking clean for different integrations.
 ```
 
+**Why separate keys?** Hermes Agent and GitHub Copilot serve very different purposes — one is a general assistant, the other is a coding tool. By using a different API key for each, you can see exactly how much you spend on each service in the DeepSeek usage dashboard. For example, this article alone (written with the help of Hermes Agent) cost about **¥0.13** — that is less than ¥0.14 for a full tutorial with over a dozen screenshots and multiple revisions.
+
 ### Step 3: Enter the API key in VS Code
 
 The extension will open a setup guide. Click **"Set API Key"** and paste your DeepSeek API key.
@@ -145,7 +147,15 @@ Now you can use DeepSeek-powered Copilot in all three modes. Try **Agent** mode 
 | Configure | Providers → API keys → DeepSeek | Extension setup → Set API Key |
 | Start using | Chat with DeepSeek model | Copilot Chat in Ask/Plan/Agent mode |
 
-That is all there is to it. With a single DeepSeek API key, you can power both your daily AI assistant (Hermes Agent) and your coding assistant (VS Code Copilot). The setup takes about five minutes and gives you access to DeepSeek's capable models in two very different contexts.
+That is all there is to it. With DeepSeek API keys, you can power both your daily AI assistant (Hermes Agent) and your coding assistant (VS Code Copilot) with separate keys for each — making it easy to track your usage. The setup takes about five minutes and gives you access to DeepSeek's capable models in two very different contexts.
+
+If you use separate keys (as suggested above), you can check exactly how much each service costs on the [DeepSeek Platform usage page](https://platform.deepseek.com/). For reference, writing this entire article with Hermes Agent cost about **¥0.13**.
+
+```{figure} ../_static/blogs/deepseek_agent/13_usage_dashboard.png
+:name: usage-dashboard
+
+The DeepSeek usage dashboard breaks down cost by API key. Here you can see the "Copilot" key cost ¥0.04 and the "Hermes" key cost ¥0.13 in the last 30 days — useful for understanding your usage patterns.
+```
 
 If you run into any issues or have questions, feel free to leave a comment below.
 

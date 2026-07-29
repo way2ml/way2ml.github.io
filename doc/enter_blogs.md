@@ -8,23 +8,23 @@ feel free to share them in the comments. I would really appreciate it.
 
 ```{toctree}
 :hidden:
+blogs/deepseek_agent
 blogs/finnish
 blogs/type
 blogs/anki_server
 blogs/tmux
-blogs/gitflow
 blogs/sphinx
-blogs/deepseek_agent
+blogs/gitflow
 ```
 
 ```{blog-cards}
+blogs/deepseek_agent
 blogs/finnish
 blogs/type
 blogs/anki_server
 blogs/tmux
-blogs/gitflow
 blogs/sphinx
-blogs/deepseek_agent
+blogs/gitflow
 ```
 
 <div class="blog-card">
