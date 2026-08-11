@@ -1,4 +1,5 @@
 # News 
+- 2026.08.04 Jie contributes a talk at the [NC-AFM 2026 conference](https://www.uibk.ac.at/en/congress/nc-afm-2026/), the 27th International Conference on Non-Contact Atomic Force Microscopy, in Innsbruck, Austria (August 3rd–7th). <a href="./_static/talks/NCAFM_Jie_Huang_2026_photo.jpg" target="_blank" rel="noopener">View photo</a> or <a href="./_static/talks/NCAFM_Jie_Huang_2026.pdf" target="_blank" rel="noopener">view slides</a>.
 - 2026.07.13 Our paper "[Improving atomic force microscopy structure discovery via style-translation](https://doi.org/10.1038/s41524-026-02243-2)" has finally been accepted by npj Comput. Mater. after almost a year of review! 🎉 
 - 2026.05.02 Jie starts his final year as a doctoral researcher at Aalto University. 
 - 2025.08.07 Jie contributes a talk at [NCAFM-2025 conference](https://www.nims.go.jp/group/Nanoprobe/NC-AFM2025/Index.html) in Toyama, Japan. [View abstract](https://www.nims.go.jp/group/Nanoprobe/NC-AFM2025/Abstract/S11-2_Jie%20Huang.pdf) or [slides](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/NCAFM_Jie_Huang.pdf).     
