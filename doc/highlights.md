@@ -4,7 +4,7 @@ comment: True
 ---
 
 # Highlights
-- 2026.08.07 On the last day of NC-AFM 2026 in Innsbruck, I met many <a href="./_static/moments/20260807_ncafm_friends.jpg" target="_blank" rel="noopener">[friends]</a>: Sebastian, Zheng-Rong Guo, Ing-Shouh Hwang, and Xiangling Zhuang.
+- 2026.08.07 On the last day of NC-AFM 2026 in Innsbruck, I met many <a href="./_static/moments/20260807_ncafm_friends.jpg" target="_blank" rel="noopener">[friends]</a>: Ye Liu, Jing Guo, Yuejian Zhang, Shuyu Huang, Lulu Wang, Xinnan Peng, Yukun Zhang, Paul Laubrock,  Jonas Heggemann, Johanna Schnorrenberg, Philipp Rahe,  Sebastian Nikolaus Strube-Grützner, Zheng-Rong Guo, Ing-Shouh Hwang, and Xiangling Zhuang.
 - 2026.07.17 I self-hosted a [community version of Overleaf](http://88.192.136.30/) on Raspberry Pi 5, assisted with AI gent. It's clean and elegant. 
 - 2026.05.27 I had lunch with Nan. I met a new old friend, Ziying, from Peter's group. I'm considering developing tennis as a second source of income. I love tennis. There's no reason to say no to this kind of thing. It makes me really happy. 
 - 2026.05.26 I cycled back with Nan, and we had dinner in Tapiola. Then I cycled back through the forest. The view is so beautiful. 
