@@ -1,6 +1,8 @@
 # Publications
+- Chiral water structures on the dolomite(104)-S surface enantiomer - Paul Laubrock, Jonas Heggemann, Jie Huang, Adam S. Foster, and Philipp Rahe
+  - Nano Lett. (2026)
 - Improving atomic force microscopy structure discovery via style-translation - Jie Huang, Niko Oinonen, Fabio Priante, Filippo Federici Canova, Lauri Kurki, Chen Xu, and Adam S. Foster
-  - npj Computational Materials (2026) <a href="https://github.com/SINGROUP/StyleTransAugment" target="_blank" rel="noopener">[code]</a> [[pdf](https://arxiv.org/pdf/2509.02240)]
+  -  npj Comput. Mater. (2026) <a href="https://github.com/SINGROUP/StyleTransAugment" target="_blank" rel="noopener">[code]</a> [[pdf](https://arxiv.org/pdf/2509.02240)]
 - Dynamic disordering in discrete states: Disconnected hopping boosts anharmonicity in CuInP2S6 - Bowen Wang, Hejin Yan, Jie Huang, Xuefei Yan, Changmeng Huan, Johannes Lischner, Qingqing Ke, and Yongqing Cai
   - Sci. Adv. 12 (2026) eaee1289 <a href="./_static/publications/2026_sciadv.pdf" target="_blank" rel="noopener">[pdf]</a>
 - Mic-hackathon 2024: hackathon on machine learning for electron and scanning probe microscopy - Utkarsh Pratiush et al
