@@ -14,5 +14,5 @@ ongoing research journey and hobbies.
 Blogs <enter_blogs.md>
 News <news.md>
 Highlights <highlights.md>
-Others <publications.md>
+Publications <publications.md>
 ```
