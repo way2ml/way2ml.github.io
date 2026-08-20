@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Self-hosting an Anki server on Raspberry Pi &#8212; Way To Machine Learning 0.0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f31f7f3d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://3dmol.org/build/3Dmol-min.js"></script>
+    <script src="../_static/mol-viewer.js?v=bf506b58"></script>
+    <script src="../_static/article-metadata.js?v=deda2c05"></script>
+    <script src="../_static/lightbox.js?v=e8dcba6a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blogs/anki_server';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How do I use tmux to smooth my workflow" href="tmux.html" />
+    <link rel="prev" title="Type Finnish and Special Characters using a US Keyboard" href="type.html" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  
+    
+      <meta name="article-date" content="2026-05-04" />
+    
+    
+      <meta name="article-author" content="Jie Huang" />
+    
+  
+  <meta name="github-user" content="way2ml" />
+  <meta name="github-repo" content="way2ml.github.io" />
+  <meta name="github-branch" content="main" />
+  <meta name="doc-path" content="doc" />
+  <meta name="page-name" content="blogs/anki_server" />
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Way To Machine Learning</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../enter_blogs.html">
+    Blogs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../news.html">
+    News
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../highlights.html">
+    Highlights
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../publications.html">
+    Publications
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/way2ml/way2ml.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.researchgate.net/profile/Jie_Huang136" title="ResearchGate" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-researchgate fa-lg" aria-hidden="true"></i><span class="visually-hidden">ResearchGate</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@jackhuang.wz" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i><span class="visually-hidden">Medium</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com//@way2ml" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i><span class="visually-hidden">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/jackhuang_wz" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://linkedin.com/in/jiehuang-fi" title="LinkedIn" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i><span class="visually-hidden">LinkedIn</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://orcid.org/0000-0003-3560-283X" title="ORCID" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-orcid fa-lg" aria-hidden="true"></i><span class="visually-hidden">ORCID</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://scholar.google.com/citations?user=238kWMkAAAAJ&hl=en" title="Google Scholar" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-google-scholar fa-lg" aria-hidden="true"></i><span class="visually-hidden">Google Scholar</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../enter_blogs.html">
+    Blogs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../news.html">
+    News
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../highlights.html">
+    Highlights
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../publications.html">
+    Publications
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/way2ml/way2ml.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.researchgate.net/profile/Jie_Huang136" title="ResearchGate" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-researchgate fa-lg" aria-hidden="true"></i><span class="visually-hidden">ResearchGate</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@jackhuang.wz" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i><span class="visually-hidden">Medium</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com//@way2ml" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i><span class="visually-hidden">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/jackhuang_wz" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://linkedin.com/in/jiehuang-fi" title="LinkedIn" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i><span class="visually-hidden">LinkedIn</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://orcid.org/0000-0003-3560-283X" title="ORCID" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-orcid fa-lg" aria-hidden="true"></i><span class="visually-hidden">ORCID</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://scholar.google.com/citations?user=238kWMkAAAAJ&hl=en" title="Google Scholar" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-google-scholar fa-lg" aria-hidden="true"></i><span class="visually-hidden">Google Scholar</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../enter_blogs.html" class="nav-link">Blogs</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Self-hosting an Anki server on Raspberry Pi</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+  
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="self-hosting-an-anki-server-on-raspberry-pi">
+<h1>Self-hosting an Anki server on Raspberry Pi<a class="headerlink" href="#self-hosting-an-anki-server-on-raspberry-pi" title="Link to this heading">#</a></h1>
+<p><img alt="" src="https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/260504_212826_anki_server_toc.png" /></p>
+<p><a class="reference external" href="https://apps.ankiweb.net/">Anki</a> is a popular flashcard application built around spaced repetition, a learning method that helps you review information at the right time to improve long-term memory. It is widely used for language learning, exams, and any subject where steady review matters.</p>
+<p>One reason Anki is so useful is that it is not limited to plain text. You can build cards with images, audio, your own voice recordings, and even video-based material, which makes it especially effective for language learning, listening practice, visual memory, and other media-rich study workflows. Just as important, Anki lets you build your own decks to match your own needs. You are not limited to ready-made learning material from other people. You can create your own cards, organize them in your own way, and gradually build a study system that fits exactly what you want to learn.</p>
+<p>If you use Anki every day, relying on a third-party sync service may feel limiting when you want full control over your own study data. Running your own Anki sync server is a practical way to keep your decks private, manage backups yourself, and sync smoothly across multiple devices. In this article, I show how to set up a self-hosted Anki server on a Raspberry Pi, then connect Linux and iOS clients so you can study and sync your cards from anywhere on your own system.</p>
+<p>Before you start, you only need a few things: a Raspberry Pi connected to your network, Anki installed on your client devices, and a stable local IP address for the server. If you can already SSH into your Raspberry Pi, you are ready for the setup.</p>
+<section id="server-on-raspberry-pi">
+<h2>Server on Raspberry Pi<a class="headerlink" href="#server-on-raspberry-pi" title="Link to this heading">#</a></h2>
+<p>Create a Python environment for the Anki server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span> <span class="n">python3</span><span class="o">-</span><span class="n">venv</span>
+
+<span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">~/</span><span class="n">anki</span><span class="o">-</span><span class="n">syncserver</span>
+<span class="o">~/</span><span class="n">anki</span><span class="o">-</span><span class="n">syncserver</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">pip</span> <span class="n">install</span> <span class="n">anki</span>
+</pre></div>
+</div>
+<p>Create a data folder to store your sync data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">anki</span><span class="o">-</span><span class="n">sync</span><span class="o">-</span><span class="n">data</span>
+</pre></div>
+</div>
+<p>Check the local IP address of the server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ifconfig</span>
+</pre></div>
+</div>
+<p>Suppose the IP address is <code class="docutils literal notranslate"><span class="pre">xxx.xxx.xxx.xxx</span></code>. Save it, because you will need it later.</p>
+<p>Run the server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SYNC_USER1=YOURNAME:YOURPASSWORD \  
+SYNC_BASE=$HOME/anki-sync-data \  
+SYNC_HOST=0.0.0.0 \  
+SYNC_PORT=8080 \  
+~/anki-syncserver/bin/python -m anki.syncserver
+</pre></div>
+</div>
+<p>Save your username and password for later use.
+The official Anki manual includes additional setup options and notes on networking, reverse proxies, and multi-user configuration <span class="bibtex-citation" id="id1">[<a class="reference internal" href="#id6" title="Ankitects. Self-hosted sync server. https://docs.ankiweb.net/sync-server.html, 2026. Anki Manual. Accessed: 2026-05-04.">1</a>]</span>.</p>
+</section>
+<section id="settings-on-clients">
+<h2>Settings on clients<a class="headerlink" href="#settings-on-clients" title="Link to this heading">#</a></h2>
+<p>Install <code class="docutils literal notranslate"><span class="pre">lame</span></code> if you want to record audio for your cards.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">lame</span>
+</pre></div>
+</div>
+<p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl+P</span></code> to open Preferences, go to the Sync tab, and enter the self-hosted sync server address at the bottom:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">xxx</span><span class="o">.</span><span class="n">xxx</span><span class="o">.</span><span class="n">xxx</span><span class="o">.</span><span class="n">xxx</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">xxx.xxx.xxx.xxx</span></code> is the IP address of your server.</p>
+<p>If your devices are on the same local network, this address should work directly. If you want to access your Anki server from outside your home network, it is better to use a reverse proxy, VPN, or another secure access method instead of exposing the port directly to the internet.</p>
+<p><img alt="" src="https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/screenshot_260503_211556.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The first time you click <code class="docutils literal notranslate"><span class="pre">Synchronize</span></code>, Anki will ask you to sign in with an email address and password. This can be confusing. Because you are using your own sync server instead of AnkiWeb, you do not need your AnkiWeb email here. Instead, enter the <code class="docutils literal notranslate"><span class="pre">YOURNAME</span></code> and <code class="docutils literal notranslate"><span class="pre">YOURPASSWORD</span></code> values that you used in the server configuration.</p>
+</div>
+<p>The setup is the same if you use Anki on iOS or Android.</p>
+</section>
+<section id="auto-start-the-anki-server">
+<h2>Auto start the Anki server<a class="headerlink" href="#auto-start-the-anki-server" title="Link to this heading">#</a></h2>
+<p>To avoid starting the server manually every time, you can configure it to start automatically.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">systemd</span><span class="o">/</span><span class="n">system</span><span class="o">/</span><span class="n">anki</span><span class="o">-</span><span class="n">syncserver</span><span class="o">.</span><span class="n">service</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Unit</span><span class="p">]</span>
+<span class="n">Description</span><span class="o">=</span><span class="n">Anki</span> <span class="n">Self</span><span class="o">-</span><span class="n">Hosted</span> <span class="n">Sync</span> <span class="n">Server</span>
+<span class="n">After</span><span class="o">=</span><span class="n">network</span><span class="o">.</span><span class="n">target</span>
+
+<span class="p">[</span><span class="n">Service</span><span class="p">]</span>
+<span class="n">Type</span><span class="o">=</span><span class="n">simple</span>
+<span class="n">User</span><span class="o">=</span><span class="n">jie</span>
+<span class="n">Environment</span><span class="o">=</span><span class="n">SYNC_USER1</span><span class="o">=</span><span class="n">YOURNAME</span><span class="p">:</span><span class="n">YOURPASSWORD</span>
+<span class="n">Environment</span><span class="o">=</span><span class="n">SYNC_BASE</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">jie</span><span class="o">/</span><span class="n">anki</span><span class="o">-</span><span class="n">sync</span><span class="o">-</span><span class="n">data</span>
+<span class="n">Environment</span><span class="o">=</span><span class="n">SYNC_HOST</span><span class="o">=</span><span class="mf">0.0.0.0</span>
+<span class="n">Environment</span><span class="o">=</span><span class="n">SYNC_PORT</span><span class="o">=</span><span class="mi">8080</span>
+<span class="n">ExecStart</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">jie</span><span class="o">/</span><span class="n">anki</span><span class="o">-</span><span class="n">syncserver</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">anki</span><span class="o">.</span><span class="n">syncserver</span>
+<span class="n">Restart</span><span class="o">=</span><span class="n">on</span><span class="o">-</span><span class="n">failure</span>
+
+<span class="p">[</span><span class="n">Install</span><span class="p">]</span>
+<span class="n">WantedBy</span><span class="o">=</span><span class="n">multi</span><span class="o">-</span><span class="n">user</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+</div>
+<p>Enable and start the service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">daemon</span><span class="o">-</span><span class="n">reload</span>
+<span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">enable</span> <span class="o">--</span><span class="n">now</span> <span class="n">anki</span><span class="o">-</span><span class="n">syncserver</span>
+<span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">status</span> <span class="n">anki</span><span class="o">-</span><span class="n">syncserver</span>
+</pre></div>
+</div>
+<p>You should see output similar to this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>● anki-syncserver.service - Anki Self-Hosted Sync Server
+     Loaded: loaded (/etc/systemd/system/anki-syncserver.service; enabled; preset: enabled)
+     Active: active (running) since Sun 2026-05-03 22:38:30 EEST; 5s ago
+ Invocation: 3a24b3a3c12e47558ff3f430ca45c2ca
+   Main PID: 2444 (python)
+      Tasks: 5 (limit: 9575)
+        CPU: 450ms
+     CGroup: /system.slice/anki-syncserver.service
+             └─2444 /home/jie/anki-syncserver/bin/python -m anki.syncserver
+
+May 03 22:38:30 zhuque-01 systemd[1]: Started anki-syncserver.service - Anki Self-Hosted Sync Server.
+May 03 22:38:31 zhuque-01 python[2444]: 2026-05-03T19:38:31.373484Z  INFO listening addr=0.0.0.0:8080
+</pre></div>
+</div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>At this point, you have a lightweight Anki sync server running on a Raspberry Pi, a client configuration that works on Linux and mobile devices, and a systemd service that starts everything automatically after reboot. The result is simple and practical: your cards stay under your control, and your study workflow becomes a little more independent.
+It is a small project, but it is satisfying. Your Raspberry Pi is no longer just sitting there on the shelf; now it is helping you remember things.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id2">
+<div role="list" class="citation-list">
+<div class="citation" id="id6" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Ankitects. Self-hosted sync server. <a class="reference external" href="https://docs.ankiweb.net/sync-server.html">https://docs.ankiweb.net/sync-server.html</a>, 2026. Anki Manual. Accessed: 2026-05-04.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+  
+  
+  
+  <article class="bd-article">
+    <div class="giscus-container" style="margin-top: 2rem;">
+      <script src="https://giscus.app/client.js"
+              data-repo="way2ml/comments"
+              data-repo-id="R_kgDOGRwKvQ"
+              data-category="General"
+              data-category-id="DIC_kwDOGRwKvc4ChuA7"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme="https://way2ml.github.io/_static/giscus-custom.css"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+  </article>
+  
+
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  <div class="footer-item" style="width: 100%; text-align: center;">
+    <p>
+      © Copyright 2026, <a href="https://way2ml.github.io/">Way To Machine Learning</a>. | 
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx</a>, <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>, and <a href="https://giscus.app" target="_blank" rel="noopener">Giscus</a> | 
+      <a href="../_sources/blogs/anki_server.md.txt" rel="nofollow">Page source</a>
+    </p>
+  </div>
+</div>
+</footer>
+
+  </body>
+</html>
