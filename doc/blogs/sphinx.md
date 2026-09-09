@@ -182,7 +182,6 @@ them without changing the molecular structure.
 The same sII template can complete the cage outlines at a terminated surface.
 The reconstructed vertices and faces are visual guides only; they are not added
 to the atomic structure.
-
 ```{molview} https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/20251201_154750_poscar.fin
 :caption: A sII(111) with THF - Cut at 17.50 Å
 :extendx: 0.1
