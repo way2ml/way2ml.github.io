@@ -155,7 +155,13 @@ extensions = [
     'sphinx_molview', 
     ]
 ```
-This plugin supports `.xyz` and `POSCAR` format at this moment. 
+This plugin supports `.xyz` and `POSCAR` format at this moment. For clathrate
+hydrates it can also detect the water cages automatically. The **Show cage**
+controls above the viewer toggle the small and large cages independently, and
+the adjacent colour pickers update their transparent tiles. The display menu
+switches between tiles with edges, edges only, and tiles only. The cage edit
+menu lets you click to hide individual faces or edges; **Reset cage** restores
+them without changing the molecular structure.
 ```{molview} https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/251206_225424_POSCAR 
 :format: poscar
 :caption: Water molecules
@@ -166,6 +172,28 @@ This plugin supports `.xyz` and `POSCAR` format at this moment.
 :zoom: 4
 :showborder: true
 :view: c*
+:showcage: both
+:smallcagecolor: 4da6ff
+:largecagecolor: ff9f43
+:cageopacity: 0.5
+:cagestyle: both
+```
+
+The same sII template can complete the cage outlines at a terminated surface.
+The reconstructed vertices and faces are visual guides only; they are not added
+to the atomic structure.
+
+```{molview} https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uploads/20251201_154750_poscar.fin
+:caption: A sII(111) with THF - Cut at 17.50 Å
+:extendx: 0.1
+:extendy: 0.1
+:showhbonds: true
+:zoom: 1.5
+:showcage: both
+:smallcagecolor: 4da6ff
+:largecagecolor: ff9f43
+:cageopacity: 0.5
+:cagestyle: both
 ```
 
 ## References
@@ -174,4 +202,3 @@ This plugin supports `.xyz` and `POSCAR` format at this moment.
 :filter: docname in docnames
 :style: unsrt
 ```
-
