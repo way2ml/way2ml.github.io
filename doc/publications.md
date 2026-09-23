@@ -1,6 +1,6 @@
 # Publications
 - Chiral water structures on the dolomite(104)-S surface enantiomer - Paul Laubrock, Jonas Heggemann, Jie Huang, Adam S. Foster, and Philipp Rahe
-  - Nano Lett. (2026) <a href="./_static/publications/2026_nanolett.pdf" target="_blank" rel="noopener">[pdf]</a>
+  - Nano Lett. (2026) <a href="./_static/publications/2026_nanoletter.pdf" target="_blank" rel="noopener">[pdf]</a>
 - Improving atomic force microscopy structure discovery via style-translation - Jie Huang, Niko Oinonen, Fabio Priante, Filippo Federici Canova, Lauri Kurki, Chen Xu, and Adam S. Foster
   -  npj Comput. Mater. (2026) <a href="https://github.com/SINGROUP/StyleTransAugment" target="_blank" rel="noopener">[code]</a> [[pdf](https://www.nature.com/articles/s41524-026-02243-2_reference.pdf)]
 - Dynamic disordering in discrete states: Disconnected hopping boosts anharmonicity in CuInP2S6 - Bowen Wang, Hejin Yan, Jie Huang, Xuefei Yan, Changmeng Huan, Johannes Lischner, Qingqing Ke, and Yongqing Cai
