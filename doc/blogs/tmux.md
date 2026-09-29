@@ -69,7 +69,7 @@ run '~/.tmux/plugins/tpm/tpm'
 tmux source ~/.tmux.conf
 ```
 TPM is installed.
-Then, hit prefix + I to fetch the plugin and source it. We should now be able to use the plugin.
+Then, hit prefix + I (The capital letter I = Shift+i) to fetch the plugin and source it. We should now be able to use the plugin.
 
 ```bash
 # Fix colour unmatched
@@ -105,11 +105,11 @@ set -g @plugin 'tmux-plugins/tmux-resurrect' # Restore tmux environment after sy
 # init TPM (must be at the end)
 run '~/.tmux/plugins/tpm/tpm'
 ```
-The plugin [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) is used to realise restoring the tmux environment. The keys for saving and 
+The plugin [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) is used to restore the tmux environment. The keys for saving and 
 restoring the environment are `Ctrl b s/r`.
 
-For simplicity, I just use one session in one computer since in one session you can create
-lots of windows; and in one window you can split multiple panels. I use this following 
+For simplicity, I just use one session on one computer since in one session you can create
+lots of windows; and in one window you can split multiple panels. I use the following 
 alias for creating or reloading this session:
 
 ```bash
