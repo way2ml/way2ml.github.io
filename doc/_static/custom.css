@@ -116,17 +116,27 @@ figure img {
     font-style: normal !important;
 }
 
-.article-metadata .edit-link {
+.article-edit-link {
+    margin-top: 2rem;
+    color: #666;
+    font-size: 0.85em;
+    font-style: italic;
+}
+
+.article-metadata .edit-link,
+.article-edit-link .edit-link {
     color: #586069;
     text-decoration: none;
 }
 
-.article-metadata .edit-link:hover {
+.article-metadata .edit-link:hover,
+.article-edit-link .edit-link:hover {
     color: #0366d6;
     text-decoration: underline;
 }
 
-.article-metadata .edit-link i {
+.article-metadata .edit-link i,
+.article-edit-link .edit-link i {
     margin-right: 3px;
 }
 

@@ -23,8 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
   metaDiv.className = 'article-metadata';
   
   var formatted = [];
+  var editLink = '';
   
-  // Always add Edit on GitHub link FIRST if we have the required info
+  // Keep the maintenance link at the end of the article, away from the title.
   if (githubUserEl && githubRepoEl && githubBranchEl && docPathEl && pageNameEl) {
     var user = githubUserEl.getAttribute('content');
     var repo = githubRepoEl.getAttribute('content');
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var extension = '.md'; 
     var url = `https://github.com/${user}/${repo}/edit/${branch}/${docPath}/${pageName}${extension}`;
     
-    formatted.push(`<a href="${url}" target="_blank" rel="noopener noreferrer" class="edit-link"><i class="fab fa-github"></i> Edit this page on GitHub</a>`);
+    editLink = `<a href="${url}" target="_blank" rel="noopener noreferrer" class="edit-link"><i class="fab fa-github"></i> Edit this page on GitHub</a>`;
   }
 
   // Add date if available
@@ -65,5 +66,12 @@ document.addEventListener('DOMContentLoaded', function () {
   if (formatted.length > 0) {
     metaDiv.innerHTML = formatted.join(' • ');
     heading.insertAdjacentElement('afterend', metaDiv);
+  }
+
+  if (editLink) {
+    var editDiv = document.createElement('div');
+    editDiv.className = 'article-edit-link';
+    editDiv.innerHTML = editLink;
+    article.appendChild(editDiv);
   }
 });
