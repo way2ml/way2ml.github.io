@@ -10,6 +10,9 @@
     max-width: 1400px !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    /* Use the document's single vertical scroller without leaking sideways. */
+    overflow-x: clip !important;
+    overflow-y: visible !important;
 }
 
 /* Increase the width of the main article content */
