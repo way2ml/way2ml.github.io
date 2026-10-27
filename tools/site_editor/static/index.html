@@ -34,11 +34,11 @@
           <strong>Markdown</strong>
           <span id="dirty-state" class="state">Saved</span>
         </div>
-        <span class="hint">Drop images at the cursor · Ctrl/⌘ S to save</span>
+        <span class="hint">Drop images or PDFs at the cursor · Ctrl/⌘ S to save</span>
       </div>
       <div id="drop-zone" class="editor-wrap">
         <textarea id="editor" spellcheck="true" aria-label="Markdown content"></textarea>
-        <div id="drop-indicator" class="drop-indicator">Drop image here</div>
+        <div id="drop-indicator" class="drop-indicator">Drop image or PDF here</div>
       </div>
     </section>
 
@@ -63,12 +63,16 @@
     <form method="dialog" id="image-form">
       <div class="dialog-heading">
         <div>
-          <h2>Add image</h2>
+          <h2 id="asset-dialog-title">Add file</h2>
           <p id="image-original-name"></p>
         </div>
         <button class="icon-button" value="cancel" aria-label="Close" type="submit">×</button>
       </div>
       <img id="image-thumbnail" class="image-thumbnail" alt="Selected image preview">
+      <div id="pdf-thumbnail" class="pdf-thumbnail" hidden>
+        <strong>PDF</strong>
+        <span>The document will be inserted as a text link.</span>
+      </div>
       <label>Date <input id="image-date" inputmode="numeric" maxlength="10" required></label>
       <label>Link text <input id="image-label" required placeholder="friends"></label>
       <label>Filename <input id="image-name" required placeholder="friends"></label>

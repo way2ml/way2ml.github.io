@@ -35,13 +35,13 @@ EDITOR_ROOT = REPO_ROOT / ".site-editor"
 STATIC_ROOT = Path(__file__).resolve().parent / "static"
 
 PAGE_CONFIG = {
-    "research": {"label": "Research", "source": "research.md", "output": "research.html", "asset_dir": "research", "timeline": True},
+    "research": {"label": "Research", "source": "research.md", "output": "research.html", "asset_dir": "research", "pdf_dir": "publications", "timeline": True},
     "blogs": {"label": "Blogs", "source": "enter_blogs.md", "output": "enter_blogs.html", "asset_dir": "blogs/index", "timeline": False},
     "news": {"label": "News", "source": "news.md", "output": "news.html", "asset_dir": "news", "timeline": True},
     "moments": {"label": "Moments", "source": "moments.md", "output": "moments.html", "asset_dir": "moments", "timeline": True},
 }
 
-ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg"}
+ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg", ".pdf"}
 MIME_BY_EXTENSION = {
     ".jpg": "image/jpeg",
     ".jpeg": "image/jpeg",
@@ -49,6 +49,7 @@ MIME_BY_EXTENSION = {
     ".webp": "image/webp",
     ".gif": "image/gif",
     ".svg": "image/svg+xml",
+    ".pdf": "application/pdf",
 }
 
 
@@ -97,9 +98,9 @@ def validate_date(value: str) -> str:
     return digits
 
 
-def validate_image(extension: str, payload: bytes) -> None:
+def validate_asset(extension: str, payload: bytes) -> None:
     if extension not in ALLOWED_EXTENSIONS:
-        raise EditorError("Supported image formats: JPG, JPEG, PNG, WebP, GIF, and SVG.")
+        raise EditorError("Supported formats: JPG, JPEG, PNG, WebP, GIF, SVG, and PDF.")
     signatures = {
         ".jpg": payload.startswith(b"\xff\xd8\xff"),
         ".jpeg": payload.startswith(b"\xff\xd8\xff"),
@@ -107,9 +108,10 @@ def validate_image(extension: str, payload: bytes) -> None:
         ".gif": payload.startswith((b"GIF87a", b"GIF89a")),
         ".webp": len(payload) >= 12 and payload[:4] == b"RIFF" and payload[8:12] == b"WEBP",
         ".svg": b"<svg" in payload[:4096].lower(),
+        ".pdf": payload.startswith(b"%PDF-"),
     }
     if not payload or not signatures[extension]:
-        raise EditorError("The file contents do not match the selected image format.")
+        raise EditorError("The file contents do not match the selected file format.")
 
 
 class EditorState:
@@ -153,7 +155,9 @@ class EditorState:
         return self._markdown.render(content)
 
     def _destination_name(self, page_id: str, date: str, name: str, extension: str) -> tuple[str, Path]:
-        asset_directory = Path("_static") / self.page(page_id)["asset_dir"]
+        page = self.page(page_id)
+        directory_name = page.get("pdf_dir", page["asset_dir"]) if extension == ".pdf" else page["asset_dir"]
+        asset_directory = Path("_static") / directory_name
         stem = f"{validate_date(date)}_{sanitize_name(name)}"
         candidate = f"{stem}{extension}"
         index = 2
@@ -164,7 +168,7 @@ class EditorState:
         relative_path = asset_directory / candidate
         return f"./{relative_path.as_posix()}", relative_path
 
-    def stage_image(self, data: dict[str, Any]) -> dict[str, Any]:
+    def stage_asset(self, data: dict[str, Any]) -> dict[str, Any]:
         page_id = str(data.get("page", ""))
         self.page(page_id)
         original_name = Path(str(data.get("originalName", ""))).name
@@ -172,10 +176,10 @@ class EditorState:
         try:
             payload = base64.b64decode(str(data.get("data", "")), validate=True)
         except (ValueError, TypeError) as error:
-            raise EditorError("Image upload is not valid.") from error
+            raise EditorError("File upload is not valid.") from error
         if len(payload) > 40 * 1024 * 1024:
-            raise EditorError("Images larger than 40 MB are not supported.")
-        validate_image(extension, payload)
+            raise EditorError("Files larger than 40 MB are not supported.")
+        validate_asset(extension, payload)
 
         date = str(data.get("date", ""))
         name = str(data.get("name", ""))
@@ -184,7 +188,9 @@ class EditorState:
         asset_id = uuid.uuid4().hex
         staged_path = self.session_root / f"{asset_id}{extension}"
         staged_path.write_bytes(payload)
-        if self.page(page_id)["timeline"]:
+        if extension == ".pdf":
+            markup = f'<a href="{html.escape(href, quote=True)}" target="_blank" rel="noopener">[{html.escape(label)}]</a>'
+        elif self.page(page_id)["timeline"]:
             markup = f'<a href="{html.escape(href, quote=True)}">[{html.escape(label)}]</a>'
         else:
             markdown_label = label.replace("[", "\\[").replace("]", "\\]")
@@ -198,6 +204,7 @@ class EditorState:
             "markup": markup,
             "staged_path": staged_path,
             "mime": MIME_BY_EXTENSION[extension],
+            "kind": "pdf" if extension == ".pdf" else "image",
         }
         self._staged[asset_id] = entry
         return {key: value for key, value in entry.items() if key != "staged_path"}
@@ -555,7 +562,8 @@ class EditorHandler(SimpleHTTPRequestHandler):
             data = self._read_json()
             routes = {
                 "/api/render": lambda: {"html": self.app.state.render_quick(str(data.get("content", "")))},
-                "/api/stage-image": lambda: self.app.state.stage_image(data),
+                "/api/stage-asset": lambda: self.app.state.stage_asset(data),
+                "/api/stage-image": lambda: self.app.state.stage_asset(data),
                 "/api/preview": lambda: self.app.state.build_preview(data),
                 "/api/save": lambda: self.app.state.save_page(data),
                 "/api/restore": lambda: self.app.state.restore_backup(data),

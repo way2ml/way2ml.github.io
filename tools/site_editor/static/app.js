@@ -137,8 +137,14 @@
   async function askImageDetails(file, date) {
     const objectUrl = URL.createObjectURL(file);
     const stem = file.name.replace(/\.[^.]+$/, '');
+    const isPdf = /\.pdf$/i.test(file.name);
     document.querySelector('#image-original-name').textContent = file.name;
-    document.querySelector('#image-thumbnail').src = objectUrl;
+    document.querySelector('#asset-dialog-title').textContent = isPdf ? 'Add PDF' : 'Add image';
+    const imageThumbnail = document.querySelector('#image-thumbnail');
+    const pdfThumbnail = document.querySelector('#pdf-thumbnail');
+    imageThumbnail.hidden = isPdf;
+    pdfThumbnail.hidden = !isPdf;
+    if (!isPdf) imageThumbnail.src = objectUrl;
     document.querySelector('#image-date').value = date;
     document.querySelector('#image-label').value = stem;
     document.querySelector('#image-name').value = stem;
@@ -146,9 +152,10 @@
     function updatePath() {
       const page = pages.get(currentPage);
       const extension = file.name.includes('.') ? `.${file.name.split('.').pop().toLowerCase()}` : '';
+      const assetDir = isPdf ? page.pdfDir : page.assetDir;
       const cleanDate = document.querySelector('#image-date').value.replace(/\D/g, '');
       const cleanName = safeName(document.querySelector('#image-name').value);
-      document.querySelector('#image-path').textContent = `doc/_static/${page.assetDir || ''}/${cleanDate}_${cleanName}${extension}`;
+      document.querySelector('#image-path').textContent = `doc/_static/${assetDir}/${cleanDate}_${cleanName}${extension}`;
     }
     document.querySelector('#image-date').oninput = updatePath;
     document.querySelector('#image-name').oninput = updatePath;
@@ -178,11 +185,11 @@
   });
 
   async function stageFiles(files, insertionPoint) {
-    const supported = /\.(?:jpe?g|png|webp|gif|svg)$/i;
+    const supported = /\.(?:jpe?g|png|webp|gif|svg|pdf)$/i;
     let cursor = insertionPoint;
     for (const file of files) {
       if (!supported.test(file.name)) {
-        showToast(`${file.name}: unsupported image format`, true);
+        showToast(`${file.name}: unsupported file format`, true);
         continue;
       }
       const details = await askImageDetails(file, dateAtCursor(cursor));
@@ -190,7 +197,7 @@
       setStatus(`Staging ${file.name}…`);
       try {
         const dataUrl = await readAsDataUrl(file);
-        const result = await api('/api/stage-image', {
+        const result = await api('/api/stage-asset', {
           method: 'POST',
           body: JSON.stringify({
             page: currentPage,
@@ -347,7 +354,7 @@
 
   function enrichPage(page) {
     const dirs = {research: 'research', blogs: 'blogs/index', news: 'news', moments: 'moments'};
-    return {...page, assetDir: dirs[page.id]};
+    return {...page, assetDir: dirs[page.id], pdfDir: page.id === 'research' ? 'publications' : dirs[page.id]};
   }
 
   async function init() {

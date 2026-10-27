@@ -18,7 +18,7 @@ Run the optional local editor from the repository root:
 ```
 
 It opens a browser editor for Research, Blogs, News, and Moments. Markdown remains
-the source of truth. Dropped images are staged until Save, exact previews are built
+the source of truth. Dropped images and PDFs are staged until Save, exact previews are built
 in a temporary directory, and every save creates a local backup under
 `.site-editor/`. Nothing is pushed or published automatically.
 

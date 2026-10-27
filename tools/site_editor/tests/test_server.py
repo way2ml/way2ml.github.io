@@ -30,7 +30,7 @@ class EditorStateTests(unittest.TestCase):
         self.temporary.cleanup()
 
     def stage_moment(self, name="friends"):
-        return self.state.stage_image({
+        return self.state.stage_asset({
             "page": "moments",
             "date": "2026.08.07",
             "name": name,
@@ -58,7 +58,7 @@ class EditorStateTests(unittest.TestCase):
 
     def test_unsupported_image_is_rejected(self):
         with self.assertRaises(EditorError):
-            self.state.stage_image({
+            self.state.stage_asset({
                 "page": "moments",
                 "date": "2026.08.07",
                 "name": "phone-photo",
@@ -66,6 +66,31 @@ class EditorStateTests(unittest.TestCase):
                 "originalName": "photo.heic",
                 "data": base64.b64encode(b"not a web image").decode("ascii"),
             })
+
+    def test_research_pdf_uses_publications_directory(self):
+        document = self.state.stage_asset({
+            "page": "research",
+            "date": "2026.10.21",
+            "name": "conference-slides",
+            "label": "slides",
+            "originalName": "slides.pdf",
+            "data": base64.b64encode(b"%PDF-1.7\n%%EOF\n").decode("ascii"),
+        })
+        self.assertEqual(document["relative_path"], "_static/publications/20261021_conference-slides.pdf")
+        self.assertEqual(document["kind"], "pdf")
+        self.assertIn('target="_blank"', document["markup"])
+        self.assertFalse((self.root / "doc" / document["relative_path"]).exists())
+
+    def test_news_pdf_stays_in_news_directory(self):
+        document = self.state.stage_asset({
+            "page": "news",
+            "date": "2026.10.21",
+            "name": "conference-program",
+            "label": "program",
+            "originalName": "program.pdf",
+            "data": base64.b64encode(b"%PDF-1.7\n%%EOF\n").decode("ascii"),
+        })
+        self.assertEqual(document["relative_path"], "_static/news/20261021_conference-program.pdf")
 
     def test_save_creates_asset_and_backup(self):
         image = self.stage_moment()
