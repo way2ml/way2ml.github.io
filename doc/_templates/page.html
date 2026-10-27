@@ -25,7 +25,7 @@
   {{ super() }}
   
   {# Giscus Comments Section - only show if comment: True in front matter #}
-  {% if meta and meta.get('comment') %}
+  {% if meta and (meta.get('comment', '') | lower) == 'true' %}
   <article class="bd-article">
     <div class="giscus-container" style="margin-top: 2rem;">
       <script src="https://giscus.app/client.js"

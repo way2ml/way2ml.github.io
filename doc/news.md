@@ -1,3 +1,7 @@
+---
+comment: False
+---
+
 # News 
 - 2026.08.04 Jie contributes a talk at [NC-AFM 2026](https://www.uibk.ac.at/en/congress/nc-afm-2026/), Innsbruck, Austria: <a href="./_static/talks/NCAFM_Jie_Huang_2026.pdf" target="_blank" rel="noopener">slides</a> · <a href="./_static/talks/NCAFM_Jie_Huang_2026_photo.jpg" target="_blank" rel="noopener">photo</a> · <a href="./_static/talks/NCAFM_Jie_Huang_2026_people.jpg" target="_blank" rel="noopener">group photo</a>.
 - 2026.07.13 Our paper "[Improving atomic force microscopy structure discovery via style-translation](https://doi.org/10.1038/s41524-026-02243-2)" has been accepted by npj Comput. Mater. 🎉 
@@ -14,4 +18,3 @@
 - 2022.08.31 Jie presents his work to the group members of Prof. Cai at the University of Macau. [View slides](https://nbviewer.org/github/HuangJiaLian/DataBase0/blob/master/uPic/2022_08_31_13_HuangUMSlides.pdf).   
 - 2022.08.08 Jie starts his role as a research assistant in [Prof. Yongqing Cai](https://iapme.um.edu.mo/staff/academic-staff/cai-yongqing/)'s group at the [IAPME](https://iapme.um.edu.mo/), [University of Macau](https://www.um.edu.mo/).  
 - 2021.09.01 Jie completes his master's degree at [Wenzhou University](https://www.wzu.edu.cn/en/About.htm) with [honors](https://raw.githubusercontent.com/HuangJiaLian/DataBase0/master/uPic/2022_06_17_01_Jack.png), under the guidance of [Prof. Shiben Li](https://slxy.wzu.edu.cn/lishiben.pdf).
-

@@ -1,5 +1,5 @@
 ---
-comment: True
+comment: False
 ---
 # Blogs
 Here you'll find all my blogs, along with the tools I rely on in my daily work and life. It's impossible to cover everything at once, 
