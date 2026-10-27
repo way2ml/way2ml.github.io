@@ -321,11 +321,10 @@ figure img {
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transform: translate(-50%, -100%) translateY(-0.2rem);
+        transform: translate(-50%, -100%);
         overflow: hidden;
         border-radius: 5px;
         box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.16);
-        transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s ease;
     }
 
     .timeline-item.has-images.is-previewing .timeline-gallery {
@@ -336,12 +335,6 @@ figure img {
 
     .timeline-item.has-images.is-previewing.preview-below .timeline-gallery {
         transform: translate(-50%, 0) translateY(0.2rem);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .timeline-item.has-images .timeline-gallery {
-        transition: none;
     }
 }
 
