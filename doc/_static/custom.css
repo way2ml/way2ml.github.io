@@ -250,7 +250,7 @@ figure img {
     color: var(--pst-color-text-muted, #6c757d);
     font-size: 0.82rem;
     font-weight: 550;
-    text-align: right;
+    text-align: left;
     white-space: nowrap;
 }
 
@@ -400,6 +400,7 @@ figure img {
     }
 
     .timeline-item.has-images .timeline-date:hover ~ .timeline-content .timeline-gallery,
+    .timeline-item.has-images .timeline-content > p:hover ~ .timeline-gallery,
     .timeline-item.has-images:focus-within .timeline-gallery,
     .timeline-item.has-images .timeline-gallery:hover {
         opacity: 1;
