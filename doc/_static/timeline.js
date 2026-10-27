@@ -1,5 +1,5 @@
 /**
- * Progressive enhancement for the Highlights and News timelines.
+ * Progressive enhancement for the Moments and News timelines.
  *
  * The Markdown lists remain the source of truth. Direct image links in each
  * list item are mirrored into a visual gallery without changing the content.
@@ -7,7 +7,7 @@
 (function() {
     'use strict';
 
-    const TIMELINE_PAGES = ['highlights', 'news'];
+    const TIMELINE_PAGES = ['moments', 'news'];
     const IMAGE_PATH = /\.(?:avif|gif|jpe?g|png|svg|webp)$/i;
     const DATE_PREFIX = /^(\d{4}(?:[.\-/]|\s+)\d{2}[.\-/]\d{2})\s+/;
 

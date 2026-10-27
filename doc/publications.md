@@ -1,4 +1,4 @@
-# Publications
+# Research
 - Chiral water structures on the dolomite(104)-S surface enantiomer - Paul Laubrock, Jonas Heggemann, Jie Huang, Adam S. Foster, and Philipp Rahe
   - Nano Lett. (2026) <a href="./_static/publications/2026_nanoletter.pdf" target="_blank" rel="noopener">[pdf]</a>
 - Improving atomic force microscopy structure discovery via style-translation - Jie Huang, Niko Oinonen, Fabio Priante, Filippo Federici Canova, Lauri Kurki, Chen Xu, and Adam S. Foster
@@ -17,5 +17,4 @@
   - ChemPhysChem, 23 (2022) 42 <a href="./_static/publications/2021_CPC_cover.pdf" target="_blank" rel="noopener">[cover]</a> <a href="./_static/publications/2021_CPC.pdf" target="_blank" rel="noopener">[pdf]</a>  
 - Neural network model for structure factor of polymer systems - Jie Huang, Shiben Li, Xinghua Zhang, and Gang Huang 
   - J. Chem. Phys. 153 (2020) 124902 <a href="https://github.com/HuangJiaLian/NN_For_Structure_Factor" target="_blank" rel="noopener">[code]</a> <a href="./_static/publications/2020_JCP.pdf" target="_blank" rel="noopener">[pdf]</a>
-
 

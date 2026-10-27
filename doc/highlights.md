@@ -1,9 +1,9 @@
 ---
-title: Highlights
+title: Moments
 comment: True
 ---
 
-# Highlights
+# Moments
 - 2026.08.07 On the last day of [NC-AFM 2026](https://www.uibk.ac.at/en/congress/nc-afm-2026/) in Innsbruck, I met many <a href="./_static/talks/NCAFM_Jie_Huang_2026_people.jpg" target="_blank" rel="noopener">[friends]</a>: Ye Liu, Jing Guo, Yuejian Zhang, Shuyu Huang, Lulu Wang, Xinnan Peng, Yukun Zhang, Paul Laubrock, Jonas Heggemann, Johanna Schnorrenberg, Philipp Rahe, <a href="./_static/moments/20260807_ncafm_friends.jpg" target="_blank" rel="noopener">[photo]</a> Sebastian Nikolaus Strube-Grützner, Zheng-Rong Guo, Ing-Shouh Hwang, and Xiangling Zhuang.
 - 2026.07.17 I self-hosted a [community version of Overleaf](http://88.192.136.30/) on Raspberry Pi 5, assisted with AI gent. It's clean and elegant. 
 - 2026.05.27 I had lunch with Nan. I met a new old friend, Ziying, from Peter's group. I'm considering developing tennis as a second source of income. I love tennis. There's no reason to say no to this kind of thing. It makes me really happy. 
@@ -36,4 +36,3 @@ Checkin, Nostalgia, ABC Bulb, Theo, MJ, Burnout and Pablo.  We were looking pret
 - 2024.08.17 Our website has been redesigned using [Hugo](https://gohugo.io/) as the generator, with inspiration from [TeXify3](https://github.com/michaelneuper/hugo-texify3) and [KaTeX](https://katex.org/).  
 - 2021.10.23 An [Online Forum](https://github.com/way2ml/forum/discussions) based on GitHub Discussions is added to the top right corner of the website.  
 - 2019.01.31 [Way To Machine Learning](https://way2ml.github.io/) is launched in [Chengdu](https://goo.gl/maps/Hjto2WtzYHeCBsmQ9), China.
-

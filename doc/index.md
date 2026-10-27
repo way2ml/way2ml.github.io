@@ -13,6 +13,6 @@ ongoing research journey and hobbies.
 
 Blogs <enter_blogs.md>
 News <news.md>
-Highlights <highlights.md>
-Publications <publications.md>
+Moments <highlights.md>
+Research <publications.md>
 ```
