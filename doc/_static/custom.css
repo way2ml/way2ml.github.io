@@ -207,9 +207,10 @@ figure img {
 }
 
 .timeline-item {
+    --timeline-date-width: 4rem;
     position: relative;
     display: grid;
-    grid-template-columns: 6rem 1.5rem minmax(0, 1fr);
+    grid-template-columns: var(--timeline-date-width) 1.5rem minmax(0, 1fr);
     grid-template-rows: auto auto;
     gap: 0;
     margin: 0;
@@ -221,7 +222,7 @@ figure img {
     position: absolute;
     top: 0.55rem;
     bottom: -0.45rem;
-    left: 6.75rem;
+    left: calc(var(--timeline-date-width) + 0.75rem);
     width: 1px;
     background: var(--pst-color-border, rgba(127, 127, 127, 0.3));
 }
@@ -234,12 +235,16 @@ figure img {
     content: '';
     position: absolute;
     top: 0.4rem;
-    left: 6.48rem;
+    left: calc(var(--timeline-date-width) + 0.48rem);
     width: 0.6rem;
     height: 0.6rem;
     border: 2px solid var(--pst-color-background);
     border-radius: 50%;
     background: var(--pst-color-text-muted, #6c757d);
+}
+
+#research .timeline-item {
+    --timeline-date-width: 2rem;
 }
 
 .timeline-date {
