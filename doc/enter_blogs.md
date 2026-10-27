@@ -2,10 +2,6 @@
 comment: False
 ---
 # Blogs
-Here you'll find all my blogs, along with the tools I rely on in my daily work and life. It's impossible to cover everything at once, 
-so my approach is to document things as I use them and keep refining along the way. If you come across any interesting tools or topics, 
-feel free to share them in the comments. I would really appreciate it.
-
 ```{toctree}
 :hidden:
 blogs/deepseek_agent

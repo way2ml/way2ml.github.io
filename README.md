@@ -9,6 +9,22 @@ conda activate way2ml
 
 ```
 
+## Local site editor
+
+Run the optional local editor from the repository root:
+
+```bash
+./site-editor
+```
+
+It opens a browser editor for Research, Blogs, News, and Moments. Markdown remains
+the source of truth. Dropped images and PDFs are staged until Save, exact previews are built
+in a temporary directory, and every save creates a local backup under
+`.site-editor/`. Nothing is pushed or published automatically.
+
+Use `./site-editor --no-browser` when you only want the local URL printed in the
+terminal. Press `Ctrl+C` in that terminal to stop the editor.
+
 ## Project structure
 
 The reference directory structure for this project. 

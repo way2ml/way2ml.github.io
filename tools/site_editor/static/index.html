@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Way2ML Editor</title>
+  <link rel="icon" href="/doc/_static/favicon.ico">
+  <link rel="stylesheet" href="/static/style.css?v=1">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <strong>Way2ML Editor</strong>
+        <span>Local writing helper</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <label class="page-picker">
+        <span>Page</span>
+        <select id="page-select" aria-label="Page"></select>
+      </label>
+      <button id="history-button" class="button secondary" type="button">Backups</button>
+      <button id="git-button" class="button secondary" type="button">Git snapshot</button>
+      <button id="save-button" class="button primary" type="button">Save</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <section class="editor-panel" aria-label="Markdown editor">
+      <div class="panel-header">
+        <div>
+          <strong>Markdown</strong>
+          <span id="dirty-state" class="state">Saved</span>
+        </div>
+        <span class="hint">Drop images or PDFs at the cursor · Ctrl/⌘ S to save</span>
+      </div>
+      <div id="drop-zone" class="editor-wrap">
+        <textarea id="editor" spellcheck="true" aria-label="Markdown content"></textarea>
+        <div id="drop-indicator" class="drop-indicator">Drop image or PDF here</div>
+      </div>
+    </section>
+
+    <section class="preview-panel" aria-label="Preview">
+      <div class="panel-header preview-header">
+        <div class="preview-tabs" role="tablist">
+          <button id="quick-tab" class="tab active" type="button" role="tab">Quick preview</button>
+          <button id="exact-tab" class="tab" type="button" role="tab">Exact preview</button>
+        </div>
+        <button id="build-button" class="button secondary compact" type="button">Build exact preview</button>
+      </div>
+      <iframe id="preview" title="Website preview" sandbox="allow-same-origin"></iframe>
+    </section>
+  </main>
+
+  <footer class="status-bar">
+    <span id="status">Loading pages…</span>
+    <span>Files stay in the existing Sphinx project</span>
+  </footer>
+
+  <dialog id="image-dialog" class="dialog image-dialog">
+    <form method="dialog" id="image-form">
+      <div class="dialog-heading">
+        <div>
+          <h2 id="asset-dialog-title">Add file</h2>
+          <p id="image-original-name"></p>
+        </div>
+        <button class="icon-button" value="cancel" aria-label="Close" type="submit">×</button>
+      </div>
+      <img id="image-thumbnail" class="image-thumbnail" alt="Selected image preview">
+      <div id="pdf-thumbnail" class="pdf-thumbnail" hidden>
+        <strong>PDF</strong>
+        <span>The document will be inserted as a text link.</span>
+      </div>
+      <label>Date <input id="image-date" inputmode="numeric" maxlength="10" required></label>
+      <label>Link text <input id="image-label" required placeholder="friends"></label>
+      <label>Filename <input id="image-name" required placeholder="friends"></label>
+      <p class="path-preview">Final path: <code id="image-path"></code></p>
+      <div class="dialog-actions">
+        <button class="button secondary" value="cancel" type="submit">Cancel</button>
+        <button id="image-add" class="button primary" value="default" type="submit">Stage image</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="list-dialog" class="dialog wide-dialog">
+    <div class="dialog-heading">
+      <div>
+        <h2 id="list-title">Details</h2>
+        <p id="list-description"></p>
+      </div>
+      <button id="list-close" class="icon-button" aria-label="Close" type="button">×</button>
+    </div>
+    <div id="list-content" class="list-content"></div>
+    <div id="list-actions" class="dialog-actions"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/static/app.js?v=1" defer></script>
+</body>
+</html>

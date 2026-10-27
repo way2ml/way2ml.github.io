@@ -3,6 +3,7 @@ comment: False
 ---
 
 # News 
+- 2026.10.21 Jie contributes a talk "High-Resolution AFM and Simulation of THF Clathrate Hydrate Growth and Structure" at [ACSIN-16 & ICSPM34](https://www.icspm.net/acsin16/), Himeji, Japan. <a href="./_static/news/20261021_banquet-photo.jpg">[View-photo]</a> <a href="./_static/news/20261021_ACSIN_Jie_Huang_2026.pdf" target="_blank" rel="noopener">[or slides]</a>.
 - 2026.08.04 Jie contributes a talk at [NC-AFM 2026](https://www.uibk.ac.at/en/congress/nc-afm-2026/), Innsbruck, Austria: <a href="./_static/talks/NCAFM_Jie_Huang_2026.pdf" target="_blank" rel="noopener">slides</a> · <a href="./_static/talks/NCAFM_Jie_Huang_2026_photo.jpg" target="_blank" rel="noopener">photo</a> · <a href="./_static/talks/NCAFM_Jie_Huang_2026_people.jpg" target="_blank" rel="noopener">group photo</a>.
 - 2026.07.13 Our paper "[Improving atomic force microscopy structure discovery via style-translation](https://doi.org/10.1038/s41524-026-02243-2)" has been accepted by npj Comput. Mater. 🎉 
 - 2026.05.02 Jie starts his final year as a doctoral researcher at Aalto University. 
