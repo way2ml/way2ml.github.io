@@ -31,81 +31,6 @@
         return label || 'Photo from ' + dateLabel;
     }
 
-    function addCarouselControls(gallery, photos, item, triggers) {
-        let currentIndex = 0;
-        let autoPlayTimer = null;
-
-        gallery.classList.add('timeline-carousel');
-
-        const controls = document.createElement('div');
-        controls.className = 'timeline-carousel-controls';
-
-        const previous = document.createElement('button');
-        previous.type = 'button';
-        previous.className = 'timeline-carousel-button timeline-carousel-previous';
-        previous.setAttribute('aria-label', 'Previous photo');
-        previous.textContent = '‹';
-
-        const counter = document.createElement('span');
-        counter.className = 'timeline-carousel-counter';
-        counter.setAttribute('aria-live', 'polite');
-
-        const next = document.createElement('button');
-        next.type = 'button';
-        next.className = 'timeline-carousel-button timeline-carousel-next';
-        next.setAttribute('aria-label', 'Next photo');
-        next.textContent = '›';
-
-        function showPhoto(index) {
-            currentIndex = (index + photos.length) % photos.length;
-
-            photos.forEach(function(photo, photoIndex) {
-                photo.hidden = photoIndex !== currentIndex;
-            });
-
-            counter.textContent = (currentIndex + 1) + ' / ' + photos.length;
-        }
-
-        function startAutoPlay() {
-            const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (autoPlayTimer || !canHover || reduceMotion) return;
-
-            autoPlayTimer = window.setInterval(function() {
-                showPhoto(currentIndex + 1);
-            }, 2400);
-        }
-
-        function stopAutoPlay() {
-            if (!autoPlayTimer) return;
-            window.clearInterval(autoPlayTimer);
-            autoPlayTimer = null;
-            showPhoto(0);
-        }
-
-        previous.addEventListener('click', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            showPhoto(currentIndex - 1);
-        });
-
-        next.addEventListener('click', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            showPhoto(currentIndex + 1);
-        });
-
-        triggers.forEach(function(trigger) {
-            trigger.addEventListener('pointerenter', startAutoPlay);
-        });
-        gallery.addEventListener('pointerenter', startAutoPlay);
-        item.addEventListener('pointerleave', stopAutoPlay);
-
-        controls.append(previous, counter, next);
-        gallery.appendChild(controls);
-        showPhoto(0);
-    }
-
     function enhanceItem(item) {
         const paragraph = item.querySelector(':scope > p');
         if (!paragraph) return;
@@ -133,40 +58,48 @@
         const imageLinks = Array.from(paragraph.querySelectorAll('a[href]')).filter(isImageLink);
         if (imageLinks.length) {
             item.classList.add('has-images');
-            date.tabIndex = 0;
 
             const gallery = document.createElement('div');
             gallery.className = 'timeline-gallery';
             gallery.dataset.count = String(imageLinks.length);
 
+            const photos = [];
+
             function positionGallery(clientX, clientY) {
                 const itemRect = item.getBoundingClientRect();
-                gallery.style.setProperty('--timeline-preview-x', (clientX - itemRect.left) + 'px');
+                const container = item.closest('.bd-article-container');
+                const containerRect = container ? container.getBoundingClientRect() : null;
+                const previewWidth = gallery.offsetWidth || Math.min(448, window.innerWidth - 32);
+                const previewHeight = gallery.offsetHeight || previewWidth * 3 / 4;
+                const leftEdge = Math.max(16, containerRect ? containerRect.left : 16);
+                const rightEdge = Math.min(window.innerWidth - 16, containerRect ? containerRect.right : window.innerWidth - 16);
+                const halfWidth = previewWidth / 2;
+                const previewX = rightEdge - leftEdge >= previewWidth
+                    ? Math.min(rightEdge - halfWidth, Math.max(leftEdge + halfWidth, clientX))
+                    : (leftEdge + rightEdge) / 2;
+
+                gallery.style.setProperty('--timeline-preview-x', (previewX - itemRect.left) + 'px');
                 gallery.style.setProperty('--timeline-preview-y', (clientY - itemRect.top) + 'px');
+                item.classList.toggle('preview-below', clientY < previewHeight + 16);
             }
 
-            function followPointer(event) {
+            function showPhoto(index, event) {
+                photos.forEach(function(photo, photoIndex) {
+                    photo.hidden = photoIndex !== index;
+                });
+                item.classList.add('is-previewing');
                 positionGallery(event.clientX, event.clientY);
             }
 
-            [date, paragraph].forEach(function(trigger) {
-                trigger.addEventListener('pointerenter', followPointer);
-                trigger.addEventListener('pointermove', followPointer);
-            });
+            imageLinks.forEach(function(link, photoIndex) {
+                link.classList.add('timeline-image-trigger');
 
-            date.addEventListener('focus', function() {
-                const dateRect = date.getBoundingClientRect();
-                positionGallery(dateRect.left + dateRect.width / 2, dateRect.top);
-            });
-
-            const photos = [];
-
-            imageLinks.forEach(function(link) {
                 const photoLink = document.createElement('a');
                 photoLink.className = 'timeline-photo';
                 photoLink.href = link.href;
                 photoLink.target = '_blank';
                 photoLink.rel = 'noopener';
+                photoLink.hidden = true;
 
                 const image = document.createElement('img');
                 image.src = link.href;
@@ -177,9 +110,27 @@
                 photoLink.appendChild(image);
                 gallery.appendChild(photoLink);
                 photos.push(photoLink);
-            });
 
-            if (photos.length > 1) addCarouselControls(gallery, photos, item, [date, paragraph]);
+                link.addEventListener('pointerenter', function(event) {
+                    showPhoto(photoIndex, event);
+                });
+                link.addEventListener('pointermove', function(event) {
+                    positionGallery(event.clientX, event.clientY);
+                });
+                link.addEventListener('pointerleave', function() {
+                    item.classList.remove('is-previewing', 'preview-below');
+                });
+                link.addEventListener('focus', function() {
+                    const linkRect = link.getBoundingClientRect();
+                    showPhoto(photoIndex, {
+                        clientX: linkRect.left + linkRect.width / 2,
+                        clientY: linkRect.top,
+                    });
+                });
+                link.addEventListener('blur', function() {
+                    item.classList.remove('is-previewing', 'preview-below');
+                });
+            });
 
             content.appendChild(gallery);
         }
