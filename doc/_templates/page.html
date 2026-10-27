@@ -1,5 +1,13 @@
 {% extends "!page.html" %}
 
+{% block htmltitle %}
+  {% if pagename == 'index' %}
+    <title>Jie Huang — Way To Machine Learning</title>
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}
+
 {% block extrahead %}
   {{ super() }}
   {% if meta %}
