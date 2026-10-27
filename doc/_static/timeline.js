@@ -1,5 +1,5 @@
 /**
- * Progressive enhancement for the Moments and News timelines.
+ * Progressive enhancement for the Research, Moments, and News timelines.
  *
  * The Markdown lists remain the source of truth. Direct image links in each
  * list item are mirrored into a visual gallery without changing the content.
@@ -7,9 +7,9 @@
 (function() {
     'use strict';
 
-    const TIMELINE_PAGES = ['moments', 'news'];
+    const TIMELINE_PAGES = ['research', 'moments', 'news'];
     const IMAGE_PATH = /\.(?:avif|gif|jpe?g|png|svg|webp)$/i;
-    const DATE_PREFIX = /^(\d{4}(?:[.\-/]|\s+)\d{2}[.\-/]\d{2})\s+/;
+    const DATE_PREFIX = /^(\d{4}(?:(?:[.\-/]|\s+)\d{2}[.\-/]\d{2})?)\s+/;
 
     function isImageLink(link) {
         try {
@@ -99,9 +99,12 @@
         date.dateTime = dateValue;
         date.textContent = dateLabel;
 
+        const contentChildren = Array.from(item.children);
         const content = document.createElement('div');
         content.className = 'timeline-content';
-        content.appendChild(paragraph);
+        contentChildren.forEach(function(child) {
+            content.appendChild(child);
+        });
 
         const imageLinks = Array.from(paragraph.querySelectorAll('a[href]')).filter(isImageLink);
         if (imageLinks.length) {

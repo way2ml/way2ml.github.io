@@ -198,7 +198,7 @@ figure img {
 
 /* ===== Image Lightbox Styles ===== */
 
-/* ===== Moments and News Timelines ===== */
+/* ===== Research, Moments, and News Timelines ===== */
 
 .timeline-list {
     list-style: none;
@@ -258,10 +258,20 @@ figure img {
 }
 
 .timeline-content > p {
-    grid-row: 1 / span 2;
+    grid-row: 1;
     grid-column: 3;
     min-width: 0;
     margin: 0;
+}
+
+.timeline-content > ul {
+    grid-row: 2;
+    grid-column: 3;
+    margin: 0.35rem 0 0;
+    padding: 0;
+    color: var(--pst-color-text-muted, #6c757d);
+    font-size: 0.92rem;
+    list-style: none;
 }
 
 .timeline-gallery {

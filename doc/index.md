@@ -11,8 +11,8 @@ ongoing research journey and hobbies.
 :hidden:
 :maxdepth: 1
 
+Research <research.md>
 Blogs <enter_blogs.md>
 News <news.md>
 Moments <moments.md>
-Research <research.md>
 ```
