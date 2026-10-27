@@ -102,6 +102,21 @@
         const lbImg = lightboxOverlay.querySelector('img');
         const lbCaption = lightboxOverlay.querySelector('.lightbox-caption');
 
+        function openLightbox(source, alt, captionText) {
+            lbImg.src = source;
+            lbImg.alt = alt || 'Enlarged image';
+
+            if (captionText) {
+                lbCaption.textContent = captionText;
+                lbCaption.style.display = 'block';
+            } else {
+                lbCaption.style.display = 'none';
+            }
+
+            lightboxOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
         // Add click handlers to all images in the main content
         const contentImages = document.querySelectorAll('.bd-article img, .bd-main .bd-content img');
         
@@ -115,25 +130,24 @@
                 e.preventDefault();
                 e.stopPropagation();
 
-                // Set the lightbox image source
-                lbImg.src = img.src;
-                lbImg.alt = img.alt || 'Enlarged image';
-
-                // Set caption
-                const captionText = getCaption(img);
-                if (captionText) {
-                    lbCaption.textContent = captionText;
-                    lbCaption.style.display = 'block';
-                } else {
-                    lbCaption.style.display = 'none';
-                }
-
-                // Show lightbox
-                lightboxOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
+                openLightbox(img.src, img.alt, getCaption(img));
             });
 
             img.dataset.lightboxReady = 'true';
+        });
+
+        document.querySelectorAll('.timeline-image-trigger').forEach(function(link) {
+            if (link.dataset.lightboxReady === 'true') return;
+
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const label = link.textContent.trim().replace(/^\[|\]$/g, '');
+                openLightbox(link.href, label, label);
+            });
+
+            link.dataset.lightboxReady = 'true';
         });
     }
 

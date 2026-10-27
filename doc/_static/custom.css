@@ -412,6 +412,10 @@ figure img {
     cursor: zoom-in;
 }
 
+.timeline-image-trigger {
+    cursor: zoom-in;
+}
+
 /* Lightbox overlay */
 .lightbox-overlay {
     position: fixed;
