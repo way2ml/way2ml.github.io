@@ -83,12 +83,13 @@
                 item.classList.toggle('preview-below', clientY < previewHeight + 16);
             }
 
-            function showPhoto(index, event) {
+            function showPhoto(index, link) {
                 photos.forEach(function(photo, photoIndex) {
                     photo.hidden = photoIndex !== index;
                 });
                 item.classList.add('is-previewing');
-                positionGallery(event.clientX, event.clientY);
+                const linkRect = link.getBoundingClientRect();
+                positionGallery(linkRect.left + linkRect.width / 2, linkRect.top);
             }
 
             imageLinks.forEach(function(link, photoIndex) {
@@ -111,21 +112,14 @@
                 gallery.appendChild(photoLink);
                 photos.push(photoLink);
 
-                link.addEventListener('pointerenter', function(event) {
-                    showPhoto(photoIndex, event);
-                });
-                link.addEventListener('pointermove', function(event) {
-                    positionGallery(event.clientX, event.clientY);
+                link.addEventListener('pointerenter', function() {
+                    showPhoto(photoIndex, link);
                 });
                 link.addEventListener('pointerleave', function() {
                     item.classList.remove('is-previewing', 'preview-below');
                 });
                 link.addEventListener('focus', function() {
-                    const linkRect = link.getBoundingClientRect();
-                    showPhoto(photoIndex, {
-                        clientX: linkRect.left + linkRect.width / 2,
-                        clientY: linkRect.top,
-                    });
+                    showPhoto(photoIndex, link);
                 });
                 link.addEventListener('blur', function() {
                     item.classList.remove('is-previewing', 'preview-below');
