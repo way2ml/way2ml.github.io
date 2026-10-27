@@ -109,6 +109,7 @@
         const imageLinks = Array.from(paragraph.querySelectorAll('a[href]')).filter(isImageLink);
         if (imageLinks.length) {
             item.classList.add('has-images');
+            date.tabIndex = 0;
 
             const gallery = document.createElement('div');
             gallery.className = 'timeline-gallery';
