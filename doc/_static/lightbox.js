@@ -56,7 +56,7 @@
         if (img.classList.contains('lightbox-ignore')) return true;
         
         // Exclude very small images (icons, badges, etc.)
-        if (img.naturalWidth < 50 || img.naturalHeight < 50) return true;
+        if (img.complete && (img.naturalWidth < 50 || img.naturalHeight < 50)) return true;
         
         // Exclude images that are already in the lightbox
         if (img.closest('.lightbox-overlay')) return true;
@@ -108,6 +108,7 @@
         contentImages.forEach(function(img) {
             // Skip excluded images
             if (shouldExclude(img)) return;
+            if (img.dataset.lightboxReady === 'true') return;
 
             // Add click handler
             img.addEventListener('click', function(e) {
@@ -131,6 +132,8 @@
                 lightboxOverlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
             });
+
+            img.dataset.lightboxReady = 'true';
         });
     }
 
