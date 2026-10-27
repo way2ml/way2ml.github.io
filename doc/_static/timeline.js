@@ -115,6 +115,26 @@
             gallery.className = 'timeline-gallery';
             gallery.dataset.count = String(imageLinks.length);
 
+            function positionGallery(clientX, clientY) {
+                const itemRect = item.getBoundingClientRect();
+                gallery.style.setProperty('--timeline-preview-x', (clientX - itemRect.left) + 'px');
+                gallery.style.setProperty('--timeline-preview-y', (clientY - itemRect.top) + 'px');
+            }
+
+            function followPointer(event) {
+                positionGallery(event.clientX, event.clientY);
+            }
+
+            [date, paragraph].forEach(function(trigger) {
+                trigger.addEventListener('pointerenter', followPointer);
+                trigger.addEventListener('pointermove', followPointer);
+            });
+
+            date.addEventListener('focus', function() {
+                const dateRect = date.getBoundingClientRect();
+                positionGallery(dateRect.left + dateRect.width / 2, dateRect.top);
+            });
+
             const photos = [];
 
             imageLinks.forEach(function(link) {
