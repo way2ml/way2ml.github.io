@@ -140,26 +140,28 @@ html_theme_options = {
             "url": "https://www.researchgate.net/profile/Jie_Huang136",
             "icon": "fab fa-researchgate",  # generic icon
         },
-        {
-            "name": "Medium",
-            "url": "https://medium.com/@jackhuang.wz",
-            "icon": "fab fa-medium",
-        },
-        {
-            "name": "YouTube",
-            "url": "https://www.youtube.com//@way2ml",
-            "icon": "fab fa-youtube",
-        },
-        {
-            "name": "Twitter",
-            "url": "https://x.com/jackhuang_wz",
-            "icon": "fab fa-twitter",
-        },
-        {
-            "name": "LinkedIn",
-            "url": "https://linkedin.com/in/jiehuang-fi",
-            "icon": "fab fa-linkedin",
-        },
+
+#        {
+#            "name": "Medium",
+#            "url": "https://medium.com/@jackhuang.wz",
+#            "icon": "fab fa-medium",
+#        },
+#        {
+#            "name": "YouTube",
+#            "url": "https://www.youtube.com//@way2ml",
+#            "icon": "fab fa-youtube",
+#        },
+#        {
+#            "name": "Twitter",
+#            "url": "https://x.com/jackhuang_wz",
+#            "icon": "fab fa-twitter",
+#        },
+#        {
+#            "name": "LinkedIn",
+#            "url": "https://linkedin.com/in/jiehuang-fi",
+#            "icon": "fab fa-linkedin",
+#        },
+
         {
             "name": "ORCID",
             "url": "https://orcid.org/0000-0003-3560-283X",
