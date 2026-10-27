@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).parent / '_extensions'))
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Way To Machine Learning'
-copyright = '2025, Way To Machine Learning'
+copyright = '2026, Jie Huang · Way To Machine Learning'
 author = 'Jie Huang'
 release = '0.0.1'
 
