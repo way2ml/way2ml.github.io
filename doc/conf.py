@@ -76,7 +76,7 @@ myst_substitutions = {}
 def setup(app):
     app.add_css_file('custom.css')
     app.add_js_file('article-metadata.js')
-    app.add_js_file('highlights.js')
+    app.add_js_file('timeline.js')
     app.add_js_file('lightbox.js')
     
     # Add a function to process page metadata from MyST front matter
@@ -174,4 +174,3 @@ html_theme_options = {
     "use_edit_page_button": True, 
     "secondary_sidebar_items": [], # Remove right sidebar
 }
-
