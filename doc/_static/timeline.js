@@ -31,8 +31,9 @@
         return label || 'Photo from ' + dateLabel;
     }
 
-    function addCarouselControls(gallery, photos) {
+    function addCarouselControls(gallery, photos, item, triggers) {
         let currentIndex = 0;
+        let autoPlayTimer = null;
 
         gallery.classList.add('timeline-carousel');
 
@@ -65,6 +66,23 @@
             counter.textContent = (currentIndex + 1) + ' / ' + photos.length;
         }
 
+        function startAutoPlay() {
+            const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (autoPlayTimer || !canHover || reduceMotion) return;
+
+            autoPlayTimer = window.setInterval(function() {
+                showPhoto(currentIndex + 1);
+            }, 2400);
+        }
+
+        function stopAutoPlay() {
+            if (!autoPlayTimer) return;
+            window.clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+            showPhoto(0);
+        }
+
         previous.addEventListener('click', function(event) {
             event.preventDefault();
             event.stopPropagation();
@@ -76,6 +94,12 @@
             event.stopPropagation();
             showPhoto(currentIndex + 1);
         });
+
+        triggers.forEach(function(trigger) {
+            trigger.addEventListener('pointerenter', startAutoPlay);
+        });
+        gallery.addEventListener('pointerenter', startAutoPlay);
+        item.addEventListener('pointerleave', stopAutoPlay);
 
         controls.append(previous, counter, next);
         gallery.appendChild(controls);
@@ -155,7 +179,7 @@
                 photos.push(photoLink);
             });
 
-            if (photos.length > 1) addCarouselControls(gallery, photos);
+            if (photos.length > 1) addCarouselControls(gallery, photos, item, [date, paragraph]);
 
             content.appendChild(gallery);
         }

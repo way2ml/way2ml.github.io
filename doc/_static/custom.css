@@ -396,8 +396,8 @@ figure img {
         z-index: 5;
         grid-row: auto;
         grid-column: auto;
-        grid-template-columns: 11rem;
-        width: 11rem;
+        grid-template-columns: 14rem;
+        width: 14rem;
         margin: 0;
         opacity: 0;
         visibility: hidden;
