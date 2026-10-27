@@ -443,6 +443,15 @@ figure img {
         margin-bottom: 0.4rem;
         padding: 0;
     }
+
+    #research .timeline-item {
+        padding-left: 0;
+    }
+
+    #research .timeline-item::before,
+    #research .timeline-item::after {
+        display: none;
+    }
 }
 
 /* Make images clickable */
