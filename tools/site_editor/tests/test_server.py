@@ -2,14 +2,54 @@ from __future__ import annotations
 
 import base64
 import json
+import socket
 import tempfile
 import unittest
 from pathlib import Path
 
-from tools.site_editor.server import EditorError, EditorState, file_hash, sanitize_name, validate_date
+from tools.site_editor.server import (
+    EditorError,
+    EditorState,
+    download_remote_image,
+    file_hash,
+    sanitize_name,
+    validate_date,
+    validate_remote_url,
+)
 
 
 PNG = base64.b64decode("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=")
+
+
+def public_resolver(host, port, type=0):
+    return [(socket.AF_INET, socket.SOCK_STREAM, 6, "", ("93.184.216.34", port))]
+
+
+class FakeImageResponse:
+    def __init__(self, payload=PNG, content_type="image/png", url="https://example.com/photo"):
+        self.payload = payload
+        self.headers = {"Content-Type": content_type, "Content-Length": str(len(payload))}
+        self.url = url
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        return False
+
+    def geturl(self):
+        return self.url
+
+    def read(self, limit):
+        return self.payload[:limit]
+
+
+class FakeImageOpener:
+    def __init__(self, response):
+        self.response = response
+
+    def open(self, request, timeout):
+        return self.response
 
 
 class EditorStateTests(unittest.TestCase):
@@ -44,6 +84,20 @@ class EditorStateTests(unittest.TestCase):
         self.assertEqual(validate_date("2026.08.07"), "20260807")
         with self.assertRaises(EditorError):
             validate_date("2026.02.30")
+
+    def test_private_network_image_url_is_rejected(self):
+        with self.assertRaises(EditorError):
+            validate_remote_url("http://127.0.0.1/photo.png")
+
+    def test_network_image_is_downloaded_without_saving_it(self):
+        result = download_remote_image(
+            "https://example.com/photo",
+            opener=FakeImageOpener(FakeImageResponse()),
+            resolver=public_resolver,
+        )
+        self.assertEqual(result["originalName"], "photo.png")
+        self.assertEqual(result["mime"], "image/png")
+        self.assertEqual(base64.b64decode(result["data"]), PNG)
 
     def test_image_is_staged_without_touching_doc_assets(self):
         image = self.stage_moment()

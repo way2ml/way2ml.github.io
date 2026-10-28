@@ -134,6 +134,42 @@
     });
   }
 
+  function networkImageUrl(clipboard) {
+    const htmlContent = clipboard.getData('text/html');
+    if (htmlContent) {
+      const image = new DOMParser().parseFromString(htmlContent, 'text/html').querySelector('img[src]');
+      if (image && /^https?:\/\//i.test(image.src)) return image.src;
+    }
+    const textContent = clipboard.getData('text/plain').trim();
+    try {
+      const url = new URL(textContent);
+      return /^https?:$/.test(url.protocol) && /\.(?:jpe?g|png|webp|gif|svg)$/i.test(url.pathname) ? url.href : '';
+    } catch {
+      return '';
+    }
+  }
+
+  function clipboardFiles(clipboard) {
+    const files = [...clipboard.files];
+    if (files.length) return files;
+    return [...clipboard.items]
+      .filter(item => item.kind === 'file')
+      .map(item => item.getAsFile())
+      .filter(Boolean);
+  }
+
+  async function downloadNetworkImage(url) {
+    setStatus('Downloading network image…');
+    const result = await api('/api/download-image', {
+      method: 'POST',
+      body: JSON.stringify({url}),
+    });
+    const binary = atob(result.data);
+    const bytes = new Uint8Array(binary.length);
+    for (let index = 0; index < binary.length; index += 1) bytes[index] = binary.charCodeAt(index);
+    return new File([bytes], result.originalName, {type: result.mime});
+  }
+
   async function askImageDetails(file, date, selectedText = '') {
     const objectUrl = URL.createObjectURL(file);
     const stem = file.name.replace(/\.[^.]+$/, '');
@@ -226,7 +262,7 @@
     }
     editor.focus();
     editor.setSelectionRange(cursor, cursor);
-    setStatus('Image staging finished');
+    setStatus('File staging finished');
   }
 
   dropZone.addEventListener('dragenter', event => { event.preventDefault(); dropZone.classList.add('dragging'); });
@@ -237,6 +273,22 @@
     dropZone.classList.remove('dragging');
     const files = [...event.dataTransfer.files];
     if (files.length) stageFiles(files, editor.selectionStart, editor.selectionEnd);
+  });
+
+  editor.addEventListener('paste', async event => {
+    const files = clipboardFiles(event.clipboardData);
+    const remoteUrl = files.length ? '' : networkImageUrl(event.clipboardData);
+    if (!files.length && !remoteUrl) return;
+    event.preventDefault();
+    const selectionStart = editor.selectionStart;
+    const selectionEnd = editor.selectionEnd;
+    try {
+      const pastedFiles = files.length ? files : [await downloadNetworkImage(remoteUrl)];
+      await stageFiles(pastedFiles, selectionStart, selectionEnd);
+    } catch (error) {
+      showToast(error.message, true);
+      setStatus('Image paste failed');
+    }
   });
 
   async function save() {

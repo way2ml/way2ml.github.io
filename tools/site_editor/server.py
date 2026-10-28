@@ -7,17 +7,21 @@ import argparse
 import base64
 import hashlib
 import html
+import ipaddress
 import json
 import mimetypes
 import os
 import re
 import secrets
 import shutil
+import socket
 import subprocess
 import tempfile
 import threading
 import unicodedata
+import urllib.error
 import urllib.parse
+import urllib.request
 import uuid
 import webbrowser
 from datetime import datetime
@@ -51,6 +55,14 @@ MIME_BY_EXTENSION = {
     ".svg": "image/svg+xml",
     ".pdf": "application/pdf",
 }
+REMOTE_IMAGE_EXTENSION_BY_MIME = {
+    "image/jpeg": ".jpg",
+    "image/png": ".png",
+    "image/webp": ".webp",
+    "image/gif": ".gif",
+    "image/svg+xml": ".svg",
+}
+MAX_ASSET_BYTES = 40 * 1024 * 1024
 
 
 class EditorError(Exception):
@@ -112,6 +124,73 @@ def validate_asset(extension: str, payload: bytes) -> None:
     }
     if not payload or not signatures[extension]:
         raise EditorError("The file contents do not match the selected file format.")
+
+
+def validate_remote_url(url: str, resolver=socket.getaddrinfo) -> urllib.parse.ParseResult:
+    parsed = urllib.parse.urlparse(url)
+    if parsed.scheme not in {"http", "https"} or not parsed.hostname or parsed.username or parsed.password:
+        raise EditorError("Paste a valid public HTTP or HTTPS image URL.")
+    try:
+        addresses = resolver(parsed.hostname, parsed.port or (443 if parsed.scheme == "https" else 80), type=socket.SOCK_STREAM)
+    except (OSError, ValueError) as error:
+        raise EditorError("The image host could not be resolved.") from error
+    if not addresses:
+        raise EditorError("The image host could not be resolved.")
+    for address in addresses:
+        try:
+            ip = ipaddress.ip_address(address[4][0])
+        except ValueError as error:
+            raise EditorError("The image host returned an invalid address.") from error
+        if not ip.is_global:
+            raise EditorError("Local and private network image URLs are not allowed.")
+    return parsed
+
+
+class SafeImageRedirectHandler(urllib.request.HTTPRedirectHandler):
+    def __init__(self, resolver=socket.getaddrinfo):
+        self.resolver = resolver
+        super().__init__()
+
+    def redirect_request(self, request, file_pointer, code, message, headers, new_url):
+        validate_remote_url(new_url, self.resolver)
+        return super().redirect_request(request, file_pointer, code, message, headers, new_url)
+
+
+def download_remote_image(url: str, opener=None, resolver=socket.getaddrinfo) -> dict[str, str]:
+    validate_remote_url(url, resolver)
+    if opener is None:
+        opener = urllib.request.build_opener(SafeImageRedirectHandler(resolver))
+    request = urllib.request.Request(url, headers={"User-Agent": "Way2ML local site editor"})
+    try:
+        with opener.open(request, timeout=15) as response:
+            content_type = response.headers.get("Content-Type", "").split(";", 1)[0].strip().lower()
+            extension = REMOTE_IMAGE_EXTENSION_BY_MIME.get(content_type)
+            final_url = response.geturl()
+            url_extension = Path(urllib.parse.urlparse(final_url).path).suffix.lower()
+            if not extension and url_extension in ALLOWED_EXTENSIONS - {".pdf"}:
+                extension = ".jpg" if url_extension == ".jpeg" else url_extension
+            if not extension:
+                raise EditorError("The URL did not return a supported image.")
+            try:
+                content_length = int(response.headers.get("Content-Length", "0"))
+            except ValueError:
+                content_length = 0
+            if content_length > MAX_ASSET_BYTES:
+                raise EditorError("Files larger than 40 MB are not supported.")
+            payload = response.read(MAX_ASSET_BYTES + 1)
+    except EditorError:
+        raise
+    except (OSError, urllib.error.URLError) as error:
+        raise EditorError("The network image could not be downloaded.") from error
+    if len(payload) > MAX_ASSET_BYTES:
+        raise EditorError("Files larger than 40 MB are not supported.")
+    validate_asset(extension, payload)
+    stem = sanitize_name(Path(urllib.parse.urlparse(final_url).path).stem or "downloaded-image")
+    return {
+        "originalName": f"{stem}{extension}",
+        "mime": MIME_BY_EXTENSION[extension],
+        "data": base64.b64encode(payload).decode("ascii"),
+    }
 
 
 class EditorState:
@@ -177,7 +256,7 @@ class EditorState:
             payload = base64.b64decode(str(data.get("data", "")), validate=True)
         except (ValueError, TypeError) as error:
             raise EditorError("File upload is not valid.") from error
-        if len(payload) > 40 * 1024 * 1024:
+        if len(payload) > MAX_ASSET_BYTES:
             raise EditorError("Files larger than 40 MB are not supported.")
         validate_asset(extension, payload)
 
@@ -568,6 +647,7 @@ class EditorHandler(SimpleHTTPRequestHandler):
                 "/api/render": lambda: {"html": self.app.state.render_quick(str(data.get("content", "")))},
                 "/api/stage-asset": lambda: self.app.state.stage_asset(data),
                 "/api/stage-image": lambda: self.app.state.stage_asset(data),
+                "/api/download-image": lambda: download_remote_image(str(data.get("url", ""))),
                 "/api/preview": lambda: self.app.state.build_preview(data),
                 "/api/save": lambda: self.app.state.save_page(data),
                 "/api/restore": lambda: self.app.state.restore_backup(data),
