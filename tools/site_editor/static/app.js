@@ -134,7 +134,7 @@
     });
   }
 
-  async function askImageDetails(file, date) {
+  async function askImageDetails(file, date, selectedText = '') {
     const objectUrl = URL.createObjectURL(file);
     const stem = file.name.replace(/\.[^.]+$/, '');
     const isPdf = /\.pdf$/i.test(file.name);
@@ -146,7 +146,7 @@
     pdfThumbnail.hidden = !isPdf;
     if (!isPdf) imageThumbnail.src = objectUrl;
     document.querySelector('#image-date').value = date;
-    document.querySelector('#image-label').value = stem;
+    document.querySelector('#image-label').value = selectedText || stem;
     document.querySelector('#image-name').value = stem;
 
     function updatePath() {
@@ -184,15 +184,18 @@
     pendingImageResolve = null;
   });
 
-  async function stageFiles(files, insertionPoint) {
+  async function stageFiles(files, selectionStart, selectionEnd) {
     const supported = /\.(?:jpe?g|png|webp|gif|svg|pdf)$/i;
-    let cursor = insertionPoint;
+    let cursor = selectionStart;
+    let rangeEnd = selectionEnd;
+    let selectedText = editor.value.slice(selectionStart, selectionEnd);
     for (const file of files) {
       if (!supported.test(file.name)) {
         showToast(`${file.name}: unsupported file format`, true);
         continue;
       }
-      const details = await askImageDetails(file, dateAtCursor(cursor));
+      const linkSelectedText = selectedText.length > 0;
+      const details = await askImageDetails(file, dateAtCursor(cursor), linkSelectedText ? selectedText : '');
       if (!details) continue;
       setStatus(`Staging ${file.name}…`);
       try {
@@ -203,14 +206,17 @@
             page: currentPage,
             originalName: file.name,
             data: dataUrl.split(',', 2)[1],
+            linkOnly: linkSelectedText,
             ...details,
           }),
         });
         stagedAssets.push(result);
-        const prefix = cursor > 0 && !/\s/.test(editor.value[cursor - 1]) ? ' ' : '';
+        const prefix = !linkSelectedText && cursor > 0 && !/\s/.test(editor.value[cursor - 1]) ? ' ' : '';
         const insertion = `${prefix}${result.markup}`;
-        editor.setRangeText(insertion, cursor, cursor, 'end');
+        editor.setRangeText(insertion, cursor, linkSelectedText ? rangeEnd : cursor, 'end');
         cursor += insertion.length;
+        rangeEnd = cursor;
+        selectedText = '';
         updateDirtyState();
         renderQuick();
         showToast(`Staged ${result.relative_path}`);
@@ -230,7 +236,7 @@
     event.preventDefault();
     dropZone.classList.remove('dragging');
     const files = [...event.dataTransfer.files];
-    if (files.length) stageFiles(files, editor.selectionStart);
+    if (files.length) stageFiles(files, editor.selectionStart, editor.selectionEnd);
   });
 
   async function save() {

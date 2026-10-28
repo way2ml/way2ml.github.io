@@ -92,6 +92,36 @@ class EditorStateTests(unittest.TestCase):
         })
         self.assertEqual(document["relative_path"], "_static/news/20261021_conference-program.pdf")
 
+    def test_selected_text_becomes_image_link(self):
+        image = self.state.stage_asset({
+            "page": "blogs",
+            "date": "2026.10.21",
+            "name": "group-photo",
+            "label": "friends from Aalto",
+            "linkOnly": True,
+            "originalName": "photo.png",
+            "data": base64.b64encode(PNG).decode("ascii"),
+        })
+        self.assertEqual(
+            image["markup"],
+            '<a href="./_static/blogs/index/20261021_group-photo.png">friends from Aalto</a>',
+        )
+
+    def test_selected_text_becomes_pdf_link(self):
+        document = self.state.stage_asset({
+            "page": "research",
+            "date": "2026.10.21",
+            "name": "conference-slides",
+            "label": "presentation slides",
+            "linkOnly": True,
+            "originalName": "slides.pdf",
+            "data": base64.b64encode(b"%PDF-1.7\n%%EOF\n").decode("ascii"),
+        })
+        self.assertEqual(
+            document["markup"],
+            '<a href="./_static/publications/20261021_conference-slides.pdf" target="_blank" rel="noopener">presentation slides</a>',
+        )
+
     def test_save_creates_asset_and_backup(self):
         image = self.stage_moment()
         source = self.root / "doc" / "moments.md"

@@ -184,11 +184,15 @@ class EditorState:
         date = str(data.get("date", ""))
         name = str(data.get("name", ""))
         label = str(data.get("label", "")).strip() or sanitize_name(name)
+        link_only = data.get("linkOnly") is True
         href, relative_path = self._destination_name(page_id, date, name, extension)
         asset_id = uuid.uuid4().hex
         staged_path = self.session_root / f"{asset_id}{extension}"
         staged_path.write_bytes(payload)
-        if extension == ".pdf":
+        if link_only:
+            target = ' target="_blank" rel="noopener"' if extension == ".pdf" else ""
+            markup = f'<a href="{html.escape(href, quote=True)}"{target}>{html.escape(label)}</a>'
+        elif extension == ".pdf":
             markup = f'<a href="{html.escape(href, quote=True)}" target="_blank" rel="noopener">[{html.escape(label)}]</a>'
         elif self.page(page_id)["timeline"]:
             markup = f'<a href="{html.escape(href, quote=True)}">[{html.escape(label)}]</a>'
