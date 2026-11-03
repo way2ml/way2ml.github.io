@@ -1,0 +1,586 @@
+/* Custom CSS to increase main content width and center align */
+
+/* Increase the max-width of the main content area */
+.bd-main .bd-content {
+    max-width: 100% !important;
+}
+
+/* Adjust the article container width and center it */
+.bd-article-container {
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    /* Use the document's single vertical scroller without leaking sideways. */
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+}
+
+/* Increase the width of the main article content */
+article.bd-article {
+    max-width: none !important;
+}
+
+/* Center the main container */
+.bd-container {
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Center the main content area */
+.bd-main {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.article-metadata {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 0.25rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* Footer inline layout - left aligned */
+.bd-footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* align content to the left */
+    align-items: center;
+    gap: 0.5rem;
+    text-align: left;
+    width: 100%;
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 3rem !important; /* 1rem container + 2rem article padding */
+    padding-right: 1.5rem !important;
+}
+
+.bd-footer__inner .footer-items__start,
+.bd-footer__inner .footer-items__end,
+.bd-footer__inner .footer-item {
+    display: contents;
+}
+
+.bd-footer__inner .footer-item p {
+    display: inline;
+    margin: 0;
+}
+
+.bd-footer__inner .footer-item p br {
+    display: none;
+}
+
+/* Hide breadcrumb header strip */
+.bd-header-article {
+    display: none !important;
+}
+
+/* Ensure content doesn't get too wide on very large screens */
+@media (min-width: 1200px) {
+    .bd-main .bd-content .bd-article-container {
+        max-width: 1400px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/* Add rounded corners to all images */
+img {
+    border-radius: 5px !important;
+    overflow: hidden;
+}
+
+/* Also apply to images in figures */
+figure img {
+    border-radius: 5px !important;
+    overflow: hidden;
+}
+
+/* Apply to images in content area */
+.bd-article img {
+    border-radius: 5px !important;
+    overflow: hidden;
+}
+
+/* Apply to images in main content */
+.bd-main img {
+    border-radius: 5px !important;
+    overflow: hidden;
+}
+
+/* Make figure numbers bold instead of italic */
+.caption-number {
+    font-weight: bold !important;
+    font-style: normal !important;
+}
+
+.article-edit-link {
+    margin-top: 2rem;
+    color: #666;
+    font-size: 0.85em;
+    font-style: italic;
+}
+
+.article-metadata .edit-link,
+.article-edit-link .edit-link {
+    color: #586069;
+    text-decoration: none;
+}
+
+.article-metadata .edit-link:hover,
+.article-edit-link .edit-link:hover {
+    color: #0366d6;
+    text-decoration: underline;
+}
+
+.article-metadata .edit-link i,
+.article-edit-link .edit-link i {
+    margin-right: 3px;
+}
+
+/* Header navbar - align logo text with main content */
+.bd-header__inner {
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Move logo image to the left so the text aligns with content */
+.navbar-brand.logo {
+    margin-left: -1.1rem !important; /* Push logo left so text aligns */
+}
+
+.navbar-brand.logo .logo__image {
+    margin-right: 0.5rem;
+}
+
+/* Align navbar icon links with main content on the right */
+.navbar-header-items__end {
+    padding-right: 1rem !important;
+}
+
+/* Giscus comment header styling */
+.giscus-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.95em;
+}
+
+.giscus-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.giscus-stats {
+    color: #586069;
+    font-style: italic;
+}
+
+.giscus-stats a {
+    color: #586069;
+    text-decoration: none;
+}
+
+.giscus-stats a:hover {
+    color: #0366d6;
+    text-decoration: underline;
+}
+
+#giscus-reactions {
+    font-style: normal;
+}
+
+/* Dark-themed back-to-top button override */
+#pst-back-to-top {
+    background-color: #111 !important;
+    color: #f1f1f1 !important;
+}
+
+#pst-back-to-top:hover,
+#pst-back-to-top:focus {
+    background-color: #000 !important;
+    color: #ffffff !important;
+}
+
+/* ===== Image Lightbox Styles ===== */
+
+/* ===== Research, Moments, and News Timelines ===== */
+
+.timeline-list {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+}
+
+.timeline-item {
+    --timeline-date-width: 4rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--timeline-date-width) 1.5rem minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    gap: 0;
+    margin: 0;
+    padding: 0 0 0.9rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0.55rem;
+    bottom: -0.45rem;
+    left: calc(var(--timeline-date-width) + 0.75rem);
+    width: 1px;
+    background: var(--pst-color-border, rgba(127, 127, 127, 0.3));
+}
+
+.timeline-item:last-child::before {
+    display: none;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 0.4rem;
+    left: calc(var(--timeline-date-width) + 0.48rem);
+    width: 0.6rem;
+    height: 0.6rem;
+    border: 2px solid var(--pst-color-background);
+    border-radius: 50%;
+    background: var(--pst-color-text-muted, #6c757d);
+}
+
+#research .timeline-item {
+    --timeline-date-width: 2rem;
+}
+
+.timeline-date {
+    grid-row: 1;
+    grid-column: 1;
+    align-self: start;
+    padding-top: 0.18rem;
+    color: var(--pst-color-text-muted, #6c757d);
+    font-size: 0.82rem;
+    font-weight: 550;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.timeline-content {
+    display: contents;
+}
+
+.timeline-content > p {
+    grid-row: 1;
+    grid-column: 3;
+    min-width: 0;
+    margin: 0;
+}
+
+.timeline-content > ul {
+    grid-row: 2;
+    grid-column: 3;
+    margin: 0.35rem 0 0;
+    padding: 0;
+    color: var(--pst-color-text-muted, #6c757d);
+    font-size: 0.92rem;
+    list-style: none;
+}
+
+.timeline-gallery {
+    display: none;
+}
+
+.timeline-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 1px solid var(--pst-color-border, rgba(127, 127, 127, 0.2));
+    border-radius: 5px;
+    background: rgba(127, 127, 127, 0.06);
+}
+
+.timeline-photo[hidden] {
+    display: none;
+}
+
+.timeline-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .timeline-item.has-images .timeline-gallery {
+        position: absolute;
+        top: var(--timeline-preview-y, 0);
+        left: var(--timeline-preview-x, 50%);
+        z-index: 5;
+        display: grid;
+        grid-template-columns: min(28rem, calc(100vw - 2rem));
+        width: min(28rem, calc(100vw - 2rem));
+        margin: 0;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translate(-50%, -100%);
+        overflow: hidden;
+        border-radius: 5px;
+        box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.16);
+    }
+
+    .timeline-item.has-images.is-previewing .timeline-gallery {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, -100%);
+    }
+
+    .timeline-item.has-images.is-previewing.preview-below .timeline-gallery {
+        transform: translate(-50%, 0) translateY(0.2rem);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .timeline-item {
+        grid-template-columns: 8.5rem minmax(0, 1fr);
+        grid-template-rows: auto;
+        gap: 1.5rem;
+    }
+
+    .timeline-item::before {
+        left: 8.69rem;
+    }
+
+    .timeline-item::after {
+        left: 8.42rem;
+    }
+
+    .timeline-date {
+        grid-row: auto;
+        grid-column: auto;
+        text-align: left;
+    }
+
+    .timeline-content {
+        display: block;
+        min-width: 0;
+    }
+
+}
+
+@media (max-width: 767.98px) {
+    .timeline-item {
+        display: block;
+        padding: 0 0 1rem 1.25rem;
+    }
+
+    .timeline-item::before {
+        top: 0.45rem;
+        bottom: -0.4rem;
+        left: 0.28rem;
+    }
+
+    .timeline-item::after {
+        top: 0.3rem;
+        left: 0;
+    }
+
+    .timeline-date {
+        display: block;
+        margin-bottom: 0.4rem;
+        padding: 0;
+    }
+
+}
+
+/* Make images clickable */
+.bd-article img:not(.lightbox-ignore),
+.bd-main img:not(.lightbox-ignore):not(.logo__image):not([src*="logo"]) {
+    cursor: zoom-in;
+}
+
+.timeline-image-trigger {
+    cursor: zoom-in;
+}
+
+/* Lightbox overlay */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    cursor: zoom-out;
+}
+
+.lightbox-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Lightbox image */
+.lightbox-overlay img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    cursor: zoom-out;
+}
+
+.lightbox-overlay.active img {
+    transform: scale(1);
+}
+
+/* Close button */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+    z-index: 10000;
+    line-height: 1;
+}
+
+.lightbox-close:hover {
+    color: #ccc;
+    transform: scale(1.1);
+}
+
+/* Caption in lightbox */
+.lightbox-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    max-width: 80%;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+}
+
+/* Navigation arrows (for future enhancement) */
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 50px;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.2s ease;
+    user-select: none;
+}
+
+.lightbox-nav:hover {
+    color: #ccc;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+/* ===== Blog Timeline Styles ===== */
+
+.blog-timeline {
+    margin: 2rem 0 0;
+}
+
+.blog-card.timeline-item {
+    --timeline-date-width: 4rem;
+    padding-bottom: 1rem;
+}
+
+.blog-card-title {
+    grid-row: 1;
+    grid-column: 3;
+    min-width: 0;
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.blog-card-title a {
+    text-decoration: none;
+}
+
+.blog-card-title a:hover {
+    text-decoration: underline;
+}
+
+.blog-card-description {
+    grid-row: 2;
+    grid-column: 3;
+    min-width: 0;
+    margin: 0.2rem 0 0;
+    color: var(--pst-color-text-muted, #8b949e);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog-card-meta {
+    grid-row: 3;
+    grid-column: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.25rem;
+    color: var(--pst-color-text-muted, #6e7681);
+    font-size: 0.8rem;
+}
+
+.blog-card-meta span:not(:last-child)::after {
+    content: "·";
+    margin-left: 0.35rem;
+    color: var(--pst-color-border, #484f58);
+}
+
+@media (max-width: 991.98px) {
+    .blog-card-title,
+    .blog-card-description,
+    .blog-card-meta {
+        grid-column: 2;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .blog-card-title,
+    .blog-card-description,
+    .blog-card-meta {
+        margin-left: 0;
+    }
+}
