@@ -4,6 +4,7 @@ comment: False
 ---
 
 # Moments
+- 2026-11-03 Pablo shared his thoughts about agent use. He said the current agent is too good. He was amazed by this. Pablo introduced Eliana to us. We went to Sello for dinner and went back to Aalto for the board game. We had a good evening. 
 - 2026-10-28 I checked in for the flight back in Japanese. I'm proud of my learning results.
 - 2026-10-25 I went to Tsukuba with everyone to visit [Shigeki Kawai](https://samurai.nims.go.jp/profiles/KAWAI_Shigeki?locale=en) sensei's group. We had <a href="./_static/moments/20261025_IMG_5794.jpg">[good Ramen]</a> and beer there.  He loves Taylor Swift and playing tennis. He led me back at night on his birthday. What a pleasure. 
 - 2026-10-24 I went to <a href="./_static/moments/20261023_IMG_5726.jpg">[Kyoto University]</a> with <a href="./_static/moments/20261023_IMG_5742.jpg">[Yilin Wang]</a>. I visited his laboratories. He showed me what an AFM machine looks like. He does AFM in liquid at room temperature, which means the whole system is very tiny. We talked about our lives, from the University to the city centre of Kyoto.  Later <a href="./_static/moments/20261023_IMG_5750.jpg">[in the evening]</a>, another friend studying Japanese law as a master's student in Tokyo, <a href="./_static/moments/20261023_IMG_0269.jpg">[Shengsheng Wang]</a>,  came.  We ate good food. After dinner, we walked along the River of Duck. We shared our dreams, talked about the troubles we met when we first came. We had a wonderful night. 
