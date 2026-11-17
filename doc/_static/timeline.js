@@ -199,7 +199,7 @@
                 if (text.startsWith('Author:')) {
                     part.textContent = text.replace(/^Author:\s*/, '');
                 } else if (text.startsWith('Platform:')) {
-                    part.textContent = text.replace(/^Platform:\s*/, '') + ' ↗';
+                    part.textContent = text.replace(/^Platform:\s*/, '');
                     part.classList.add('blog-card-source');
                     hasSource = true;
                 }
